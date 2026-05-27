@@ -1,0 +1,1316 @@
+{
+  "_readme": [
+    "RailKing Gen6 course manifest - first-pass draft generated from CBT_Outline_RailKing_G6.md.",
+    "All content screen HTML files referenced here are planned authoring targets in the workspace root.",
+    "Update narration, questions, and LMS metadata before final build and release."
+  ],
+  "course": {
+    "id": "KIR-RK-G6-001",
+    "title": "RailKing Gen6 Operations and Service Fundamentals",
+    "title_short": "RailKing G6 Fundamentals",
+    "logo_file": "kirbyflag_imagefile.png"
+  },
+  "kla": {
+    "description": "This course prepares RailKing Gen6 operators and service personnel to locate and apply the correct operating, reference, and support documentation; execute safe startup, operation, and shutdown workflows; and use RK24 drawings and OEM vendor references for advanced troubleshooting.",
+    "category": "Technical Skills",
+    "tags": [
+      "RailKing",
+      "Gen6",
+      "RK22",
+      "RK23",
+      "RK24",
+      "operator training",
+      "service troubleshooting"
+    ],
+    "compliance_tags": [],
+    "contractor_visible": false,
+    "release_date": "2026-05-27",
+    "revision_notes": "Initial manifest draft from approved outline."
+  },
+  "intro": {
+    "output_file": "CBT_Introduction.html",
+    "first_section_href": "S1_Section1.html",
+    "title_html": "RailKing Gen6<br>Operations and Service Fundamentals",
+    "subtitle": "Operator and Service Reference Workflow Training",
+    "duration_badge": "55-minute course",
+    "sections_badge": "6 Sections + Final Exam",
+    "audience_badge": "Operators, Supervisors, and Service Technicians",
+    "footer_label": "4 minutes",
+    "screens": [
+      {
+        "id": "s-int1",
+        "label": "Title Card",
+        "vo": [
+          "Welcome to RailKing Gen6 Operations and Service Fundamentals. This course shows you how to use the RailKing document set to run the unit safely, respond to issues, and hand off clean technical information for service support."
+        ]
+      },
+      {
+        "id": "s-int2",
+        "label": "Who This Course Is For",
+        "vo": [
+          "This training is designed for operators, lead operators, field supervisors, and service technicians who support RailKing Gen6 equipment in daily operation and troubleshooting."
+        ]
+      },
+      {
+        "id": "s-int3",
+        "label": "Course Application",
+        "vo": [
+          "You will practice selecting the right manual, following startup and shutdown workflows, and using model-specific references including RK24 drawings and OEM vendor documentation to solve field problems."
+        ]
+      },
+      {
+        "id": "s-int4",
+        "label": "Learning Objectives",
+        "vo": [
+          "By the end of this course, you will be able to complete six core tasks.",
+          "One. Identify the RailKing Gen6 document set and where to find operating, service, and support information.",
+          "Two. Explain model family differences and common operating principles across RK22, RK23, and RK24.",
+          "Three. Perform safe pre-operation checks and startup sequencing using the operator guidance.",
+          "Four. Operate the machine through normal work cycles and monitor key indicators and limits.",
+          "Five. Execute shutdown, post-operation checks, and escalation and support workflows.",
+          "Six. Apply model-specific service references, drawings, and OEM documentation to troubleshoot and maintain RK24 systems.",
+          "These objectives establish the baseline workflow for confident RailKing Gen6 operation and service coordination."
+        ],
+        "revealAt": [
+          null,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          null
+        ]
+      }
+    ],
+    "objectives": [
+      {
+        "num": 1,
+        "tag": "Section 1",
+        "text": "Identify the RailKing Gen6 document set and where to find operating, service, and support information."
+      },
+      {
+        "num": 2,
+        "tag": "Section 2",
+        "text": "Explain model family differences and common operating principles across RK22, RK23, and RK24."
+      },
+      {
+        "num": 3,
+        "tag": "Section 3",
+        "text": "Perform safe pre-operation checks and startup sequencing using the operator guidance."
+      },
+      {
+        "num": 4,
+        "tag": "Section 4",
+        "text": "Operate the machine through normal work cycles and monitor key indicators and limits."
+      },
+      {
+        "num": 5,
+        "tag": "Section 5",
+        "text": "Execute shutdown, post-operation checks, and escalation and support workflows."
+      },
+      {
+        "num": 6,
+        "tag": "Section 6",
+        "text": "Apply model-specific service references, drawings, and OEM documentation to troubleshoot and maintain RK24 systems."
+      }
+    ],
+    "int2_cards": [
+      {
+        "border_color": "var(--k-orange)",
+        "body": "This course supports <strong>operators and lead operators</strong> who need repeatable startup, operation, and shutdown workflows."
+      },
+      {
+        "border_color": "var(--k-orange)",
+        "body": "It also supports <strong>field supervisors and support coordinators</strong> who prepare complete handoff packets for service escalation."
+      },
+      {
+        "border_color": "var(--k-steel)",
+        "body": "The final section extends to <strong>service technicians</strong> using RK24 drawings and OEM vendor references for advanced troubleshooting."
+      }
+    ],
+    "int3_kp": [
+      {
+        "dot_class": "bl",
+        "body": "<strong>Primary workflow:</strong><br>Find the right source first, then execute the procedure."
+      },
+      {
+        "dot_class": "bl",
+        "body": "<strong>Reference stack:</strong><br>Operator guide, model manuals, support forms, RK24 drawings, and OEM vendor documents."
+      }
+    ],
+    "int3_highlight": "\u26a1 Correct documentation selection prevents rework, delays, and unsafe field actions.",
+    "int3_closing": {
+      "dot_class": "or",
+      "body": "Consistent workflows and complete service handoffs improve uptime and decision quality across operations and maintenance teams."
+    }
+  },
+  "sections": [
+    {
+      "num": 1,
+      "output_file": "S1_Section1.html",
+      "title": "Documentation, Safety, and Support Workflow",
+      "title_short": "Docs, Safety, and Support",
+      "duration": "8 minutes",
+      "next_section_href": "S2_Section2.html",
+      "next_section_btn_label": "Section 2 ▸",
+      "screens": [
+        {
+          "id": "s-s1-0",
+          "file": "S1-0_Section_Intro.html",
+          "label": "Section Intro",
+          "vo": "Section one introduces the RailKing document ecosystem, safety responsibilities, and support channels used during normal operation and escalation."
+        },
+        {
+          "id": "s-s1-1",
+          "file": "S1-1_Document_Library_Map.html",
+          "label": "Document Library Map",
+          "vo": "This screen maps the main source sets and identifies which document families are intended for operation, service, and support communication."
+        },
+        {
+          "id": "s-s1-2",
+          "file": "S1-2_Safety_and_Responsibility.html",
+          "label": "Safety and Responsibility",
+          "vo": "Review safety responsibilities, role boundaries, and the requirement to follow approved procedures before attempting corrective actions."
+        },
+        {
+          "id": "s-s1-3",
+          "file": "S1-3_Warranty_and_Limits.html",
+          "label": "Warranty and Limits",
+          "vo": "Understand warranty context and decision limits that determine when to stop, document conditions, and escalate to support."
+        },
+        {
+          "id": "s-s1-4",
+          "file": "S1-4_Contacts_and_Support_Path.html",
+          "label": "Contacts and Support Path",
+          "vo": "Follow the contact pathway so support requests include the right team, urgency, and machine context on first submission."
+        },
+        {
+          "id": "s-s1-5",
+          "file": "S1-5_Forms_and_Data_Quality.html",
+          "label": "Forms and Data Quality",
+          "vo": "Use the standard forms to provide complete, high-quality data that reduces troubleshooting cycle time."
+        }
+      ],
+      "quiz": {
+        "screen_id": "s-quiz1",
+        "quiz_vo": "Complete this section checkpoint to confirm you can select the right source and follow the support workflow.",
+        "pick": 4,
+        "pass_threshold": 3,
+        "pass_msg": "Well done. Continue to Section 2.",
+        "fail_msg": "Review Section 1 and try again.",
+        "pool": [
+          {
+            "stem": "Which document should be used first for day-to-day operating workflow guidance?",
+            "options": [
+              { "val": "A", "text": "G6 Operator reference materials" },
+              { "val": "B", "text": "RK24 OEM vendor manuals" },
+              { "val": "C", "text": "Parts order form" },
+              { "val": "D", "text": "Sales feedback form" }
+            ],
+            "correct": "A",
+            "feedback": {
+              "correct": "✓ Correct. Operator guidance is the first reference for normal workflow.",
+              "wrong": "✗ Not quite. Start with operator guidance before specialized references.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "What is the main purpose of standardized support forms?",
+            "options": [
+              { "val": "A", "text": "Reduce training duration" },
+              { "val": "B", "text": "Provide complete troubleshooting data" },
+              { "val": "C", "text": "Replace model manuals" },
+              { "val": "D", "text": "Approve warranty claims automatically" }
+            ],
+            "correct": "B",
+            "feedback": {
+              "correct": "✓ Correct. Complete data improves support response quality.",
+              "wrong": "✗ Not quite. The forms are for structured, complete support information.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "When should escalation occur during uncertainty about safe limits?",
+            "options": [
+              { "val": "A", "text": "Only after trying multiple fixes" },
+              { "val": "B", "text": "At end of shift" },
+              { "val": "C", "text": "Immediately when limits are unclear" },
+              { "val": "D", "text": "Only if parts are unavailable" }
+            ],
+            "correct": "C",
+            "feedback": {
+              "correct": "✓ Correct. Escalate immediately when safe operating limits are uncertain.",
+              "wrong": "✗ Not quite. Do not continue when limits are unclear.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "Which source is most appropriate for support contact pathways?",
+            "options": [
+              { "val": "A", "text": "contacts.pdf" },
+              { "val": "B", "text": "RK22 manual" },
+              { "val": "C", "text": "OEM hydraulic datasheets" },
+              { "val": "D", "text": "summary screen" }
+            ],
+            "correct": "A",
+            "feedback": {
+              "correct": "✓ Correct. contacts.pdf defines primary support channels.",
+              "wrong": "✗ Not quite. Contact pathways are maintained in contacts.pdf.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "Which form should be used when ordering replacement parts?",
+            "options": [
+              { "val": "A", "text": "form_tech_manual_feedback.pdf" },
+              { "val": "B", "text": "form_parts_order.pdf" },
+              { "val": "C", "text": "warranty.pdf" },
+              { "val": "D", "text": "user.pdf" }
+            ],
+            "correct": "B",
+            "feedback": {
+              "correct": "✓ Correct. Parts orders use form_parts_order.pdf.",
+              "wrong": "✗ Not quite. There is a dedicated parts order form for this purpose.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "A technician finds a discrepancy in a manual. Which form is most appropriate?",
+            "options": [
+              { "val": "A", "text": "form_equip_tech_support.pdf" },
+              { "val": "B", "text": "form_sales_feedback.pdf" },
+              { "val": "C", "text": "form_tech_manual_feedback.pdf" },
+              { "val": "D", "text": "warranty.pdf" }
+            ],
+            "correct": "C",
+            "feedback": {
+              "correct": "✓ Correct. Technical manual feedback has a dedicated form.",
+              "wrong": "✗ Not quite. Use form_tech_manual_feedback.pdf for documentation discrepancies.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "Which document outlines coverage limits for non-routine actions?",
+            "options": [
+              { "val": "A", "text": "G6 Operator Reference Guide" },
+              { "val": "B", "text": "RK24 drawing set" },
+              { "val": "C", "text": "warranty.pdf" },
+              { "val": "D", "text": "form_parts_order.pdf" }
+            ],
+            "correct": "C",
+            "feedback": {
+              "correct": "✓ Correct. warranty.pdf defines coverage and responsibility boundaries.",
+              "wrong": "✗ Not quite. Warranty context and limits are documented in warranty.pdf.",
+              "retry": "Incorrect - try again."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "num": 2,
+      "output_file": "S2_Section2.html",
+      "title": "Platform Overview (RK22, RK23, RK24)",
+      "title_short": "Platform Overview",
+      "duration": "7 minutes",
+      "next_section_href": "S3_Section3.html",
+      "next_section_btn_label": "Section 3 ▸",
+      "screens": [
+        {
+          "id": "s-s2-0",
+          "file": "S2-0_Section_Intro.html",
+          "label": "Section Intro",
+          "vo": "Section two compares RK22, RK23, and RK24 models and clarifies shared systems versus model-specific references."
+        },
+        {
+          "id": "s-s2-1",
+          "file": "S2-1_Model_Family_Comparison.html",
+          "label": "Model Family Comparison",
+          "vo": "Use this comparison to identify where model behavior is common and where procedural differences must be checked in model manuals."
+        },
+        {
+          "id": "s-s2-2",
+          "file": "S2-2_Common_Subsystems.html",
+          "label": "Common Subsystems",
+          "vo": "This screen highlights subsystem categories that remain conceptually common across the model family."
+        },
+        {
+          "id": "s-s2-3",
+          "file": "S2-3_Operator_Interface_Overview.html",
+          "label": "Operator Interface Overview",
+          "vo": "Review interface concepts and where to validate model-specific indicator and control behavior."
+        },
+        {
+          "id": "s-s2-4",
+          "file": "S2-4_When_to_Use_Model_Specific_Manuals.html",
+          "label": "When to Use Model Manuals",
+          "vo": "Learn trigger points for switching from generic guidance to RK22, RK23, or RK24 model-specific documentation."
+        }
+      ],
+      "quiz": {
+        "screen_id": "s-quiz2",
+        "quiz_vo": "Answer these questions to confirm your model-family reference strategy.",
+        "pick": 4,
+        "pass_threshold": 3,
+        "pass_msg": "Section 2 complete. Continue to Section 3.",
+        "fail_msg": "Review Section 2 content and retry.",
+        "pool": [
+          {
+            "stem": "What is the safest approach when guidance appears to differ across models?",
+            "options": [
+              { "val": "A", "text": "Use RK24 guidance for all models" },
+              { "val": "B", "text": "Use operator preference" },
+              { "val": "C", "text": "Confirm the model-specific manual" },
+              { "val": "D", "text": "Ignore differences unless fault occurs" }
+            ],
+            "correct": "C",
+            "feedback": {
+              "correct": "✓ Correct. Model-specific manuals resolve model-specific differences.",
+              "wrong": "✗ Not quite. Always validate model-specific instructions.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "Which set best represents model-level source documents?",
+            "options": [
+              { "val": "A", "text": "RK22.pdf, RK23.pdf, RK24 Service Manual.pdf" },
+              { "val": "B", "text": "contacts.pdf and warranty.pdf" },
+              { "val": "C", "text": "parts and feedback forms only" },
+              { "val": "D", "text": "OEM manuals only" }
+            ],
+            "correct": "A",
+            "feedback": {
+              "correct": "✓ Correct. Those three manuals provide model-level guidance.",
+              "wrong": "✗ Not quite. Model-level documents are the RK22/RK23/RK24 manuals.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "Why distinguish common subsystems from model-specific details?",
+            "options": [
+              { "val": "A", "text": "To reduce documentation" },
+              { "val": "B", "text": "To speed up safe decision making" },
+              { "val": "C", "text": "To avoid operator training" },
+              { "val": "D", "text": "To bypass escalation" }
+            ],
+            "correct": "B",
+            "feedback": {
+              "correct": "✓ Correct. It improves speed while preserving correctness.",
+              "wrong": "✗ Not quite. The goal is faster, safer decisions.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "What should you do before applying a procedure to a different model?",
+            "options": [
+              { "val": "A", "text": "Assume the same steps" },
+              { "val": "B", "text": "Validate with model-specific documentation" },
+              { "val": "C", "text": "Ask another operator only" },
+              { "val": "D", "text": "Wait for next shift" }
+            ],
+            "correct": "B",
+            "feedback": {
+              "correct": "✓ Correct. Validate procedure applicability by model.",
+              "wrong": "✗ Not quite. Cross-model assumptions are unsafe.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "Which model in the Gen6 family includes the most advanced diagnostics capability?",
+            "options": [
+              { "val": "A", "text": "RK22" },
+              { "val": "B", "text": "RK23" },
+              { "val": "C", "text": "RK24" },
+              { "val": "D", "text": "All models are identical" }
+            ],
+            "correct": "C",
+            "feedback": {
+              "correct": "✓ Correct. The RK24 includes advanced diagnostics and OEM vendor integration.",
+              "wrong": "✗ Not quite. The RK24 is the advanced configuration in the family.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "Which document should a supervisor consult for shared operating principles?",
+            "options": [
+              { "val": "A", "text": "RK24 Service Manual exclusively" },
+              { "val": "B", "text": "G6 Operator Reference Guide" },
+              { "val": "C", "text": "OEM vendor datasheets" },
+              { "val": "D", "text": "contacts.pdf" }
+            ],
+            "correct": "B",
+            "feedback": {
+              "correct": "✓ Correct. The Operator Reference Guide covers shared Gen6 principles.",
+              "wrong": "✗ Not quite. The G6 Operator Reference Guide is the cross-model resource.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "An operator needs threshold values for the RK23. What is the correct action?",
+            "options": [
+              { "val": "A", "text": "Use RK24 values as they are more advanced" },
+              { "val": "B", "text": "Estimate based on RK22 values" },
+              { "val": "C", "text": "Consult the RK23 model manual for model-specific thresholds" },
+              { "val": "D", "text": "Contact sales feedback" }
+            ],
+            "correct": "C",
+            "feedback": {
+              "correct": "✓ Correct. Always use the model-specific manual for thresholds.",
+              "wrong": "✗ Not quite. RK23 thresholds must come from the RK23 manual.",
+              "retry": "Incorrect - try again."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "num": 3,
+      "output_file": "S3_Section3.html",
+      "title": "Pre-Operation and Startup",
+      "title_short": "Pre-Op and Startup",
+      "duration": "9 minutes",
+      "next_section_href": "S4_Section4.html",
+      "next_section_btn_label": "Section 4 ▸",
+      "screens": [
+        {
+          "id": "s-s3-0",
+          "file": "S3-0_Section_Intro.html",
+          "label": "Section Intro",
+          "vo": "Section three standardizes pre-operation checks and startup sequencing across the RailKing Gen6 workflow."
+        },
+        {
+          "id": "s-s3-1",
+          "file": "S3-1_PreOp_Inspection_Zones.html",
+          "label": "Pre-Op Inspection Zones",
+          "vo": "Follow the inspection zone sequence to confirm readiness before control-system interaction."
+        },
+        {
+          "id": "s-s3-2",
+          "file": "S3-2_Control_Panel_Readiness.html",
+          "label": "Control Panel Readiness",
+          "vo": "Verify panel readiness indicators and prerequisites before initiating startup commands."
+        },
+        {
+          "id": "s-s3-3",
+          "file": "S3-3_Startup_Sequence.html",
+          "label": "Startup Sequence",
+          "vo": "Execute startup in procedural order, using hold points where conditions are not confirmed."
+        },
+        {
+          "id": "s-s3-4",
+          "file": "S3-4_Abnormal_Conditions_HoldPoints.html",
+          "label": "Abnormal Hold Points",
+          "vo": "Apply stop and hold criteria for abnormal conditions and escalate when needed."
+        },
+        {
+          "id": "s-s3-5",
+          "file": "S3-5_Startup_Confirmation_and_Recordkeeping.html",
+          "label": "Startup Confirmation and Records",
+          "vo": "Document startup status and required records to maintain operational continuity across shifts."
+        }
+      ],
+      "quiz": {
+        "screen_id": "s-quiz3",
+        "quiz_vo": "Complete the startup workflow check before moving to normal operations.",
+        "pick": 4,
+        "pass_threshold": 3,
+        "pass_msg": "Good work. Continue to Section 4.",
+        "fail_msg": "Review Section 3 startup process and retry.",
+        "pool": [
+          {
+            "stem": "What is the first major phase before startup command execution?",
+            "options": [
+              { "val": "A", "text": "Fault reset" },
+              { "val": "B", "text": "Pre-operation inspection" },
+              { "val": "C", "text": "OEM manual review" },
+              { "val": "D", "text": "Parts order submission" }
+            ],
+            "correct": "B",
+            "feedback": {
+              "correct": "✓ Correct. Pre-operation inspection is required before startup actions.",
+              "wrong": "✗ Not quite. Begin with pre-operation inspection and readiness checks.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "When should a startup hold point be used?",
+            "options": [
+              { "val": "A", "text": "When all conditions are normal" },
+              { "val": "B", "text": "When conditions are unverified or abnormal" },
+              { "val": "C", "text": "Only during training" },
+              { "val": "D", "text": "Only after shutdown" }
+            ],
+            "correct": "B",
+            "feedback": {
+              "correct": "✓ Correct. Hold points are for unverified or abnormal conditions.",
+              "wrong": "✗ Not quite. Hold when criteria are not satisfied.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "Why is startup recordkeeping required?",
+            "options": [
+              { "val": "A", "text": "For visual consistency" },
+              { "val": "B", "text": "To support shift continuity and traceability" },
+              { "val": "C", "text": "To reduce checklist steps" },
+              { "val": "D", "text": "To avoid model manuals" }
+            ],
+            "correct": "B",
+            "feedback": {
+              "correct": "✓ Correct. Records preserve continuity and escalation context.",
+              "wrong": "✗ Not quite. Records are essential for continuity and troubleshooting.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "If a readiness prerequisite is missing, the operator should:",
+            "options": [
+              { "val": "A", "text": "Continue slowly" },
+              { "val": "B", "text": "Skip to normal operation" },
+              { "val": "C", "text": "Stop and resolve/escalate per procedure" },
+              { "val": "D", "text": "Change model profile" }
+            ],
+            "correct": "C",
+            "feedback": {
+              "correct": "✓ Correct. Stop, resolve, or escalate as defined.",
+              "wrong": "✗ Not quite. Never proceed with missing prerequisites.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "Which zone should be inspected first in the pre-operation sequence?",
+            "options": [
+              { "val": "A", "text": "Control panel" },
+              { "val": "B", "text": "Fluid levels" },
+              { "val": "C", "text": "Perimeter and safety" },
+              { "val": "D", "text": "External hoses" }
+            ],
+            "correct": "C",
+            "feedback": {
+              "correct": "✓ Correct. Perimeter and safety is the first inspection zone.",
+              "wrong": "✗ Not quite. Start with perimeter and safety before other zones.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "How long should a unit run at idle before applying operating load?",
+            "options": [
+              { "val": "A", "text": "Idle warm-up is not required" },
+              { "val": "B", "text": "As specified in the model manual" },
+              { "val": "C", "text": "At least 30 seconds regardless of conditions" },
+              { "val": "D", "text": "Until the operator is comfortable" }
+            ],
+            "correct": "B",
+            "feedback": {
+              "correct": "✓ Correct. Follow model-manual idle warm-up specifications.",
+              "wrong": "✗ Not quite. Warm-up time is model-specific and procedure-defined.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "What should be confirmed before moving from startup to operational mode?",
+            "options": [
+              { "val": "A", "text": "All hold point criteria are satisfied" },
+              { "val": "B", "text": "Parts order is submitted" },
+              { "val": "C", "text": "OEM manuals are available" },
+              { "val": "D", "text": "Service form is completed" }
+            ],
+            "correct": "A",
+            "feedback": {
+              "correct": "✓ Correct. All hold point criteria must be satisfied before progression.",
+              "wrong": "✗ Not quite. Hold points gate progression — satisfy all criteria first.",
+              "retry": "Incorrect - try again."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "num": 4,
+      "output_file": "S4_Section4.html",
+      "title": "Normal Operation and Performance Monitoring",
+      "title_short": "Normal Operation",
+      "duration": "8 minutes",
+      "next_section_href": "S5_Section5.html",
+      "next_section_btn_label": "Section 5 ▸",
+      "screens": [
+        {
+          "id": "s-s4-0",
+          "file": "S4-0_Section_Intro.html",
+          "label": "Section Intro",
+          "vo": "Section four focuses on stable operation, indicator interpretation, and warning response during normal work cycles."
+        },
+        {
+          "id": "s-s4-1",
+          "file": "S4-1_Operating_Cycle_Overview.html",
+          "label": "Operating Cycle Overview",
+          "vo": "Review the standard operating cycle and expected monitoring checkpoints."
+        },
+        {
+          "id": "s-s4-2",
+          "file": "S4-2_Key_Indicators_and_Thresholds.html",
+          "label": "Indicators and Thresholds",
+          "vo": "Track key indicators and thresholds and verify model-specific values before action."
+        },
+        {
+          "id": "s-s4-3",
+          "file": "S4-3_Common_Adjustments_in_Service.html",
+          "label": "Common Adjustments",
+          "vo": "Apply common in-service adjustments only within approved guidance and operating limits."
+        },
+        {
+          "id": "s-s4-4",
+          "file": "S4-4_Responding_to_Warnings.html",
+          "label": "Responding to Warnings",
+          "vo": "Use warning response logic to stabilize operation and determine if escalation is required."
+        },
+        {
+          "id": "s-s4-5",
+          "file": "S4-5_Handoff_Between_Operators.html",
+          "label": "Operator Handoff",
+          "vo": "Perform complete operator handoff to maintain state awareness and avoid repeated diagnostic work."
+        }
+      ],
+      "quiz": {
+        "screen_id": "s-quiz4",
+        "quiz_vo": "Check your understanding of normal operation and warning response.",
+        "pick": 4,
+        "pass_threshold": 3,
+        "pass_msg": "Section 4 complete. Proceed to Section 5.",
+        "fail_msg": "Review Section 4 and retake the quiz.",
+        "pool": [
+          {
+            "stem": "How should indicator thresholds be applied?",
+            "options": [
+              { "val": "A", "text": "Use one fixed threshold set for all models" },
+              { "val": "B", "text": "Use model-specific validated thresholds" },
+              { "val": "C", "text": "Use previous shift values only" },
+              { "val": "D", "text": "Ignore unless alarm triggers" }
+            ],
+            "correct": "B",
+            "feedback": {
+              "correct": "✓ Correct. Confirm thresholds against the correct model references.",
+              "wrong": "✗ Not quite. Threshold interpretation must be model-validated.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "What is the best response to an unexpected warning?",
+            "options": [
+              { "val": "A", "text": "Continue operating and observe" },
+              { "val": "B", "text": "Disable warning display" },
+              { "val": "C", "text": "Apply warning response procedure and assess escalation" },
+              { "val": "D", "text": "Switch models in settings" }
+            ],
+            "correct": "C",
+            "feedback": {
+              "correct": "✓ Correct. Follow procedure and escalate based on criteria.",
+              "wrong": "✗ Not quite. Warnings require procedural response, not suppression.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "Why is operator handoff quality important?",
+            "options": [
+              { "val": "A", "text": "It shortens shift overlap only" },
+              { "val": "B", "text": "It reduces dashboard clutter" },
+              { "val": "C", "text": "It preserves operating context and pending actions" },
+              { "val": "D", "text": "It eliminates service documentation" }
+            ],
+            "correct": "C",
+            "feedback": {
+              "correct": "✓ Correct. Strong handoff avoids missed context and repeated work.",
+              "wrong": "✗ Not quite. Handoff is critical for continuity and safety.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "Which practice supports stable normal operation?",
+            "options": [
+              { "val": "A", "text": "Ad hoc adjustments outside procedure" },
+              { "val": "B", "text": "Procedure-driven monitoring and response" },
+              { "val": "C", "text": "Ignoring low-priority indicators" },
+              { "val": "D", "text": "Skipping model checks" }
+            ],
+            "correct": "B",
+            "feedback": {
+              "correct": "✓ Correct. Procedure-driven monitoring stabilizes operations.",
+              "wrong": "✗ Not quite. Stability comes from disciplined, procedural operation.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "At which operating cycle phase should interval logs be captured?",
+            "options": [
+              { "val": "A", "text": "Only at startup" },
+              { "val": "B", "text": "Only at shutdown" },
+              { "val": "C", "text": "During stable operational load per schedule" },
+              { "val": "D", "text": "Logs are not required during normal operation" }
+            ],
+            "correct": "C",
+            "feedback": {
+              "correct": "✓ Correct. Interval checks should be logged during the stable load phase.",
+              "wrong": "✗ Not quite. Logging happens during operation on a defined schedule.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "A yellow indicator light activates during normal operation. What is the immediate correct action?",
+            "options": [
+              { "val": "A", "text": "Shut down immediately" },
+              { "val": "B", "text": "Apply warning response procedure and assess escalation" },
+              { "val": "C", "text": "Cover the indicator and continue" },
+              { "val": "D", "text": "Reset the panel and hope it clears" }
+            ],
+            "correct": "B",
+            "feedback": {
+              "correct": "✓ Correct. Follow warning response procedure before making an escalation decision.",
+              "wrong": "✗ Not quite. Every warning requires a procedure-driven response.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "What should a handoff communication include?",
+            "options": [
+              { "val": "A", "text": "Only items that caused alarms" },
+              { "val": "B", "text": "Active observations, pending actions, and current status" },
+              { "val": "C", "text": "Shift start time only" },
+              { "val": "D", "text": "Parts ordered in the last 30 days" }
+            ],
+            "correct": "B",
+            "feedback": {
+              "correct": "✓ Correct. Handoff must include full operating context.",
+              "wrong": "✗ Not quite. A complete handoff includes status, observations, and pending items.",
+              "retry": "Incorrect - try again."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "num": 5,
+      "output_file": "S5_Section5.html",
+      "title": "Shutdown, Recovery, and Daily Service Interface",
+      "title_short": "Shutdown and Service Handoff",
+      "duration": "7 minutes",
+      "next_section_href": "S6_Section6.html",
+      "next_section_btn_label": "Section 6 ▸",
+      "screens": [
+        {
+          "id": "s-s5-0",
+          "file": "S5-0_Section_Intro.html",
+          "label": "Section Intro",
+          "vo": "Section five standardizes shutdown, securing actions, and the service handoff packet required for fast support response."
+        },
+        {
+          "id": "s-s5-1",
+          "file": "S5-1_Normal_Shutdown_Sequence.html",
+          "label": "Normal Shutdown Sequence",
+          "vo": "Follow the ordered shutdown sequence and confirm all required criteria before leaving operational mode."
+        },
+        {
+          "id": "s-s5-2",
+          "file": "S5-2_Securing_the_Unit.html",
+          "label": "Securing the Unit",
+          "vo": "Apply securing steps to ensure the unit remains in the expected post-operation state."
+        },
+        {
+          "id": "s-s5-3",
+          "file": "S5-3_Post_Operation_Inspection.html",
+          "label": "Post-Operation Inspection",
+          "vo": "Perform post-operation inspection and capture findings for follow-up actions."
+        },
+        {
+          "id": "s-s5-4",
+          "file": "S5-4_Service_Handoff_Packet.html",
+          "label": "Service Handoff Packet",
+          "vo": "Compile the required records and forms so service teams can begin diagnosis without delays."
+        }
+      ],
+      "quiz": {
+        "screen_id": "s-quiz5",
+        "quiz_vo": "Complete this checkpoint on shutdown and service handoff quality.",
+        "pick": 4,
+        "pass_threshold": 3,
+        "pass_msg": "Section 5 complete. Continue to Section 6.",
+        "fail_msg": "Review Section 5 and try again.",
+        "pool": [
+          {
+            "stem": "What is the primary objective of a controlled shutdown?",
+            "options": [
+              { "val": "A", "text": "Reduce paperwork" },
+              { "val": "B", "text": "Reach and verify a safe stable state" },
+              { "val": "C", "text": "Shorten operator handoff" },
+              { "val": "D", "text": "Avoid escalation" }
+            ],
+            "correct": "B",
+            "feedback": {
+              "correct": "✓ Correct. Controlled shutdown ensures safe and verified state transition.",
+              "wrong": "✗ Not quite. Safety and stable post-operation state are the primary goals.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "Why is a post-operation inspection required?",
+            "options": [
+              { "val": "A", "text": "To confirm condition and detect issues early" },
+              { "val": "B", "text": "To replace startup checks" },
+              { "val": "C", "text": "To bypass service review" },
+              { "val": "D", "text": "To reset warranty terms" }
+            ],
+            "correct": "A",
+            "feedback": {
+              "correct": "✓ Correct. Post-operation checks identify conditions requiring action.",
+              "wrong": "✗ Not quite. Inspection supports early detection and better handoff quality.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "What improves service response time most?",
+            "options": [
+              { "val": "A", "text": "General description only" },
+              { "val": "B", "text": "Complete handoff packet with required forms and observations" },
+              { "val": "C", "text": "Delay reporting until multiple faults" },
+              { "val": "D", "text": "Skip contact pathways" }
+            ],
+            "correct": "B",
+            "feedback": {
+              "correct": "✓ Correct. Complete handoff packets reduce back-and-forth and delays.",
+              "wrong": "✗ Not quite. Service teams need full context and structured data.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "If shutdown criteria are not met, you should:",
+            "options": [
+              { "val": "A", "text": "Close out logs anyway" },
+              { "val": "B", "text": "Document and follow exception/escalation process" },
+              { "val": "C", "text": "Skip inspection" },
+              { "val": "D", "text": "Restart immediately" }
+            ],
+            "correct": "B",
+            "feedback": {
+              "correct": "✓ Correct. Unmet criteria require documented exception handling.",
+              "wrong": "✗ Not quite. Do not finalize without resolving or escalating exceptions.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "How long should a unit idle before executing shutdown?",
+            "options": [
+              { "val": "A", "text": "No idle required — shut down from load directly" },
+              { "val": "B", "text": "2–3 minutes minimum as specified" },
+              { "val": "C", "text": "10 minutes regardless of conditions" },
+              { "val": "D", "text": "Until the next shift arrives" }
+            ],
+            "correct": "B",
+            "feedback": {
+              "correct": "✓ Correct. A 2–3 minute idle stabilization period is required before shutdown.",
+              "wrong": "✗ Not quite. A minimum idle period is required before executing shutdown.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "What is the purpose of securing the unit after shutdown?",
+            "options": [
+              { "val": "A", "text": "To prepare for immediate restart" },
+              { "val": "B", "text": "To prevent accidental restart and ensure known safe state" },
+              { "val": "C", "text": "To reset operating hours counter" },
+              { "val": "D", "text": "Required only during scheduled maintenance" }
+            ],
+            "correct": "B",
+            "feedback": {
+              "correct": "✓ Correct. Securing prevents accidental restart and confirms safe state.",
+              "wrong": "✗ Not quite. Securing is a safety requirement after every shutdown.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "Which element is NOT typically part of a post-operation inspection?",
+            "options": [
+              { "val": "A", "text": "Fluid leaks and levels" },
+              { "val": "B", "text": "Visible damage or unusual wear" },
+              { "val": "C", "text": "Placing a parts order" },
+              { "val": "D", "text": "Physical condition of key components" }
+            ],
+            "correct": "C",
+            "feedback": {
+              "correct": "✓ Correct. Parts ordering is a follow-up action, not part of the inspection itself.",
+              "wrong": "✗ Not quite. Inspection observes and records condition — ordering is a separate step.",
+              "retry": "Incorrect - try again."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "num": 6,
+      "output_file": "S6_Section6.html",
+      "title": "Advanced Service Reference (RK24 Drawings and OEM Docs)",
+      "title_short": "Advanced Service Reference",
+      "duration": "10 minutes",
+      "next_section_href": "SUM_CourseSum.html",
+      "next_section_btn_label": "Course Summary ▸",
+      "screens": [
+        {
+          "id": "s-s6-0",
+          "file": "S6-0_Section_Intro.html",
+          "label": "Section Intro",
+          "vo": "Section six covers advanced service reference navigation using the RK24 drawing package and OEM vendor documentation."
+        },
+        {
+          "id": "s-s6-1",
+          "file": "S6-1_RK24_Drawing_Set_Navigation.html",
+          "label": "RK24 Drawing Navigation",
+          "vo": "Navigate the RK24 C5 drawing set to locate the correct reference quickly by symptom domain and assembly context."
+        },
+        {
+          "id": "s-s6-2",
+          "file": "S6-2_OEM_Document_Bundles_by_Subsystem.html",
+          "label": "OEM Bundles by Subsystem",
+          "vo": "Map OEM document bundles to subsystem categories so technical references are selected correctly on the first pass."
+        },
+        {
+          "id": "s-s6-3",
+          "file": "S6-3_Hydraulic_and_Pneumatic_Reference_Use.html",
+          "label": "Hydraulic and Pneumatic References",
+          "vo": "Use hydraulic and pneumatic source documents to validate component behavior, limits, and maintenance notes."
+        },
+        {
+          "id": "s-s6-4",
+          "file": "S6-4_Controls_Display_and_Camera_References.html",
+          "label": "Controls and Camera References",
+          "vo": "Use controller, display, and camera documentation for diagnostics and integration checks."
+        },
+        {
+          "id": "s-s6-5",
+          "file": "S6-5_Powertrain_Brake_and_Auxiliary_References.html",
+          "label": "Powertrain and Auxiliary References",
+          "vo": "Cross-reference powertrain, braking, and auxiliary component documentation during advanced troubleshooting."
+        },
+        {
+          "id": "s-s6-6",
+          "file": "S6-6_Case_Study_From_Symptom_to_Doc_to_Action.html",
+          "label": "Symptom-to-Action Case Study",
+          "vo": "This case study demonstrates how to move from observed symptom to correct document set to recommended action pathway."
+        }
+      ],
+      "quiz": {
+        "screen_id": "s-quiz6",
+        "quiz_vo": "Complete this final section checkpoint on RK24 advanced reference use.",
+        "pick": 4,
+        "pass_threshold": 3,
+        "pass_msg": "Excellent. Continue to the course summary.",
+        "fail_msg": "Review Section 6 advanced reference workflow and retry.",
+        "pool": [
+          {
+            "stem": "What is the first step in advanced RK24 troubleshooting?",
+            "options": [
+              { "val": "A", "text": "Replace components" },
+              { "val": "B", "text": "Select correct drawing and document domain" },
+              { "val": "C", "text": "Skip to OEM camera docs" },
+              { "val": "D", "text": "Use generic operator checklist only" }
+            ],
+            "correct": "B",
+            "feedback": {
+              "correct": "✓ Correct. Correct source selection is the first step.",
+              "wrong": "✗ Not quite. Start by identifying the correct technical reference domain.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "Why cross-reference service manual and OEM documentation?",
+            "options": [
+              { "val": "A", "text": "To replace service manual procedures" },
+              { "val": "B", "text": "To align system-level and component-level guidance" },
+              { "val": "C", "text": "To reduce documentation quality" },
+              { "val": "D", "text": "To avoid support contact" }
+            ],
+            "correct": "B",
+            "feedback": {
+              "correct": "✓ Correct. Cross-referencing aligns system context with component detail.",
+              "wrong": "✗ Not quite. Both document levels are needed for accurate diagnosis.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "Which statement best describes the RK24 C5 and C6 package roles?",
+            "options": [
+              { "val": "A", "text": "Both are operator quick guides" },
+              { "val": "B", "text": "C5 is drawings; C6 is OEM vendor documentation" },
+              { "val": "C", "text": "C5 is warranty; C6 is contacts" },
+              { "val": "D", "text": "Neither is used in troubleshooting" }
+            ],
+            "correct": "B",
+            "feedback": {
+              "correct": "✓ Correct. C5 and C6 together support advanced troubleshooting workflows.",
+              "wrong": "✗ Not quite. C5 is drawing-centric and C6 is OEM-document-centric.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "What does a high-quality advanced service handoff include?",
+            "options": [
+              { "val": "A", "text": "Only symptom summary" },
+              { "val": "B", "text": "Symptom, references consulted, findings, and pending actions" },
+              { "val": "C", "text": "Only part numbers" },
+              { "val": "D", "text": "Only screenshots" }
+            ],
+            "correct": "B",
+            "feedback": {
+              "correct": "✓ Correct. Complete context accelerates advanced support diagnosis.",
+              "wrong": "✗ Not quite. Service teams need full reference and finding context.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "What are the two main document packages in the RK24 advanced reference set?",
+            "options": [
+              { "val": "A", "text": "C3 Datasheets and C4 Schematics" },
+              { "val": "B", "text": "C5 Drawings and C6 OEM Vendor documentation" },
+              { "val": "C", "text": "Operator guide and warranty" },
+              { "val": "D", "text": "User manual and parts form" }
+            ],
+            "correct": "B",
+            "feedback": {
+              "correct": "✓ Correct. C5 contains drawings; C6 contains OEM vendor documentation.",
+              "wrong": "✗ Not quite. The advanced packages are C5 (drawings) and C6 (OEM vendors).",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "The IFM CR0020 mobile controller documentation would be found in which package?",
+            "options": [
+              { "val": "A", "text": "C5 Drawings" },
+              { "val": "B", "text": "User manual" },
+              { "val": "C", "text": "C6 OEM Vendor documentation" },
+              { "val": "D", "text": "contacts.pdf" }
+            ],
+            "correct": "C",
+            "feedback": {
+              "correct": "✓ Correct. OEM vendor component manuals are in the C6 package.",
+              "wrong": "✗ Not quite. Component-level OEM docs belong to the C6 vendor package.",
+              "retry": "Incorrect - try again."
+            }
+          },
+          {
+            "stem": "For a hydraulic pressure fault, which source should you consult first?",
+            "options": [
+              { "val": "A", "text": "Camera connection instructions" },
+              { "val": "B", "text": "Hydraulic schematics in the C5 drawing set" },
+              { "val": "C", "text": "Sales feedback form" },
+              { "val": "D", "text": "Operator reference guide only" }
+            ],
+            "correct": "B",
+            "feedback": {
+              "correct": "✓ Correct. Hydraulic schematics in C5 are the primary reference for pressure faults.",
+              "wrong": "✗ Not quite. Start with the hydraulic schematics in the C5 drawing set.",
+              "retry": "Incorrect - try again."
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "output_file": "SUM_CourseSum.html",
+    "next_href": "EXAM_Final.html",
+    "screens": [
+      {
+        "id": "s-sum-0",
+        "file": "SUM-1_Key_Takeaways.html",
+        "label": "Key Takeaways",
+        "vo": "This summary consolidates the core operational workflow and the advanced reference process required for consistent RailKing Gen6 support performance."
+      },
+      {
+        "id": "s-sum-1",
+        "file": "SUM-2_Best_Practices.html",
+        "label": "Best Practices",
+        "vo": "Apply these best practices to reduce troubleshooting cycle time, improve handoffs, and maintain safe operation across shifts and teams."
+      }
+    ]
+  },
+  "exam": {
+    "output_file": "EXAM_Final.html",
+    "return_href": "SUM_CourseSum.html",
+    "pass_score": 16,
+    "total_questions": 20,
+    "pass_pct": "80%",
+    "duration": "10-12 minutes",
+    "instr_title": "RailKing Gen6 Operations and Service Fundamentals<br>Final Knowledge Assessment",
+    "pass_msg": "You have achieved a passing score and earned completion credit for KIR-RK-G6-001.",
+    "fail_msg": "A score of 80% is required to pass. Review the recommended sections and schedule a retake.",
+    "section_names": [
+      [1, "Section 1 - Documentation, Safety, and Support Workflow"],
+      [2, "Section 2 - Platform Overview"],
+      [3, "Section 3 - Pre-Operation and Startup"],
+      [4, "Section 4 - Normal Operation and Performance Monitoring"],
+      [5, "Section 5 - Shutdown, Recovery, and Daily Service Interface"],
+      [6, "Section 6 - Advanced Service Reference"]
+    ],
+    "q_section_map": [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 1, 2, 3, 4, 5, 6, 2, 6],
+    "questions": [
+      {
+        "num": 1,
+        "type": "MULTIPLE CHOICE",
+        "stem": "Which file group is primary for support contact routing?",
+        "options": ["contacts and forms", "OEM camera manuals", "drawing index only", "summary screens"],
+        "correct": 0,
+        "feedback": "Support contact routing should begin with contact and support form references."
+      },
+      {
+        "num": 2,
+        "type": "TRUE / FALSE",
+        "stem": "Warranty context should be considered before non-routine actions.",
+        "options": ["True", "False"],
+        "correct": 0,
+        "feedback": "True. Warranty and responsibility boundaries influence escalation and service actions."
+      },
+      {
+        "num": 3,
+        "type": "MULTIPLE CHOICE",
+        "stem": "Which manuals represent model-level guidance?",
+        "options": ["RK22, RK23, RK24", "warranty and contacts", "forms only", "drawings only"],
+        "correct": 0,
+        "feedback": "Model-level guidance is in the RK22, RK23, and RK24 manuals."
+      },
+      {
+        "num": 4,
+        "type": "TRUE / FALSE",
+        "stem": "You can safely apply a procedure across models without checking model documentation.",
+        "options": ["True", "False"],
+        "correct": 1,
+        "feedback": "False. Always confirm model-specific procedures before application."
+      },
+      {
+        "num": 5,
+        "type": "MULTIPLE CHOICE",
+        "stem": "What precedes startup command execution?",
+        "options": ["post-operation inspection", "pre-operation readiness checks", "parts request", "summary review"],
+        "correct": 1,
+        "feedback": "Pre-operation readiness checks come before startup execution."
+      },
+      {
+        "num": 6,
+        "type": "TRUE / FALSE",
+        "stem": "Hold points are used when startup criteria are uncertain.",
+        "options": ["True", "False"],
+        "correct": 0,
+        "feedback": "True. Hold points prevent progression under uncertain conditions."
+      },
+      {
+        "num": 7,
+        "type": "MULTIPLE CHOICE",
+        "stem": "How should warning indicators be handled during normal operation?",
+        "options": ["ignore until alarm", "disable warning display", "follow warning response procedure", "wait for next shift"],
+        "correct": 2,
+        "feedback": "Warnings should be handled through procedure-based response logic."
+      },
+      {
+        "num": 8,
+        "type": "TRUE / FALSE",
+        "stem": "Operator handoff quality affects troubleshooting efficiency.",
+        "options": ["True", "False"],
+        "correct": 0,
+        "feedback": "True. Incomplete handoffs increase rework and delay diagnosis."
+      },
+      {
+        "num": 9,
+        "type": "MULTIPLE CHOICE",
+        "stem": "What is the objective of controlled shutdown?",
+        "options": ["faster shift close", "safe stable state transition", "reduced logs", "avoid escalation"],
+        "correct": 1,
+        "feedback": "Controlled shutdown ensures safe transition to post-operation state."
+      },
+      {
+        "num": 10,
+        "type": "TRUE / FALSE",
+        "stem": "Post-operation inspection can be skipped if no alarms occurred.",
+        "options": ["True", "False"],
+        "correct": 1,
+        "feedback": "False. Post-operation inspection is required regardless of alarm presence."
+      },
+      {
+        "num": 11,
+        "type": "MULTIPLE CHOICE",
+        "stem": "What is the first advanced troubleshooting action in RK24 references?",
+        "options": ["replace parts", "choose correct drawing/document domain", "reset controller", "skip to camera docs"],
+        "correct": 1,
+        "feedback": "Start by selecting the correct technical reference domain."
+      },
+      {
+        "num": 12,
+        "type": "TRUE / FALSE",
+        "stem": "C5 is the drawing set and C6 is the OEM vendor document set.",
+        "options": ["True", "False"],
+        "correct": 0,
+        "feedback": "True. Both sets are used together for advanced RK24 support."
+      },
+      {
+        "num": 13,
+        "type": "MULTIPLE CHOICE",
+        "stem": "Which practice improves first-pass support quality?",
+        "options": ["minimal details", "structured forms with complete context", "verbal-only handoff", "skip contact pathways"],
+        "correct": 1,
+        "feedback": "Complete structured support data improves first-pass quality."
+      },
+      {
+        "num": 14,
+        "type": "TRUE / FALSE",
+        "stem": "Model-specific manuals are optional when thresholds appear familiar.",
+        "options": ["True", "False"],
+        "correct": 1,
+        "feedback": "False. Familiarity does not replace model-specific validation."
+      },
+      {
+        "num": 15,
+        "type": "MULTIPLE CHOICE",
+        "stem": "What supports startup continuity between shifts?",
+        "options": ["informal notes", "startup confirmation and records", "memory only", "diagram screenshots only"],
+        "correct": 1,
+        "feedback": "Startup records support continuity and traceability."
+      },
+      {
+        "num": 16,
+        "type": "TRUE / FALSE",
+        "stem": "Warning response should consider escalation criteria.",
+        "options": ["True", "False"],
+        "correct": 0,
+        "feedback": "True. Escalation criteria are part of warning response workflow."
+      },
+      {
+        "num": 17,
+        "type": "MULTIPLE CHOICE",
+        "stem": "A complete service handoff packet includes:",
+        "options": ["symptom only", "forms, findings, references consulted, pending actions", "operator name only", "parts list only"],
+        "correct": 1,
+        "feedback": "Comprehensive handoff content reduces support iteration cycles."
+      },
+      {
+        "num": 18,
+        "type": "TRUE / FALSE",
+        "stem": "OEM references should be used without service-manual context.",
+        "options": ["True", "False"],
+        "correct": 1,
+        "feedback": "False. Use OEM details with service-manual system context."
+      },
+      {
+        "num": 19,
+        "type": "MULTIPLE CHOICE",
+        "stem": "Which section emphasizes model family comparison?",
+        "options": ["Section 1", "Section 2", "Section 5", "Section 6"],
+        "correct": 1,
+        "feedback": "Section 2 addresses platform overview and model comparisons."
+      },
+      {
+        "num": 20,
+        "type": "MULTIPLE CHOICE",
+        "stem": "Which section emphasizes RK24 drawing and OEM document navigation?",
+        "options": ["Section 2", "Section 3", "Section 4", "Section 6"],
+        "correct": 3,
+        "feedback": "Section 6 is dedicated to advanced RK24 reference use."
+      }
+    ]
+  }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>Document Library Map | Section 1</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { width: 1040px; min-height: 510px; overflow: hidden; background: #f8fafb; font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #334466; }
+.header { background: #002060; color: #ffffff; height: 50px; display: flex; align-items: center; justify-content: space-between; padding: 0 18px; flex-shrink: 0; }
+.header-title { font-size: 13px; font-weight: bold; letter-spacing: 0.3px; text-transform: uppercase; }
+.header-tag { font-size: 9px; font-weight: bold; letter-spacing: 1.4px; text-transform: uppercase; color: #80b4dc; background: rgba(255,255,255,0.1); padding: 3px 10px; border-radius: 10px; }
+.main { height: 460px; display: flex; gap: 12px; padding: 14px 18px 12px; }
+.panel { flex: 1; background: #ffffff; border-radius: 8px; border: 1px solid #dce7f5; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; overflow-y: auto; }
+.panel-heading { font-size: 11px; font-weight: bold; color: #002060; border-bottom: 2px solid #cc3d00; padding-bottom: 5px; margin-bottom: 8px; }
+.doc-item { background: #f3f7fc; border-left: 3px solid #3d7fbd; padding: 8px 10px; margin-bottom: 6px; border-radius: 3px; }
+.doc-name { font-size: 10px; font-weight: bold; color: #002060; margin-bottom: 2px; }
+.doc-purpose { font-size: 9px; color: #6a7d94; line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-title">Document Library Map</div>
+  <div class="header-tag">Section 1</div>
+</div>
+<div class="main">
+  <div class="panel">
+    <div class="panel-heading">Operator Level</div>
+    <div class="doc-item">
+      <div class="doc-name">G6 Operator Reference Guide</div>
+      <div class="doc-purpose">Day-to-day startup, operation, shutdown, and basic troubleshooting.</div>
+    </div>
+    <div class="doc-item">
+      <div class="doc-name">User Manual</div>
+      <div class="doc-purpose">Detailed procedures, indicators, and operating limits.</div>
+    </div>
+    <div class="doc-item">
+      <div class="doc-name">Model Manuals (RK22, RK23, RK24)</div>
+      <div class="doc-purpose">Model-specific behavior, procedures, and thresholds.</div>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="panel-heading">Support Level</div>
+    <div class="doc-item">
+      <div class="doc-name">contacts.pdf</div>
+      <div class="doc-purpose">Support routing and escalation pathways.</div>
+    </div>
+    <div class="doc-item">
+      <div class="doc-name">Support Forms</div>
+      <div class="doc-purpose">Equipment support, parts orders, feedback, and technical inquiries.</div>
+    </div>
+    <div class="doc-item">
+      <div class="doc-name">warranty.pdf</div>
+      <div class="doc-purpose">Warranty boundaries and responsibility context.</div>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="panel-heading">Service / Advanced</div>
+    <div class="doc-item">
+      <div class="doc-name">RK24 Service Manual</div>
+      <div class="doc-purpose">Model-level service and maintenance guidance.</div>
+    </div>
+    <div class="doc-item">
+      <div class="doc-name">RK24 Drawings (C5)</div>
+      <div class="doc-purpose">Technical schematics, assembly, and component reference.</div>
+    </div>
+    <div class="doc-item">
+      <div class="doc-name">OEM Documentation (C6)</div>
+      <div class="doc-purpose">Vendor datasheets and technical specifications.</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

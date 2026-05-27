@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 3 &middot; Pre-Operation and Startup | RailKing Gen6 Operations and Service Fundamentals</title>
+
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   KIRBY CORPORATION BRAND PALETTE
+═══════════════════════════════════════════════════════════════ */
+:root {
+  --k-navy:        #002060;
+  --k-navy-mid:    #1a3a6e;
+  --k-navy-light:  #274d8a;
+  --k-blue:        #1d5fa8;
+  --k-steel:       #3d7fbd;
+  --k-steel-lt:    #80b4dc;
+  --k-orange:      #cc3d00;
+  --k-orange-lt:   #e06828;
+  --k-orange-glow: rgba(204,61,0,0.28);
+  --k-white:       #ffffff;
+  --k-offwhite:    #f3f6fb;
+  --k-mid:         #dce7f5;
+  --k-text-dark:   #0d1d33;
+  --k-muted:       #6a7d94;
+  --k-border:      rgba(255,255,255,0.13);
+  --r:             10px;
+  --t:             0.38s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background: var(--k-navy);
+}
+
+body {
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+  color: var(--k-white);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   HEADER
+───────────────────────────────────────────────────────────── */
+header {
+  flex-shrink: 0;
+  background: #001245;
+  border-bottom: 3px solid var(--k-orange);
+  padding: 9px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.hdr-left { display: flex; align-items: center; gap: 14px; }
+.hdr-logo { height: 36px; opacity: 0.93; }
+.hdr-titles { line-height: 1.3; }
+.hdr-id {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.4px;
+  text-transform: uppercase; color: var(--k-orange-lt);
+}
+.hdr-course { font-size: 12.5px; font-weight: 600; color: var(--k-white); }
+
+/* Progress dots */
+.hdr-right { display: flex; align-items: center; gap: 12px; }
+.dots { display: flex; gap: 9px; }
+.dot {
+  width: 12px; height: 12px; border-radius: 50%;
+  border: 2px solid var(--k-steel); background: transparent;
+  cursor: pointer; padding: 0;
+  transition: background var(--t), border-color var(--t), transform 0.2s;
+}
+.dot:hover { border-color: var(--k-steel-lt); }
+.dot.visited { background: var(--k-steel); border-color: var(--k-steel-lt); }
+.dot.active  { background: var(--k-orange); border-color: var(--k-orange-lt); transform: scale(1.3); }
+.dot-counter { font-size: 11px; color: var(--k-muted); white-space: nowrap; }
+
+/* ─────────────────────────────────────────────────────────────
+   STAGE
+───────────────────────────────────────────────────────────── */
+.stage { flex: 1; overflow: hidden; position: relative; }
+
+.screen {
+  position: absolute; inset: 0;
+  padding: 20px 44px 14px;
+  display: none; flex-direction: column; gap: 12px;
+  opacity: 0; transition: opacity 0.35s ease;
+  overflow-y: auto;
+}
+.screen.active  { display: flex; }
+.screen.visible { opacity: 1; }
+
+.scrn-eyebrow {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.8px;
+  text-transform: uppercase; color: var(--k-orange-lt); opacity: 0.85; flex-shrink: 0;
+}
+.scrn-h1 { font-size: 22px; font-weight: 800; line-height: 1.15; color: var(--k-white); }
+.rule { width: 64px; height: 3px; background: var(--k-orange); border-radius: 2px; margin-top: 4px; }
+
+/* ─────────────────────────────────────────────────────────────
+   IFRAME SCREENS
+───────────────────────────────────────────────────────────── */
+.iframe-screen {
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  background: var(--k-navy);
+  overflow: auto;
+}
+.iframe-screen iframe {
+  display: block;
+  border: none;
+  flex-shrink: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   QUIZ SCREEN
+───────────────────────────────────────────────────────────── */
+.quiz-screen {
+  background: linear-gradient(160deg, #001a4a 0%, var(--k-navy) 100%);
+}
+.quiz-body {
+  flex: 1; min-height: 0; overflow-y: auto;
+  display: flex; flex-direction: column; gap: 18px; padding-bottom: 12px;
+}
+.quiz-progress { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
+.qp-dot {
+  width: 28px; height: 28px; border-radius: 50%;
+  border: 2px solid var(--k-steel);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; color: var(--k-muted);
+  transition: all 0.3s; user-select: none;
+}
+.qp-dot.active  { border-color: var(--k-orange);  color: var(--k-orange-lt); background: rgba(204,61,0,0.12); }
+.qp-dot.correct { border-color: #22a06b; color: #22a06b; background: rgba(34,160,107,0.12); }
+.qp-dot.wrong   { border-color: #e03131; color: #e03131; background: rgba(224,49,49,0.12); }
+
+.q-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px; padding: 18px 20px;
+  display: none; flex-direction: column; gap: 14px;
+}
+.q-card.active { display: flex; }
+.q-number {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.4px;
+  text-transform: uppercase; color: var(--k-orange-lt); margin-bottom: 4px;
+}
+.q-stem { font-size: 14.5px; font-weight: 600; color: var(--k-white); line-height: 1.5; }
+.q-options { display: flex; flex-direction: column; gap: 8px; }
+.q-opt {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 10px 14px; border-radius: 7px;
+  border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03);
+  cursor: pointer; transition: background 0.18s, border-color 0.18s;
+  font-size: 13px; line-height: 1.45; color: var(--k-offwhite); user-select: none;
+}
+.q-opt:hover:not(.locked) { background: rgba(61,127,189,0.12); border-color: var(--k-steel); }
+.q-opt.selected { background: rgba(61,127,189,0.15); border-color: var(--k-steel-lt); }
+.q-opt.correct  { background: rgba(34,160,107,0.14); border-color: #22a06b; color: #a8f4cf; }
+.q-opt.wrong    { background: rgba(224,49,49,0.12);  border-color: #e03131; color: #ffa8a8; }
+.q-opt.locked   { cursor: default; }
+.q-opt-key {
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 1.5px solid currentColor;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; flex-shrink: 0; margin-top: 1px;
+}
+.q-feedback {
+  display: none; padding: 10px 14px; border-radius: 7px;
+  font-size: 12.5px; line-height: 1.55;
+}
+.q-feedback.show        { display: block; }
+.q-feedback.fb-correct  { background: rgba(34,160,107,0.12); border: 1px solid #22a06b; color: #a8f4cf; }
+.q-feedback.fb-wrong    { background: rgba(224,49,49,0.10);  border: 1px solid #e03131; color: #ffa8a8; }
+.q-feedback.fb-retry    { background: rgba(204,61,0,0.10);   border: 1px solid var(--k-orange); color: var(--k-orange-lt); }
+.q-actions { display: flex; justify-content: flex-end; gap: 10px; }
+.btn-check {
+  background: var(--k-orange); color: var(--k-white);
+  border: none; border-radius: 7px; padding: 7px 20px;
+  font-size: 13px; font-weight: 600; cursor: pointer; transition: background 0.2s;
+}
+.btn-check:hover:not(:disabled) { background: var(--k-orange-lt); }
+.btn-check:disabled { opacity: 0.35; cursor: default; }
+.btn-qnext {
+  background: rgba(61,127,189,0.15); color: var(--k-steel-lt);
+  border: 1px solid var(--k-steel); border-radius: 7px; padding: 7px 20px;
+  font-size: 13px; font-weight: 600; cursor: pointer; display: none; transition: background 0.2s;
+}
+.btn-qnext:hover { background: rgba(61,127,189,0.25); }
+.btn-qnext.show  { display: inline-block; }
+.score-panel {
+  display: none; flex-direction: column; align-items: center; justify-content: center;
+  gap: 16px; text-align: center; padding: 20px; flex: 1;
+}
+.score-panel.show { display: flex; }
+.score-big { font-size: 64px; font-weight: 900; line-height: 1; }
+.score-big.pass { color: #22a06b; }
+.score-big.fail { color: #e03131; }
+.score-label { font-size: 14px; color: var(--k-muted); max-width: 420px; line-height: 1.6; }
+.btn-review {
+  background: rgba(255,255,255,0.07); color: var(--k-steel-lt);
+  border: 1px solid var(--k-steel); border-radius: 7px; padding: 8px 24px;
+  font-size: 13px; font-weight: 600; cursor: pointer; transition: background 0.2s;
+}
+.btn-review:hover { background: rgba(255,255,255,0.14); }
+
+/* ─────────────────────────────────────────────────────────────
+   VO BAR
+───────────────────────────────────────────────────────────── */
+.vo-bar {
+  flex-shrink: 0; background: rgba(0,0,0,0.38);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 9px 28px; display: flex; align-items: center; gap: 14px; min-height: 54px;
+}
+.vo-mic {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--k-navy-mid); border: 2px solid var(--k-steel);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: border-color 0.25s, background 0.25s;
+}
+.vo-mic svg { width: 17px; height: 17px; fill: var(--k-steel-lt); transition: fill 0.25s; }
+.vo-bar.live .vo-mic { background: var(--k-orange-glow); border-color: var(--k-orange-lt); }
+.vo-bar.live .vo-mic svg { fill: var(--k-orange-lt); }
+.vo-text { flex: 1; overflow: hidden; }
+.vo-label-tag {
+  font-size: 9px; font-weight: 700; letter-spacing: 1.4px;
+  text-transform: uppercase; color: var(--k-muted); margin-bottom: 2px;
+}
+.vo-caption { font-size: 12px; color: var(--k-muted); line-height: 1.45; font-style: italic; transition: color 0.25s; }
+.vo-bar.live .vo-caption { color: var(--k-white); }
+.wave { display: flex; gap: 2px; align-items: center; height: 18px; opacity: 0; transition: opacity 0.25s; }
+.vo-bar.live .wave { opacity: 1; }
+.wave span {
+  display: block; width: 3px; border-radius: 2px; background: var(--k-orange-lt);
+  animation: wv 0.75s ease-in-out infinite;
+}
+.wave span:nth-child(1) { height: 5px;  animation-delay: 0s;    }
+.wave span:nth-child(2) { height: 13px; animation-delay: 0.15s; }
+.wave span:nth-child(3) { height: 8px;  animation-delay: 0.05s; }
+.wave span:nth-child(4) { height: 16px; animation-delay: 0.2s;  }
+.wave span:nth-child(5) { height: 6px;  animation-delay: 0.1s;  }
+@keyframes wv {
+  0%,100% { transform: scaleY(1); }
+  50%      { transform: scaleY(0.3); }
+}
+.btn-pause {
+  flex-shrink: 0; background: transparent; color: var(--k-steel-lt);
+  font-size: 12px; font-weight: 700;
+  border: 1px solid rgba(255,255,255,0.14); border-radius: 7px; padding: 7px 14px;
+  cursor: pointer; transition: color 0.2s, border-color 0.2s, opacity 0.2s;
+}
+.btn-pause:hover:not(:disabled) { color: var(--k-white); border-color: var(--k-steel); }
+.btn-pause:disabled { opacity: 0.35; cursor: default; }
+.btn-pause.paused { color: var(--k-orange-lt); border-color: var(--k-orange-lt); }
+
+/* ─────────────────────────────────────────────────────────────
+   FOOTER NAV
+───────────────────────────────────────────────────────────── */
+footer {
+  flex-shrink: 0; background: #001245;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 8px 28px; display: flex; align-items: center; justify-content: space-between;
+}
+.btn {
+  border: none; border-radius: 7px; padding: 7px 20px;
+  font-size: 13px; font-weight: 600; cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+.btn:disabled { opacity: 0.32; cursor: default; }
+.btn-back { background: rgba(255,255,255,0.07); color: var(--k-steel-lt); }
+.btn-back:hover:not(:disabled) { background: rgba(255,255,255,0.14); }
+.btn-next { background: var(--k-orange); color: var(--k-white); }
+.btn-next:hover:not(:disabled) { background: var(--k-orange-lt); }
+.btn-replay {
+  background: transparent; color: var(--k-muted); font-size: 12px;
+  border: 1px solid rgba(255,255,255,0.14); border-radius: 7px; padding: 7px 14px;
+  cursor: pointer; transition: color 0.2s, border-color 0.2s;
+}
+.btn-replay:hover { color: var(--k-white); border-color: var(--k-steel); }
+.ftr-centre { font-size: 11px; color: var(--k-muted); }
+
+/* ─────────────────────────────────────────────────────────────
+   VOICE SELECTOR
+───────────────────────────────────────────────────────────── */
+.vo-select {
+  background-color: rgba(255,255,255,0.07);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2380b4dc'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 8px center;
+  border: 1px solid rgba(255,255,255,0.18); border-radius: 7px;
+  color: var(--k-steel-lt); font-size: 11px;
+  padding: 5px 24px 5px 9px; cursor: pointer;
+  max-width: 190px; min-width: 140px; flex-shrink: 0;
+  outline: none; appearance: none; -webkit-appearance: none;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+.vo-select:hover { border-color: var(--k-steel); background-color: rgba(255,255,255,0.12); }
+.vo-select:focus { border-color: var(--k-steel-lt); outline: none; }
+.vo-select option { background: #001245; color: #ffffff; }
+
+/* ─────────────────────────────────────────────────────────────
+   AUDIO GATE OVERLAY
+───────────────────────────────────────────────────────────── */
+.audio-gate {
+  position: fixed; inset: 0; z-index: 9999;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 22px; background: rgba(0,18,69,0.88); backdrop-filter: blur(3px);
+  transition: opacity 0.4s ease;
+}
+.audio-gate.hidden { opacity: 0; pointer-events: none; }
+.audio-gate-label {
+  font-size: 12px; font-weight: 700; letter-spacing: 1.6px;
+  text-transform: uppercase; color: var(--k-steel-lt);
+}
+.audio-gate-title {
+  font-size: 19px; font-weight: 700; color: var(--k-white);
+  text-align: center; max-width: 560px; line-height: 1.4;
+}
+.audio-gate-btn {
+  margin-top: 8px; padding: 13px 36px;
+  background: var(--k-orange); color: var(--k-white);
+  font-size: 15px; font-weight: 700; border: none; border-radius: var(--r);
+  cursor: pointer; letter-spacing: 0.5px; transition: background 0.2s;
+}
+.audio-gate-btn:hover { background: var(--k-orange-lt); }
+</style>
+</head>
+<body>
+
+<!-- ═══ AUDIO GATE ══════════════════════════════════════════ -->
+<div class="audio-gate" id="audioGate" role="dialog" aria-modal="true"
+     aria-label="Click to begin Section 3">
+  <div class="audio-gate-label">Section 3 of 6</div>
+  <div class="audio-gate-title">Pre-Operation and Startup</div>
+  <button class="audio-gate-btn" id="audioGateBtn">&#9654;&nbsp; Begin Section 3</button>
+</div>
+
+<!-- ═══ HEADER ══════════════════════════════════════════════ -->
+<header>
+  <div class="hdr-left">
+    <img src="kirbyflag_imagefile.png" alt="Kirby Corporation" class="hdr-logo">
+    <div class="hdr-titles">
+      <div class="hdr-id">KIR-RK-G6-001 &nbsp;&middot;&nbsp; Section 3 of 6</div>
+      <div class="hdr-course">RailKing Gen6 Operations and Service Fundamentals</div>
+    </div>
+  </div>
+  <div class="hdr-right">
+    <div class="dots" id="dots" role="tablist" aria-label="Section 3 screens"></div>
+    <span class="dot-counter" id="dotCounter">Screen 1 of 7</span>
+  </div>
+</header>
+
+<!-- ═══ STAGE ═══════════════════════════════════════════════ -->
+<div class="stage">
+
+
+  <!-- â”€â”€ SCREEN 1: SECTION INTRO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <div class="screen iframe-screen active" id="s-s3-0"
+       role="tabpanel" aria-label="Section Intro">
+    <iframe src="S3-0_Section_Intro.html"
+            width="1040" height="510"
+            sandbox="allow-scripts allow-same-origin"
+            frameborder="0" scrolling="no"
+            title="Section Intro"></iframe>
+  </div>
+  <!-- â”€â”€ SCREEN 2: PRE-OP INSPECTION ZONES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <div class="screen iframe-screen" id="s-s3-1"
+       role="tabpanel" aria-label="Pre-Op Inspection Zones">
+    <iframe src="S3-1_PreOp_Inspection_Zones.html"
+            width="1040" height="510"
+            sandbox="allow-scripts allow-same-origin"
+            frameborder="0" scrolling="no"
+            title="Pre-Op Inspection Zones"></iframe>
+  </div>
+  <!-- â”€â”€ SCREEN 3: CONTROL PANEL READINESS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <div class="screen iframe-screen" id="s-s3-2"
+       role="tabpanel" aria-label="Control Panel Readiness">
+    <iframe src="S3-2_Control_Panel_Readiness.html"
+            width="1040" height="510"
+            sandbox="allow-scripts allow-same-origin"
+            frameborder="0" scrolling="no"
+            title="Control Panel Readiness"></iframe>
+  </div>
+  <!-- â”€â”€ SCREEN 4: STARTUP SEQUENCE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <div class="screen iframe-screen" id="s-s3-3"
+       role="tabpanel" aria-label="Startup Sequence">
+    <iframe src="S3-3_Startup_Sequence.html"
+            width="1040" height="510"
+            sandbox="allow-scripts allow-same-origin"
+            frameborder="0" scrolling="no"
+            title="Startup Sequence"></iframe>
+  </div>
+  <!-- â”€â”€ SCREEN 5: ABNORMAL HOLD POINTS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <div class="screen iframe-screen" id="s-s3-4"
+       role="tabpanel" aria-label="Abnormal Hold Points">
+    <iframe src="S3-4_Abnormal_Conditions_HoldPoints.html"
+            width="1040" height="510"
+            sandbox="allow-scripts allow-same-origin"
+            frameborder="0" scrolling="no"
+            title="Abnormal Hold Points"></iframe>
+  </div>
+  <!-- â”€â”€ SCREEN 6: STARTUP CONFIRMATION AND RECORDS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <div class="screen iframe-screen" id="s-s3-5"
+       role="tabpanel" aria-label="Startup Confirmation and Records">
+    <iframe src="S3-5_Startup_Confirmation_and_Recordkeeping.html"
+            width="1040" height="510"
+            sandbox="allow-scripts allow-same-origin"
+            frameborder="0" scrolling="no"
+            title="Startup Confirmation and Records"></iframe>
+  </div>
+
+  <!-- ── QUIZ SCREEN ──────────────────────────────────────── -->
+  <div class="screen quiz-screen" id="s-quiz3"
+       role="tabpanel" aria-label="Section Quiz 3">
+
+    <span class="scrn-eyebrow">Section 3 &middot; Screen 7 of 7 &middot; Section Quiz</span>
+    <div>
+      <div class="scrn-h1">Section Quiz 3 &mdash; 4 Questions</div>
+      <div class="rule"></div>
+    </div>
+
+    <!-- Quiz progress dots and question cards are generated by buildQuiz() -->
+    <div class="quiz-progress" id="qProgress" aria-label="Quiz progress"></div>
+    <div class="quiz-body" id="quizBody"></div>
+
+    <div class="score-panel" id="scorePanel">
+      <div class="score-big" id="scoreBig"></div>
+      <div class="score-label" id="scoreLabel"></div>
+      <button class="btn-review" id="btnReviewSect">&#8635; Review Section 3</button>
+    </div>
+
+  </div><!-- /quiz screen -->
+
+</div><!-- /stage -->
+
+
+<!-- ═══ VO BAR ══════════════════════════════════════════════ -->
+<div class="vo-bar" id="voBar">
+  <div class="vo-mic" id="voMic">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 1a4 4 0 014 4v6a4 4 0 01-8 0V5a4 4 0 014-4zm-1.5 14.93A8.001 8.001 0 0120 10.5a.75.75 0 011.5 0 8 8 0 01-7.25 7.95V21h2.5a.75.75 0 010 1.5h-6.5a.75.75 0 010-1.5H12.75v-2.57A8.001 8.001 0 014 10.5a.75.75 0 011.5 0 6.5 6.5 0 005 6.34V18a2 2 0 002 0v-1.07z"/>
+    </svg>
+  </div>
+  <div class="vo-text">
+    <div class="vo-label-tag">Narration &nbsp;&middot;&nbsp; <span id="voiceName">–</span></div>
+    <div class="vo-caption" id="voCaption">Press Space or click Replay VO to start narration for this screen.</div>
+  </div>
+  <div class="wave" id="wave" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <select id="voiceSelect" class="vo-select" aria-label="Select narrator voice" title="Select narrator voice"></select>
+  <button class="btn-pause" id="btnPause" aria-label="Pause narration" disabled>&#9646;&#9646; Pause</button>
+</div>
+
+
+<!-- ═══ FOOTER NAV ═══════════════════════════════════════════ -->
+<footer>
+  <button class="btn btn-back" id="btnBack" disabled>&#8592; Back</button>
+  <div style="display:flex;gap:10px;align-items:center;">
+    <button class="btn-replay" id="btnReplay" aria-label="Replay narration">&#8635; Replay VO</button>
+    <span class="ftr-centre" id="ftrLabel">Section 3 &nbsp;&middot;&nbsp; Pre-Operation and Startup &nbsp;&middot;&nbsp; 9 minutes</span>
+  </div>
+  <button class="btn btn-next" id="btnNext">Next &#8594;</button>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════════════════════ -->
+<script>
+/* ── KLA ANALYTICS TRACKER ──────────────────────────────────
+   Accumulates time-per-section in sessionStorage. Each section
+   page finalises the PREVIOUS page's timer on load, then records
+   itself. The exam page reads this data and includes it in the
+   KLA_COMPLETE postMessage payload. Silently no-ops outside of a
+   KLA iframe session (sessionStorage access may throw in some
+   cross-origin sandbox configs — all calls are try/catch guarded).
+──────────────────────────────────────────────────────────── */
+(function () {
+  var PAGE_ID = 'section-3';
+  var now     = Date.now();
+  try {
+    var prev = JSON.parse(sessionStorage.getItem('kla_current_page') || 'null');
+    if (prev && prev.pageId && prev.enteredAt) {
+      var elapsed  = Math.round((now - prev.enteredAt) / 1000);
+      var sects    = JSON.parse(sessionStorage.getItem('kla_sections') || '[]');
+      var existing = sects.find(function (s) { return s.id === prev.pageId; });
+      if (existing) { existing.views++; existing.timeSpentSeconds += elapsed; }
+      else { sects.push({ id: prev.pageId, views: 1, timeSpentSeconds: elapsed }); }
+      sessionStorage.setItem('kla_sections', JSON.stringify(sects));
+    }
+  } catch (e) {}
+  try {
+    if (!sessionStorage.getItem('kla_start')) sessionStorage.setItem('kla_start', String(now));
+    sessionStorage.setItem('kla_current_page', JSON.stringify({ pageId: PAGE_ID, enteredAt: now }));
+  } catch (e) {}
+}());
+
+/* Notify the parent frame so it can save resume position */
+try { window.parent.postMessage({ type: 'KLA_NAVIGATE', url: window.location.href }, '*'); } catch(e) {}
+
+/* ── SCREENS ARRAY ────────────────────────────────────────────
+   Each entry: { id, label, vo }
+   • id     — must match the HTML element id of the iframe-screen div
+   • label  — shown in dot tooltips and aria-labels
+   • vo     — full narration text (use [PAUSE] for mid-speech pauses)
+   The quiz screen is always last; add it here too so VO plays on entry.
+─────────────────────────────────────────────────────────── */
+const SCREENS = [
+  {
+    id:    's-s3-0',
+    label: 'Section Intro',
+    vo:    'Section three standardizes pre-operation checks and startup sequencing across the RailKing Gen6 workflow.'
+  },
+  {
+    id:    's-s3-1',
+    label: 'Pre-Op Inspection Zones',
+    vo:    'Follow the inspection zone sequence to confirm readiness before control-system interaction.'
+  },
+  {
+    id:    's-s3-2',
+    label: 'Control Panel Readiness',
+    vo:    'Verify panel readiness indicators and prerequisites before initiating startup commands.'
+  },
+  {
+    id:    's-s3-3',
+    label: 'Startup Sequence',
+    vo:    'Execute startup in procedural order, using hold points where conditions are not confirmed.'
+  },
+  {
+    id:    's-s3-4',
+    label: 'Abnormal Hold Points',
+    vo:    'Apply stop and hold criteria for abnormal conditions and escalate when needed.'
+  },
+  {
+    id:    's-s3-5',
+    label: 'Startup Confirmation and Records',
+    vo:    'Document startup status and required records to maintain operational continuity across shifts.'
+  },
+  {
+    id:    's-quiz3',
+    label: 'Section Quiz 3',
+    vo:    'Complete the startup workflow check before moving to normal operations.'
+  }
+];
+
+let cur         = 0;
+let quizPassed  = false;
+let hasGestured = false;
+let voPaused    = false;
+let curVoText   = '';
+let voiceUK     = null;
+const synth     = window.speechSynthesis;
+
+function loadVoice() {
+  const all = synth.getVoices();
+  const en  = all.filter(v => v.lang.startsWith('en'));
+  if (!en.length) return;
+  const sel   = document.getElementById('voiceSelect');
+  const saved = localStorage.getItem('cbt_narrator_voice');
+  if (sel) {
+    const names = en.map(v => v.name).join('|');
+    if (sel.dataset.populated !== names) {
+      sel.innerHTML = '';
+      en.forEach(v => {
+        const opt = document.createElement('option');
+        opt.value = v.name; opt.textContent = v.name;
+        sel.appendChild(opt);
+      });
+      sel.dataset.populated = names;
+    }
+    const preferred =
+      (saved && en.find(v => v.name === saved)) ||
+      en.find(x => x.name === 'Google UK English Female') ||
+      en.find(x => x.lang === 'en-GB' && /female/i.test(x.name)) ||
+      en.find(x => x.lang === 'en-GB') || en[0];
+    if (preferred) sel.value = preferred.name;
+  }
+  applySelectedVoice();
+}
+function applySelectedVoice() {
+  const all  = synth.getVoices();
+  const sel  = document.getElementById('voiceSelect');
+  const name = sel ? sel.value : null;
+  voiceUK = (name && all.find(v => v.name === name)) ||
+    all.find(x => x.name === 'Google UK English Female') ||
+    all.find(x => x.lang === 'en-GB' && /female/i.test(x.name)) ||
+    all.find(x => x.lang === 'en-GB') ||
+    all.find(x => x.lang.startsWith('en')) || null;
+  const nameEl = document.getElementById('voiceName');
+  if (nameEl) nameEl.textContent = voiceUK ? voiceUK.name : '–';
+}
+loadVoice();
+if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
+  speechSynthesis.onvoiceschanged = loadVoice;
+}
+
+function speakOne(text) {
+  synth.cancel();
+  curVoText = text;
+  voPaused = false;
+  updatePauseBtn();
+  const segments = text.split('[PAUSE]').map(s => s.trim()).filter(s => s.length > 0);
+  function speakSegment(i) {
+    if (i >= segments.length) { setLive(false); return; }
+    const u = new SpeechSynthesisUtterance(segments[i]);
+    if (voiceUK) u.voice = voiceUK;
+    u.lang = 'en-GB'; u.rate = 0.93; u.pitch = 1.0; u.volume = 1.0;
+    if (i === 0) u.onstart = () => setLive(true, text);
+    u.onend = () => { if (i < segments.length - 1) { setTimeout(() => speakSegment(i + 1), 700); } else { setLive(false); } };
+    u.onerror = () => setLive(false);
+    synth.speak(u);
+  }
+  speakSegment(0);
+}
+
+function setLive(on, text) {
+  const bar = document.getElementById('voBar');
+  const cap = document.getElementById('voCaption');
+  if (on) { bar.classList.add('live'); cap.textContent = text || '\u2026'; }
+  else    { bar.classList.remove('live'); voPaused = false; }
+  updatePauseBtn();
+}
+
+function updatePauseBtn() {
+  const btn = document.getElementById('btnPause');
+  if (!btn) return;
+  if (voPaused) {
+    btn.textContent = '\u25b6 Resume'; btn.classList.add('paused'); btn.disabled = false;
+  } else if (synth.speaking) {
+    btn.textContent = '\u23f8 Pause'; btn.classList.remove('paused'); btn.disabled = false;
+  } else {
+    btn.textContent = '\u23f8 Pause'; btn.classList.remove('paused'); btn.disabled = true;
+  }
+}
+
+function pauseResume() {
+  if (voPaused) {
+    synth.resume();
+    voPaused = false;
+    document.getElementById('voBar').classList.add('live');
+    updatePauseBtn();
+  } else if (synth.speaking) {
+    synth.pause(); voPaused = true;
+    document.getElementById('voBar').classList.remove('live');
+    updatePauseBtn();
+  }
+}
+
+function goTo(idx, autoSpeak) {
+  if (idx < 0 || idx >= SCREENS.length) return;
+  const oldEl = document.getElementById(SCREENS[cur].id);
+  oldEl.classList.remove('visible');
+  setTimeout(() => { oldEl.classList.remove('active'); }, 360);
+  cur = idx;
+  const newEl = document.getElementById(SCREENS[cur].id);
+  newEl.classList.add('active');
+  requestAnimationFrame(() => { requestAnimationFrame(() => { newEl.classList.add('visible'); }); });
+  updateDots(); updateNav();
+  synth.cancel();
+  if (autoSpeak !== false && hasGestured) {
+    setTimeout(() => speakOne(SCREENS[cur].vo), 400);
+  }
+}
+
+function updateNav() {
+  document.getElementById('btnBack').disabled = (cur === 0);
+  const nextBtn = document.getElementById('btnNext');
+  if (cur === SCREENS.length - 1) {
+    /* ── QUIZ SCREEN: gate Next behind quiz pass ── */
+    if (quizPassed) {
+      nextBtn.textContent = 'Section 4 ▸';
+      nextBtn.disabled    = false;
+      nextBtn.onclick     = () => { window.location.href = 'S4_Section4.html'; };
+    } else {
+      nextBtn.textContent = 'Pass Quiz to Continue';
+      nextBtn.disabled    = true;
+      nextBtn.onclick     = null;
+    }
+  } else {
+    nextBtn.textContent = 'Next \u2192';
+    nextBtn.disabled    = false;
+    nextBtn.onclick     = null;
+  }
+  document.getElementById('dotCounter').textContent =
+    'Screen ' + (cur + 1) + ' of ' + SCREENS.length;
+}
+
+function buildDots() {
+  const container = document.getElementById('dots');
+  SCREENS.forEach((s, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'dot' + (i === 0 ? ' active' : '');
+    btn.setAttribute('role', 'tab');
+    btn.setAttribute('aria-label', 'Screen ' + (i + 1) + ': ' + s.label);
+    btn.title = s.label;
+    btn.addEventListener('click', () => goTo(i));
+    container.appendChild(btn);
+  });
+}
+
+function updateDots() {
+  document.querySelectorAll('.dot').forEach((d, i) => {
+    d.classList.remove('active', 'visited');
+    if      (i === cur) d.classList.add('active');
+    else if (i < cur)   d.classList.add('visited');
+  });
+}
+
+document.addEventListener('keydown', e => {
+  if (['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName)) return;
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { if (cur < SCREENS.length - 1) goTo(cur + 1); }
+  else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { if (cur > 0) goTo(cur - 1); }
+  else if (e.key === ' ') { e.preventDefault(); speakOne(SCREENS[cur].vo); }
+});
+
+document.getElementById('btnBack').addEventListener('click', () => { if (cur > 0) goTo(cur - 1); });
+document.getElementById('btnNext').addEventListener('click', () => { if (cur < SCREENS.length - 1) goTo(cur + 1); });
+document.getElementById('btnReplay').addEventListener('click', () => { hasGestured = true; speakOne(SCREENS[cur].vo); });
+document.getElementById('btnPause').addEventListener('click', pauseResume);
+document.getElementById('voiceSelect').addEventListener('change', () => {
+  localStorage.setItem('cbt_narrator_voice', document.getElementById('voiceSelect').value);
+  applySelectedVoice();
+});
+updateNav();
+requestAnimationFrame(() => { requestAnimationFrame(() => { document.getElementById(SCREENS[0].id).classList.add('visible'); }); });
+
+document.getElementById('audioGateBtn').addEventListener('click', () => {
+  hasGestured = true;
+  const gate = document.getElementById('audioGate');
+  gate.classList.add('hidden');
+  gate.addEventListener('transitionend', () => gate.remove(), { once: true });
+  speakOne(SCREENS[0].vo);
+});
+
+/* ─── QUIZ LOGIC ──────────────────────────────────────────────
+   QUIZ_POOL — full bank of questions for this section.
+   The builder selects QUIZ_PICK items at random each attempt.
+
+   Each question object:
+   {
+     stem:    'Question text?',
+     options: [ { val: 'A', text: '...' }, { val: 'B', text: '...' }, ... ],
+     correct: 'B',           // must match a val
+     feedback: {
+       correct: '✓ Correct. Explanation...',
+       wrong:   '✗ Not quite. Explanation...',
+       retry:   'Incorrect — try again.'
+     }
+   }
+─────────────────────────────────────────────────────────── */
+const QUIZ_POOL = [
+  {
+    stem: 'What is the first major phase before startup command execution?',
+    options: [
+      { val: 'A', text: 'Fault reset' },
+      { val: 'B', text: 'Pre-operation inspection' },
+      { val: 'C', text: 'OEM manual review' },
+      { val: 'D', text: 'Parts order submission' }
+    ],
+    correct: 'B',
+    feedback: {
+      correct: '✓ Correct. Pre-operation inspection is required before startup actions.',
+      wrong:   '✗ Not quite. Begin with pre-operation inspection and readiness checks.',
+      retry:   'Incorrect - try again.'
+    }
+  },
+  {
+    stem: 'When should a startup hold point be used?',
+    options: [
+      { val: 'A', text: 'When all conditions are normal' },
+      { val: 'B', text: 'When conditions are unverified or abnormal' },
+      { val: 'C', text: 'Only during training' },
+      { val: 'D', text: 'Only after shutdown' }
+    ],
+    correct: 'B',
+    feedback: {
+      correct: '✓ Correct. Hold points are for unverified or abnormal conditions.',
+      wrong:   '✗ Not quite. Hold when criteria are not satisfied.',
+      retry:   'Incorrect - try again.'
+    }
+  },
+  {
+    stem: 'Why is startup recordkeeping required?',
+    options: [
+      { val: 'A', text: 'For visual consistency' },
+      { val: 'B', text: 'To support shift continuity and traceability' },
+      { val: 'C', text: 'To reduce checklist steps' },
+      { val: 'D', text: 'To avoid model manuals' }
+    ],
+    correct: 'B',
+    feedback: {
+      correct: '✓ Correct. Records preserve continuity and escalation context.',
+      wrong:   '✗ Not quite. Records are essential for continuity and troubleshooting.',
+      retry:   'Incorrect - try again.'
+    }
+  },
+  {
+    stem: 'If a readiness prerequisite is missing, the operator should:',
+    options: [
+      { val: 'A', text: 'Continue slowly' },
+      { val: 'B', text: 'Skip to normal operation' },
+      { val: 'C', text: 'Stop and resolve/escalate per procedure' },
+      { val: 'D', text: 'Change model profile' }
+    ],
+    correct: 'C',
+    feedback: {
+      correct: '✓ Correct. Stop, resolve, or escalate as defined.',
+      wrong:   '✗ Not quite. Never proceed with missing prerequisites.',
+      retry:   'Incorrect - try again.'
+    }
+  },
+  {
+    stem: 'Which zone should be inspected first in the pre-operation sequence?',
+    options: [
+      { val: 'A', text: 'Control panel' },
+      { val: 'B', text: 'Fluid levels' },
+      { val: 'C', text: 'Perimeter and safety' },
+      { val: 'D', text: 'External hoses' }
+    ],
+    correct: 'C',
+    feedback: {
+      correct: '✓ Correct. Perimeter and safety is the first inspection zone.',
+      wrong:   '✗ Not quite. Start with perimeter and safety before other zones.',
+      retry:   'Incorrect - try again.'
+    }
+  },
+  {
+    stem: 'How long should a unit run at idle before applying operating load?',
+    options: [
+      { val: 'A', text: 'Idle warm-up is not required' },
+      { val: 'B', text: 'As specified in the model manual' },
+      { val: 'C', text: 'At least 30 seconds regardless of conditions' },
+      { val: 'D', text: 'Until the operator is comfortable' }
+    ],
+    correct: 'B',
+    feedback: {
+      correct: '✓ Correct. Follow model-manual idle warm-up specifications.',
+      wrong:   '✗ Not quite. Warm-up time is model-specific and procedure-defined.',
+      retry:   'Incorrect - try again.'
+    }
+  },
+  {
+    stem: 'What should be confirmed before moving from startup to operational mode?',
+    options: [
+      { val: 'A', text: 'All hold point criteria are satisfied' },
+      { val: 'B', text: 'Parts order is submitted' },
+      { val: 'C', text: 'OEM manuals are available' },
+      { val: 'D', text: 'Service form is completed' }
+    ],
+    correct: 'A',
+    feedback: {
+      correct: '✓ Correct. All hold point criteria must be satisfied before progression.',
+      wrong:   '✗ Not quite. Hold points gate progression — satisfy all criteria first.',
+      retry:   'Incorrect - try again.'
+    }
+  }
+];
+
+/* Number of questions selected per attempt (≤ QUIZ_POOL.length) */
+const QUIZ_PICK = 4;
+
+let QUIZ   = [];
+let qState = {};
+
+function buildQuiz() {
+  /* Fisher-Yates shuffle, then slice QUIZ_PICK items */
+  const pool = QUIZ_POOL.slice();
+  for (let i = pool.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [pool[i], pool[j]] = [pool[j], pool[i]];
+  }
+  QUIZ = pool.slice(0, QUIZ_PICK);
+  const n = QUIZ.length;
+
+  /* Regenerate progress dots */
+  const prog = document.getElementById('qProgress');
+  prog.innerHTML = '';
+  for (let i = 0; i < n; i++) {
+    const d = document.createElement('div');
+    d.className = 'qp-dot' + (i === 0 ? ' active' : '');
+    d.id = 'qpd-' + i;
+    d.textContent = i + 1;
+    prog.appendChild(d);
+  }
+
+  /* Regenerate question cards */
+  const body = document.getElementById('quizBody');
+  body.innerHTML = '';
+  QUIZ.forEach((q, i) => {
+    const card = document.createElement('div');
+    card.className = 'q-card' + (i === 0 ? ' active' : '');
+    card.id = 'qcard-' + i;
+    card.innerHTML =
+      '<div><div class="q-number">Question ' + (i + 1) + ' of ' + n + '</div>' +
+      '<div class="q-stem">' + q.stem + '</div></div>' +
+      '<div class="q-options" id="qopts-' + i + '">' +
+      q.options.map(o =>
+        '<div class="q-opt" data-q="' + i + '" data-val="' + o.val + '">' +
+        '<span class="q-opt-key">' + o.val + '</span><span>' + o.text + '</span></div>'
+      ).join('') +
+      '</div><div class="q-feedback" id="qfb-' + i + '"></div>' +
+      '<div class="q-actions">' +
+      '<button class="btn-check" id="qchk-' + i + '" disabled>Check Answer</button>' +
+      '<button class="btn-qnext" id="qnxt-' + i + '">' +
+      (i === n - 1 ? 'View Results &#x2192;' : 'Next Question &#x2192;') +
+      '</button></div>';
+    body.appendChild(card);
+  });
+
+  qState = {
+    cur:      0,
+    scores:   Array(n).fill(null),
+    attempts: Array(n).fill(0),
+    selected: Array(n).fill(null)
+  };
+
+  document.querySelectorAll('.q-opt').forEach(opt => {
+    opt.addEventListener('click', () => {
+      const q = parseInt(opt.dataset.q);
+      if (qState.scores[q] !== null || qState.attempts[q] >= 2) return;
+      document.querySelectorAll('[data-q="' + q + '"]').forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
+      qState.selected[q] = opt.dataset.val;
+      document.getElementById('qchk-' + q).disabled = false;
+    });
+  });
+
+  for (let i = 0; i < n; i++) {
+    document.getElementById('qchk-' + i).addEventListener('click', () => checkAnswer(i));
+    document.getElementById('qnxt-' + i).addEventListener('click', () => advanceQuiz(i));
+  }
+}
+
+function quizInit() {
+  buildQuiz();
+  document.getElementById('btnReviewSect').addEventListener('click', () => { resetQuiz(); goTo(0); });
+}
+
+function checkAnswer(q) {
+  const sel = qState.selected[q];
+  if (!sel) return;
+  const data = QUIZ[q];
+  qState.attempts[q]++;
+  const opts = document.querySelectorAll('[data-q="' + q + '"]');
+  const fb   = document.getElementById('qfb-' + q);
+  const chk  = document.getElementById('qchk-' + q);
+  const nxt  = document.getElementById('qnxt-' + q);
+  if (sel === data.correct) {
+    qState.scores[q] = 1;
+    opts.forEach(o => { o.classList.add('locked'); if (o.dataset.val === data.correct) o.classList.add('correct'); });
+    fb.textContent = data.feedback.correct; fb.className = 'q-feedback show fb-correct';
+    chk.disabled = true; nxt.classList.add('show');
+    updateQDot(q, 'correct');
+  } else if (qState.attempts[q] >= 2) {
+    qState.scores[q] = 0;
+    opts.forEach(o => {
+      o.classList.add('locked');
+      if (o.dataset.val === sel)          o.classList.add('wrong');
+      if (o.dataset.val === data.correct) o.classList.add('correct');
+    });
+    fb.textContent = data.feedback.wrong; fb.className = 'q-feedback show fb-wrong';
+    chk.disabled = true; nxt.classList.add('show');
+    updateQDot(q, 'wrong');
+  } else {
+    opts.forEach(o => o.classList.remove('selected'));
+    qState.selected[q] = null;
+    fb.textContent = data.feedback.retry; fb.className = 'q-feedback show fb-retry';
+    chk.disabled = true;
+  }
+}
+
+function advanceQuiz(q) {
+  if (q < QUIZ.length - 1) {
+    document.getElementById('qcard-' + q).classList.remove('active');
+    document.getElementById('qpd-'   + q).classList.remove('active');
+    const next = q + 1;
+    document.getElementById('qcard-' + next).classList.add('active');
+    document.getElementById('qpd-'   + next).classList.add('active');
+    qState.cur = next;
+  } else {
+    document.getElementById('qcard-' + q).classList.remove('active');
+    document.getElementById('quizBody').style.display  = 'none';
+    document.getElementById('qProgress').style.display = 'none';
+    showScore();
+  }
+}
+
+function updateQDot(q, state) {
+  const dot = document.getElementById('qpd-' + q);
+  dot.classList.remove('active'); dot.classList.add(state);
+}
+
+function showScore() {
+  const correct = qState.scores.filter(s => s === 1).length;
+  const panel   = document.getElementById('scorePanel');
+  const big     = document.getElementById('scoreBig');
+  const lbl     = document.getElementById('scoreLabel');
+  big.textContent = correct + ' / ' + QUIZ.length;
+  big.className = 'score-big ' + (correct >= 3 ? 'pass' : 'fail');
+  lbl.textContent = correct >= 3
+    ? 'Good work. Continue to Section 4.'
+    : 'Review Section 3 startup process and retry.';
+  panel.classList.add('show');
+  if (correct >= 3) { quizPassed = true; }
+  updateNav();
+}
+
+function resetQuiz() {
+  document.getElementById('scorePanel').classList.remove('show');
+  document.getElementById('quizBody').style.display  = '';
+  document.getElementById('qProgress').style.display = '';
+  buildQuiz();
+}
+
+  quizInit();
+
+  /* Stop narration when the section is navigated away from (exit or section change) */
+  window.addEventListener('pagehide', function() { synth.cancel(); });
+  /* Also stop when the parent frame sends KLA_STOP (cross-origin reliable) */
+  window.addEventListener('message', function(e) { if (e.data && e.data.type === 'KLA_STOP') { synth.cancel(); } });
+</script>
+
+<style>
+.iframe-screen { overflow: hidden !important; }
+</style>
+<script>
+function scaleIframes() {
+  var stage = document.querySelector('.stage');
+  if (!stage) return;
+  var sw = stage.clientWidth, sh = stage.clientHeight;
+  var s  = Math.min(sw / 1040, sh / 510);
+  var ox = (sw - 1040 * s) / 2;
+  var oy = (sh -  510 * s) / 2;
+  document.querySelectorAll('.iframe-screen iframe').forEach(function (fr) {
+    fr.style.position        = 'absolute';
+    fr.style.left            = ox + 'px';
+    fr.style.top             = oy + 'px';
+    fr.style.transformOrigin = '0 0';
+    fr.style.transform       = 'scale(' + s + ')';
+  });
+}
+window.addEventListener('resize', scaleIframes);
+window.addEventListener('load',   scaleIframes);
+if (window.ResizeObserver) {
+  new ResizeObserver(scaleIframes).observe(document.querySelector('.vo-bar'));
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>RK24 Drawing Set Navigation | Section 6</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { width: 1040px; min-height: 510px; overflow: hidden; background: #f8fafb; font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #334466; }
+.header { background: #002060; color: #ffffff; height: 50px; display: flex; align-items: center; justify-content: space-between; padding: 0 18px; flex-shrink: 0; }
+.header-title { font-size: 13px; font-weight: bold; letter-spacing: 0.3px; text-transform: uppercase; }
+.header-tag { font-size: 9px; font-weight: bold; letter-spacing: 1.4px; text-transform: uppercase; color: #80b4dc; background: rgba(255,255,255,0.1); padding: 3px 10px; border-radius: 10px; }
+.main { height: 460px; display: flex; flex-direction: column; gap: 12px; padding: 14px 18px 12px; overflow-y: auto; }
+.content-head { font-size: 12px; font-weight: bold; color: #002060; margin-bottom: 8px; }
+.domain-block { background: #ffffff; border: 1px solid #dce7f5; border-radius: 8px; padding: 10px 12px; margin-bottom: 6px; }
+.domain-name { font-size: 10px; font-weight: bold; color: #002060; margin-bottom: 4px; border-left: 3px solid #cc3d00; padding-left: 8px; }
+.domain-use { font-size: 9px; color: #334466; margin-left: 14px; line-height: 1.4; }
+.reference-note { background: #fff4ee; border-left: 3px solid #cc3d00; padding: 8px 10px; margin-top: 8px; font-size: 9px; color: #334466; border-radius: 4px; line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-title">RK24 Drawing Set Navigation (C5)</div>
+  <div class="header-tag">Section 6</div>
+</div>
+<div class="main">
+  <div class="content-head">RK24 C5 Drawing Domains (58 Files)</div>
+  
+  <div class="domain-block">
+    <div class="domain-name">Hydraulic &amp; Pneumatic Schematics</div>
+    <div class="domain-use">Use for pressure-line diagnostics, valve configuration, and actuator troubleshooting. Cross-reference OEM pump and valve datasheets.</div>
+  </div>
+  
+  <div class="domain-block">
+    <div class="domain-name">Control System &amp; Wiring Diagrams</div>
+    <div class="domain-use">Consult for electrical faults, sensor signals, controller operation, and integration logic.</div>
+  </div>
+  
+  <div class="domain-block">
+    <div class="domain-name">Mechanical Assembly &amp; BOM</div>
+    <div class="domain-use">Reference for component location, fastener specification, and assembly order during maintenance or reconstruction.</div>
+  </div>
+  
+  <div class="domain-block">
+    <div class="domain-name">Interface &amp; Camera System Layout</div>
+    <div class="domain-use">Trace display connections, signal routing, and camera/monitor integration for vision system troubleshooting.</div>
+  </div>
+  
+  <div class="domain-block">
+    <div class="domain-name">Powertrain &amp; Brake System</div>
+    <div class="domain-use">Identify drive transmission, brake actuation, and safety interlock schematics for performance and safety diagnostics.</div>
+  </div>
+  
+  <div class="reference-note">
+    <strong>Selection Strategy:</strong> Begin with the service manual symptom to identify the correct domain, then use the drawing index or part number cross-reference to locate the specific schematic.
+  </div>
+</div>
+</body>
+</html>
