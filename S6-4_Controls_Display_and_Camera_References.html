@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>Controls, Display and Camera References | Section 6</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { width: 1040px; min-height: 510px; overflow: hidden; background: #f8fafb; font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #334466; }
+.header { background: #002060; color: #fff; height: 50px; display: flex; align-items: center; justify-content: space-between; padding: 0 18px; }
+.header-title { font-size: 13px; font-weight: bold; letter-spacing: 0.3px; text-transform: uppercase; }
+.header-tag { font-size: 9px; font-weight: bold; letter-spacing: 1.4px; text-transform: uppercase; color: #80b4dc; background: rgba(255,255,255,0.1); padding: 3px 10px; border-radius: 10px; }
+.main { height: 460px; display: flex; gap: 12px; padding: 14px 18px 12px; }
+.panel { flex: 1; background: #fff; border-radius: 8px; border: 1px solid #dce7f5; padding: 14px 16px; display: flex; flex-direction: column; gap: 7px; min-width: 0; }
+.panel-heading { font-size: 11px; font-weight: bold; color: #002060; border-bottom: 2px solid #cc3d00; padding-bottom: 5px; margin-bottom: 4px; }
+
+/* Left: IFM doc map */
+.ifm-intro { font-size: 9px; color: #6a7d94; line-height: 1.5; }
+.ifm-group { background: #f8fafb; border: 1px solid #dce7f5; border-radius: 7px; overflow: hidden; margin-bottom: 7px; }
+.ifm-group-header { background: #1a3660; color: #88aacc; padding: 5px 12px; font-size: 8.5px; font-weight: bold; letter-spacing: 0.5px; text-transform: uppercase; }
+.ifm-group-body { padding: 7px 12px; display: flex; flex-direction: column; gap: 4px; }
+.ifm-doc-row { display: flex; align-items: flex-start; gap: 8px; }
+.ifm-num  { font-size: 8px; font-weight: bold; color: #1d5fa8; min-width: 28px; flex-shrink: 0; margin-top: 1px; }
+.ifm-body { flex: 1; }
+.ifm-name { font-size: 9px; font-weight: bold; color: #1a3660; }
+.ifm-use  { font-size: 8px; color: #334466; line-height: 1.45; }
+
+/* Right: use scenarios and integration notes */
+.use-scenario { background: #f8fafb; border: 1px solid #dce7f5; border-radius: 6px; padding: 8px 12px; display: flex; flex-direction: column; gap: 3px; margin-bottom: 6px; }
+.use-tag { font-size: 8px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 1px; }
+.use-tag.ctrl  { color: #1d5fa8; }
+.use-tag.cam   { color: #1a7040; }
+.use-q { font-size: 9px; font-weight: bold; color: #1a3660; }
+.use-a { font-size: 8.5px; color: #334466; line-height: 1.5; }
+.integration-note { background: #e8f0f8; border: 1px solid #3d7fbd; border-radius: 6px; padding: 8px 12px; }
+.integration-text { font-size: 8.5px; color: #1a3660; line-height: 1.55; }
+.integration-text strong { color: #002060; }
+.key-concept-bar { background: #fff4ee; border: 1px solid #e8c0a8; border-left: 4px solid #cc3d00; border-radius: 7px; padding: 8px 16px; }
+.key-concept-text { font-size: 10px; color: #334466; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-title">Controls, Display and Camera References</div>
+  <div class="header-tag">Section 6</div>
+</div>
+<div class="main">
+  <!-- LEFT: IFM document map -->
+  <div class="panel">
+    <div class="panel-heading">IFM System Document Map (Docs 07a–07i)</div>
+    <div class="ifm-intro">The IFM suite covers the RK24's machine controller, operator display, and camera system as an integrated package. Nine documents — split across three sub-systems.</div>
+
+    <div class="ifm-group">
+      <div class="ifm-group-header">CR0020 Mobile Controller</div>
+      <div class="ifm-group-body">
+        <div class="ifm-doc-row">
+          <div class="ifm-num">07c</div>
+          <div class="ifm-body"><div class="ifm-name">Data Sheet</div><div class="ifm-use">Hardware specs — I/O count, voltage range, operating temp, connector pinout reference</div></div>
+        </div>
+        <div class="ifm-doc-row">
+          <div class="ifm-num">07e</div>
+          <div class="ifm-body"><div class="ifm-name">Software Manual</div><div class="ifm-use">Parameter configuration, input mapping, output logic, fault code generation rules</div></div>
+        </div>
+        <div class="ifm-doc-row">
+          <div class="ifm-num">07f</div>
+          <div class="ifm-body"><div class="ifm-name">System Manual</div><div class="ifm-use">Full integration guide — power supply, CAN bus wiring, diagnostic port access</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ifm-group">
+      <div class="ifm-group-header">CR1081 LCD Operator Display</div>
+      <div class="ifm-group-body">
+        <div class="ifm-doc-row">
+          <div class="ifm-num">07a</div>
+          <div class="ifm-body"><div class="ifm-name">Installation Manual</div><div class="ifm-use">Panel mounting, wiring harness routing, display power and CAN connections</div></div>
+        </div>
+        <div class="ifm-doc-row">
+          <div class="ifm-num">07b</div>
+          <div class="ifm-body"><div class="ifm-name">System Manual</div><div class="ifm-use">Screen navigation structure, menu tree, parameter display configuration, alarm page behaviour</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ifm-group">
+      <div class="ifm-group-header">IFM Camera System + Safety Vision Monitor</div>
+      <div class="ifm-group-body">
+        <div class="ifm-doc-row">
+          <div class="ifm-num">07g</div>
+          <div class="ifm-body"><div class="ifm-name">Camera Connection Instructions</div><div class="ifm-use">Cable routing, connector types, power and signal wiring to controller</div></div>
+        </div>
+        <div class="ifm-doc-row">
+          <div class="ifm-num">07h</div>
+          <div class="ifm-body"><div class="ifm-name">Camera Operating Instructions</div><div class="ifm-use">Field-of-view adjustment, cleaning procedures, environmental rating</div></div>
+        </div>
+        <div class="ifm-doc-row">
+          <div class="ifm-num">07i</div>
+          <div class="ifm-body"><div class="ifm-name">Camera Spec Sheet</div><div class="ifm-use">Resolution, IP rating, temperature range, mount dimensions</div></div>
+        </div>
+        <div class="ifm-doc-row">
+          <div class="ifm-num">12</div>
+          <div class="ifm-body"><div class="ifm-name">Safety Vision LED70WQ4 Monitor Manual</div><div class="ifm-use">In-cab monitor — input selection, brightness, recording feature, mount bracket</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Use scenarios -->
+  <div class="panel">
+    <div class="panel-heading">When to Use These Documents</div>
+
+    <div class="use-scenario">
+      <div class="use-tag ctrl">Controller Fault</div>
+      <div class="use-q">Fault code appears on the CR1081 display that is not in the operator manual. Where do I look?</div>
+      <div class="use-a">Doc 07b (CR1081 System Manual) for alarm page structure, then 07e (CR0020 Software Manual) for fault code definitions and the input/output condition that triggers each code.</div>
+    </div>
+    <div class="use-scenario">
+      <div class="use-tag ctrl">Parameter Verification</div>
+      <div class="use-q">After a controller replacement, the machine behaviour seems different. What checks are needed?</div>
+      <div class="use-a">Doc 07f (CR0020 System Manual) — verify CAN bus addresses and I/O assignments. Doc 07e (Software Manual) — confirm all parameter values match the unit's build specification.</div>
+    </div>
+    <div class="use-scenario">
+      <div class="use-tag cam">Camera System</div>
+      <div class="use-q">The rear camera image is not appearing on the in-cab monitor. How do I diagnose this?</div>
+      <div class="use-a">Start with Doc 07g (connection instructions) — verify cable continuity and connector seating. Then check Doc 12 (Safety Vision monitor) for input source selection. Doc 07i for camera power voltage spec.</div>
+    </div>
+
+    <div class="integration-note">
+      <div class="integration-text"><strong>CAN bus integration:</strong> The CR0020 controller, CR1081 display, and camera system share a CAN network. A wiring fault or address conflict on any node can cause symptoms across all three systems simultaneously. Always check the system manual (07f) before replacing components.</div>
+    </div>
+
+    <div class="key-concept-bar" style="margin-top:auto;">
+      <div class="key-concept-text"><strong>The CR0020 is the brain of the RK24 control system.</strong> All fault codes originate here — the display is the window, not the source.</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

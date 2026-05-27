@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>Powertrain, Brake and Auxiliary References | Section 6</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { width: 1040px; min-height: 510px; overflow: hidden; background: #f8fafb; font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #334466; }
+.header { background: #002060; color: #fff; height: 50px; display: flex; align-items: center; justify-content: space-between; padding: 0 18px; }
+.header-title { font-size: 13px; font-weight: bold; letter-spacing: 0.3px; text-transform: uppercase; }
+.header-tag { font-size: 9px; font-weight: bold; letter-spacing: 1.4px; text-transform: uppercase; color: #80b4dc; background: rgba(255,255,255,0.1); padding: 3px 10px; border-radius: 10px; }
+.main { height: 460px; display: flex; gap: 12px; padding: 14px 18px 12px; }
+.panel { flex: 1; background: #fff; border-radius: 8px; border: 1px solid #dce7f5; padding: 14px 16px; display: flex; flex-direction: column; gap: 7px; min-width: 0; }
+.panel-heading { font-size: 11px; font-weight: bold; color: #002060; border-bottom: 2px solid #cc3d00; padding-bottom: 5px; margin-bottom: 4px; }
+
+.vendor-block { background: #f8fafb; border: 1px solid #dce7f5; border-radius: 7px; padding: 8px 12px; display: flex; gap: 10px; }
+.vendor-block + .vendor-block { margin-top: 6px; }
+.vb-badge { min-width: 44px; padding: 4px 6px; border-radius: 5px; font-size: 8px; font-weight: bold; text-align: center; flex-shrink: 0; align-self: flex-start; }
+.vb-eng     { background: #fff0e8; color: #cc6000; border: 1px solid #cc6000; }
+.vb-gear    { background: #e2eaf8; color: #1a3660; border: 1px solid #1a3660; }
+.vb-hub     { background: #e8f0f8; color: #1d5fa8; border: 1px solid #3d7fbd; }
+.vb-aux     { background: #f0e8f8; color: #6a30aa; border: 1px solid #8844cc; }
+.vb-body    { flex: 1; }
+.vb-title   { font-size: 9.5px; font-weight: bold; color: #1a3660; margin-bottom: 2px; }
+.vb-docs    { font-size: 8px; color: #1d5fa8; font-style: italic; margin-bottom: 3px; }
+.vb-desc    { font-size: 8.5px; color: #334466; line-height: 1.5; }
+
+/* Right: use scenarios */
+.use-scenario { background: #f8fafb; border: 1px solid #dce7f5; border-radius: 6px; padding: 7px 12px; display: flex; flex-direction: column; gap: 3px; margin-bottom: 6px; }
+.use-tag { font-size: 8px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 1px; }
+.use-tag.eng  { color: #cc6000; }
+.use-tag.gear { color: #1a3660; }
+.use-tag.aux  { color: #6a30aa; }
+.use-q { font-size: 9px; font-weight: bold; color: #1a3660; }
+.use-a { font-size: 8.5px; color: #334466; line-height: 1.5; }
+.scope-note { background: #e2eaf8; border: 1px solid #1a3660; border-radius: 6px; padding: 8px 12px; }
+.scope-text { font-size: 8.5px; color: #1a3660; line-height: 1.55; }
+.scope-text strong { color: #002060; }
+.key-concept-bar { background: #fff4ee; border: 1px solid #e8c0a8; border-left: 4px solid #cc3d00; border-radius: 7px; padding: 8px 16px; }
+.key-concept-text { font-size: 10px; color: #334466; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-title">Powertrain, Brake and Auxiliary References</div>
+  <div class="header-tag">Section 6</div>
+</div>
+<div class="main">
+  <!-- LEFT: Vendor documents -->
+  <div class="panel">
+    <div class="panel-heading">Powertrain and Auxiliary OEM Documents</div>
+
+    <div class="vendor-block">
+      <div class="vb-badge vb-eng">JOHN DEERE</div>
+      <div class="vb-body">
+        <div class="vb-title">Engine — CTM43 Component Technical Manual</div>
+        <div class="vb-docs">Doc 08 — John Deere 1200/1400 Series CTM43</div>
+        <div class="vb-desc">Full component-level manual covering fuel system, electrical system, mechanical diagnosis, and torque specifications for the engine fitted to the RK24. Use for fuel injection, governor, and sensor diagnostics. John Deere engine warranty work must be performed by an authorised JD dealer.</div>
+      </div>
+    </div>
+
+    <div class="vendor-block">
+      <div class="vb-badge vb-gear">FUNK</div>
+      <div class="vb-body">
+        <div class="vb-title">Gearboxes — CTM147 and CTM157</div>
+        <div class="vb-docs">Docs 05a–05b — Funk CTM147 and CTM157</div>
+        <div class="vb-desc">Two Funk gearbox variants used in the RK24 drivetrain. Covers gear ratios, lubricant type and fill procedure, bearing preload, and assembly torque values. Match the doc to the serial number range on the gearbox data plate — do not cross-apply specs between CTM147 and CTM157.</div>
+      </div>
+    </div>
+
+    <div class="vendor-block">
+      <div class="vb-badge vb-hub">CTD</div>
+      <div class="vb-body">
+        <div class="vb-title">Hub-Wheel Assembly</div>
+        <div class="vb-docs">Doc 04 — CTD Hub-Wheel Assembly and Maintenance Manual</div>
+        <div class="vb-desc">Planetary hub reduction on driven axles. Use for bearing preload adjustment, seal replacement, and end-play measurement. Includes torque sequence for hub-cap fasteners and oil fill procedure.</div>
+      </div>
+    </div>
+
+    <div class="vendor-block">
+      <div class="vb-badge vb-aux">AUX</div>
+      <div class="vb-body">
+        <div class="vb-title">Cab and Auxiliary Systems</div>
+        <div class="vb-docs">Docs 02, 10, 13, 14, 16 — Mounts, Heater, DEF, Steller, Williams</div>
+        <div class="vb-desc">AMC Marine mount (vibration isolation), Red Dot R-295 cab heater, Shaw DEF tank service, Steller V480 auxiliary regulator, Williams WM786 component. Consult the relevant doc for any auxiliary system fault before ordering parts.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Use scenarios -->
+  <div class="panel">
+    <div class="panel-heading">When to Use These Documents</div>
+
+    <div class="use-scenario">
+      <div class="use-tag eng">Engine Question</div>
+      <div class="use-q">The engine is starting hard in cold conditions and showing a fuel system fault code. Where do I look?</div>
+      <div class="use-a">John Deere CTM43 (Doc 08) — fuel system section. Check the injection pump delivery pressure spec and cold-start enrichment circuit. If the fault code is engine-specific, note the CTM43 section reference before calling the JD dealer.</div>
+    </div>
+    <div class="use-scenario">
+      <div class="use-tag gear">Gearbox Question</div>
+      <div class="use-q">Gearbox oil sample shows high metal particle count at service. What's the procedure?</div>
+      <div class="use-a">Identify gearbox variant from data plate. Open CTM147 or CTM157 (Doc 05a or 05b) — locate the inspection/disassembly section. Metal contamination triggers a full bearing and gear inspection before any service interval reset.</div>
+    </div>
+    <div class="use-scenario">
+      <div class="use-tag aux">Auxiliary System Question</div>
+      <div class="use-q">The DEF system fault lamp is on and the machine is approaching emissions derate. What documents are needed?</div>
+      <div class="use-a">Shaw DEF Tank Service Manual (Doc 13) — check tank sensor, heater, and supply line for fault source. John Deere CTM43 for the derate threshold and any engine-side DEF management procedure.</div>
+    </div>
+
+    <div class="scope-note">
+      <div class="scope-text"><strong>Warranty boundary reminder:</strong> Engine work (John Deere CTM43) must be performed by an authorised JD service dealer to preserve engine warranty. All other powertrain components in this section are within the Rail King service scope — use the relevant OEM doc and the appropriate forms.</div>
+    </div>
+
+    <div class="key-concept-bar" style="margin-top:auto;">
+      <div class="key-concept-text"><strong>Match the gearbox variant before opening any procedure.</strong> CTM147 and CTM157 are not interchangeable — verify from the data plate on the unit.</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

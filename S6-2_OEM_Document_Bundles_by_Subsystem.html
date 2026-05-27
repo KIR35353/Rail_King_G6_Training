@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>OEM Document Bundles by Subsystem | Section 6</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #f8fafb; font-family: Arial, Helvetica, sans-serif; width: 1040px; height: 510px; overflow: hidden; }
+.header { background: #002060; color: #fff; height: 50px; display: flex; align-items: center; padding: 0 24px; justify-content: space-between; }
+.header-title { font-size: 12px; font-weight: bold; letter-spacing: 0.9px; text-transform: uppercase; }
+.header-tag { background: #1a3660; border: 1px solid #3d7fbd; border-radius: 12px; padding: 4px 16px; font-size: 10px; font-weight: bold; color: #88aacc; letter-spacing: 0.5px; }
+.outer { padding: 10px 18px 6px; display: flex; flex-direction: column; gap: 8px; }
+.intro-banner { background: #f0f4ff; border: 1px solid #3d7fbd; border-radius: 6px; padding: 6px 12px; font-size: 8.5px; color: #334466; line-height: 1.5; }
+.intro-banner strong { color: #1a3a80; }
+.main-row { display: flex; gap: 14px; align-items: stretch; }
+.table-panel { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+.detail-panel { width: 300px; flex-shrink: 0; display: flex; flex-direction: column; }
+table { width: 100%; border-collapse: collapse; background: #fff; border: 1.5px solid #c8d8e8; border-radius: 8px; overflow: hidden; font-size: 8.5px; }
+thead tr { background: #002060; }
+thead th { color: #fff; padding: 6px 10px; text-align: left; font-weight: bold; font-size: 8.5px; letter-spacing: 0.3px; border-right: 1px solid rgba(255,255,255,0.15); }
+thead th:last-child { border-right: none; }
+tbody tr { cursor: pointer; transition: background 0.12s; }
+tbody tr:nth-child(even) { background: #f3f6fb; }
+tbody tr:nth-child(odd)  { background: #fff; }
+tbody tr:hover    { background: #e8f0ff; }
+tbody tr.selected { background: #d8e8ff !important; box-shadow: inset 3px 0 0 #1d5fa8; }
+tbody td { padding: 5px 10px; color: #334466; border-right: 1px solid #dde8f0; vertical-align: middle; line-height: 1.5; }
+tbody td:last-child { border-right: none; }
+.tag { display: inline-block; font-size: 7.5px; font-weight: bold; padding: 2px 6px; border-radius: 3px; }
+.tag-hyd  { background: #e8f0f8; color: #1d5fa8; }
+.tag-eng  { background: #fff0e8; color: #cc6000; }
+.tag-ctrl { background: #e8f8ee; color: #1a7040; }
+.tag-air  { background: #fff8e0; color: #7a5000; }
+.tag-aux  { background: #f0e8f8; color: #6a30aa; }
+/* Detail panel */
+.detail-box { flex: 1; background: #fff; border: 1.5px solid #c8d8e8; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
+.detail-header { background: #1a3660; color: #88aacc; padding: 8px 14px; font-size: 9px; font-weight: bold; letter-spacing: 0.5px; text-transform: uppercase; }
+.detail-body { flex: 1; padding: 12px 14px; font-size: 8.5px; color: #334466; line-height: 1.7; display: flex; flex-direction: column; gap: 6px; overflow-y: auto; }
+.detail-body strong { color: #002060; }
+.detail-body .doc-item { display: flex; align-items: flex-start; gap: 6px; padding: 4px 0; border-bottom: 1px solid #eef3fa; }
+.detail-body .doc-item:last-child { border-bottom: none; }
+.detail-body .doc-num { font-size: 8px; font-weight: bold; color: #1d5fa8; min-width: 28px; flex-shrink: 0; }
+.detail-body .doc-name { font-size: 8px; color: #334466; line-height: 1.5; }
+.detail-placeholder { color: #8899aa; font-size: 9px; text-align: center; padding-top: 40px; }
+.key-concept-bar { background: #fff4ee; border: 1px solid #e8c0a8; border-left: 4px solid #cc3d00; border-radius: 7px; padding: 7px 18px 7px 22px; }
+.key-concept-text { font-size: 10px; color: #334466; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-title">OEM Document Bundles by Subsystem</div>
+  <div class="header-tag">Section 6</div>
+</div>
+<div class="outer">
+  <div class="intro-banner"><strong>RK24 C6 Rev 1 OEM Vendor Package</strong> — 31 documents across 16 vendor families. Click a row to see the documents in that subsystem bundle.</div>
+  <div class="main-row">
+    <div class="table-panel">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:28%">Subsystem</th>
+            <th style="width:15%">Category</th>
+            <th style="width:22%">Primary Vendor(s)</th>
+            <th style="width:35%">Document Coverage</th>
+          </tr>
+        </thead>
+        <tbody id="mainTable">
+          <tr data-id="hyd"><td>Hydraulic Pumps and Valves</td><td><span class="tag tag-hyd">HYDRAULIC</span></td><td>Rexroth, Marzocchi, Sun</td><td>Pump specs, pilot valves, relay valves, service bulletins</td></tr>
+          <tr data-id="hf"><td>Hydraulic Filtration</td><td><span class="tag tag-hyd">HYDRAULIC</span></td><td>Hydac</td><td>DF/LF filter assemblies — pressure drop curves, element specs</td></tr>
+          <tr data-id="air"><td>Air Drying and Brake Circuits</td><td><span class="tag tag-air">AIR / BRAKE</span></td><td>Bendix, AAA Valve</td><td>AD-9 air dryer, solenoid/pilot air valves for brake circuits</td></tr>
+          <tr data-id="trans"><td>Transmission and Gearboxes</td><td><span class="tag tag-eng">DRIVETRAIN</span></td><td>Funk</td><td>CTM147 and CTM157 — gear ratios, torque specs, service procedures</td></tr>
+          <tr data-id="hub"><td>Hub and Wheel Assembly</td><td><span class="tag tag-eng">DRIVETRAIN</span></td><td>CTD</td><td>Hub-wheel assembly and maintenance manual</td></tr>
+          <tr data-id="engine"><td>Engine</td><td><span class="tag tag-eng">ENGINE</span></td><td>John Deere</td><td>CTM43 component manual — 1200/1400 series fuel, electrical, mechanical</td></tr>
+          <tr data-id="ctrl"><td>Controls and Display System</td><td><span class="tag tag-ctrl">CONTROLS</span></td><td>IFM</td><td>CR0020 controller + CR1081 display — install, software, system manuals</td></tr>
+          <tr data-id="cam"><td>Camera System</td><td><span class="tag tag-ctrl">CONTROLS</span></td><td>IFM, Safety Vision</td><td>Camera connection, operation, spec; LED70WQ4 monitor manual</td></tr>
+          <tr data-id="aux"><td>Auxiliary and Cab Systems</td><td><span class="tag tag-aux">AUXILIARY</span></td><td>Red Dot, Williams, Steller, Shaw</td><td>Cab heater, DEF tank, coolant system, auxiliary components</td></tr>
+          <tr data-id="mount"><td>Mounts and Isolation</td><td><span class="tag tag-aux">AUXILIARY</span></td><td>AMC Marine</td><td>XL marine mount — vibration isolation for engine/powertrain</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="detail-panel">
+      <div class="detail-box">
+        <div class="detail-header" id="detailHeader">Select a Row</div>
+        <div class="detail-body" id="detailBody">
+          <div class="detail-placeholder">← Click any subsystem row to see its document bundle</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="key-concept-bar">
+    <div class="key-concept-text"><strong>Navigation rule:</strong> Identify the subsystem first, then go to the OEM bundle. Never cross-apply an RK22/RK23 spec to an RK24 component — the C6 OEM documents are RK24-specific.</div>
+  </div>
+</div>
+<script>
+const DETAIL_DATA = {
+  hyd: {
+    header: "Hydraulic Pumps and Valves — Doc Bundle",
+    items: [
+      { num: "11a", name: "Rexroth RA92701 — A10V Variable Piston Pump (open circuit)" },
+      { num: "11b", name: "Rexroth RA92711 — A10VSO Variable Piston Pump (closed circuit)" },
+      { num: "11c", name: "Rexroth SC700 — D-Pilot Valve Pages 31–48" },
+      { num: "11d", name: "Rexroth CD-7 — Directional Control Valves" },
+      { num: "11e", name: "Rexroth SM-300/30 — CD-7 Service Manual" },
+      { num: "11f", name: "Rexroth Relay Valve Spec Sheet" },
+      { num: "09",  name: "Marzocchi Pump Catalog — GHM2 Gear Pump" },
+      { num: "15a", name: "Sun Hydraulics — Service Bulletin" },
+      { num: "15b", name: "Sun Hydraulics — A71012VB03 Circuit Drawing" }
+    ]
+  },
+  hf: {
+    header: "Hydraulic Filtration — Doc Bundle",
+    items: [
+      { num: "06", name: "Hydac DF/LF Filter Assembly — Pressure drop data, element cross-reference, installation dimensions" }
+    ]
+  },
+  air: {
+    header: "Air Drying and Brake Circuits — Doc Bundle",
+    items: [
+      { num: "03",  name: "Bendix AD-9 Air Dryer (2018) — Service, purge cycle, troubleshooting" },
+      { num: "01a", name: "AAA Valve — Remote Pilot Air Valve Spec Sheet" },
+      { num: "01b", name: "AAA Valve — Solenoid Air Valve Spec Sheet" }
+    ]
+  },
+  trans: {
+    header: "Transmission and Gearboxes — Doc Bundle",
+    items: [
+      { num: "05a", name: "Funk CTM147 — Gearbox service manual (ratio, torque, assembly)" },
+      { num: "05b", name: "Funk CTM157 — Gearbox service manual (alternate ratio variant)" }
+    ]
+  },
+  hub: {
+    header: "Hub and Wheel Assembly — Doc Bundle",
+    items: [
+      { num: "04", name: "CTD Hub-Wheel Assembly and Maintenance Manual — bearing preload, seal replacement, torque specs" }
+    ]
+  },
+  engine: {
+    header: "Engine — Doc Bundle",
+    items: [
+      { num: "08", name: "John Deere CTM43 — 1200/1400 Series Component Technical Manual. Covers fuel system, electrical, mechanical, diagnostics for the Gen6 engine variant." }
+    ]
+  },
+  ctrl: {
+    header: "Controls and Display System — Doc Bundle",
+    items: [
+      { num: "07c", name: "IFM CR0020 — Mobile Controller Data Sheet" },
+      { num: "07e", name: "IFM CR0020 — Software Manual" },
+      { num: "07f", name: "IFM CR0020 — System Manual" },
+      { num: "07a", name: "IFM CR1081 — LCD Display Installation Manual" },
+      { num: "07b", name: "IFM CR1081 — LCD Display System Manual" }
+    ]
+  },
+  cam: {
+    header: "Camera System — Doc Bundle",
+    items: [
+      { num: "07g", name: "IFM — Camera Connection Instructions" },
+      { num: "07h", name: "IFM — Camera Operating Instructions" },
+      { num: "07i", name: "IFM — Camera Spec Sheet" },
+      { num: "12",  name: "Safety Vision LED70WQ4 — Monitor Manual (display/recording unit)" }
+    ]
+  },
+  aux: {
+    header: "Auxiliary and Cab Systems — Doc Bundle",
+    items: [
+      { num: "10", name: "Red Dot R-295 — Cab Heater installation and service" },
+      { num: "13", name: "Shaw DEF Tank Service Manual — DEF system maintenance" },
+      { num: "14", name: "Steller V480 Manual — Auxiliary voltage regulator / charging system" },
+      { num: "16", name: "Williams WM786 Data Sheet — Auxiliary component spec" }
+    ]
+  },
+  mount: {
+    header: "Engine and Drivetrain Mounts — Doc Bundle",
+    items: [
+      { num: "02", name: "AMC Marine Mount XL — Vibration isolation mount spec, load ratings, and installation for engine/powertrain isolation on the RK24 chassis." }
+    ]
+  }
+};
+
+document.getElementById('mainTable').addEventListener('click', function(e) {
+  const row = e.target.closest('tr');
+  if (!row) return;
+  document.querySelectorAll('#mainTable tr').forEach(r => r.classList.remove('selected'));
+  row.classList.add('selected');
+  const data = DETAIL_DATA[row.dataset.id];
+  if (!data) return;
+  document.getElementById('detailHeader').textContent = data.header;
+  const body = document.getElementById('detailBody');
+  body.innerHTML = data.items.map(i =>
+    `<div class="doc-item"><div class="doc-num">${i.num}</div><div class="doc-name">${i.name}</div></div>`
+  ).join('');
+});
+</script>
+</body>
+</html>

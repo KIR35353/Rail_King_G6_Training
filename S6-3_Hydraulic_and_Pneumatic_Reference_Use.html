@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>Hydraulic and Pneumatic Reference Use | Section 6</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { width: 1040px; min-height: 510px; overflow: hidden; background: #f8fafb; font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #334466; }
+.header { background: #002060; color: #fff; height: 50px; display: flex; align-items: center; justify-content: space-between; padding: 0 18px; }
+.header-title { font-size: 13px; font-weight: bold; letter-spacing: 0.3px; text-transform: uppercase; }
+.header-tag { font-size: 9px; font-weight: bold; letter-spacing: 1.4px; text-transform: uppercase; color: #80b4dc; background: rgba(255,255,255,0.1); padding: 3px 10px; border-radius: 10px; }
+.main { height: 460px; display: flex; gap: 12px; padding: 14px 18px 12px; }
+.panel { flex: 1; background: #fff; border-radius: 8px; border: 1px solid #dce7f5; padding: 14px 16px; display: flex; flex-direction: column; gap: 7px; min-width: 0; }
+.panel-heading { font-size: 11px; font-weight: bold; color: #002060; border-bottom: 2px solid #cc3d00; padding-bottom: 5px; margin-bottom: 4px; }
+
+/* Vendor cards */
+.vendor-row { display: flex; align-items: flex-start; gap: 10px; padding: 5px 0; border-bottom: 1px solid #f0f4fa; }
+.vendor-row:last-child { border-bottom: none; }
+.vendor-badge { min-width: 38px; padding: 3px 6px; border-radius: 4px; font-size: 8px; font-weight: bold; text-align: center; flex-shrink: 0; margin-top: 1px; }
+.v-blue   { background: #e8f0f8; color: #1d5fa8; border: 1px solid #3d7fbd; }
+.v-navy   { background: #e2eaf8; color: #1a3660; border: 1px solid #1a3660; }
+.v-green  { background: #e8f8ee; color: #1a7040; border: 1px solid #1a7040; }
+.v-amber  { background: #fff8e0; color: #7a5000; border: 1px solid #cc8800; }
+.vendor-body { flex: 1; }
+.vendor-title { font-size: 9.5px; font-weight: bold; color: #1a3660; margin-bottom: 2px; }
+.vendor-docs  { font-size: 8px; color: #1d5fa8; font-style: italic; margin-bottom: 2px; }
+.vendor-desc  { font-size: 8.5px; color: #334466; line-height: 1.5; }
+
+/* Right: how-to use guide */
+.use-intro { font-size: 9px; color: #6a7d94; line-height: 1.5; }
+.use-scenario { background: #f8fafb; border: 1px solid #dce7f5; border-radius: 6px; padding: 8px 12px; display: flex; flex-direction: column; gap: 3px; }
+.use-scenario + .use-scenario { margin-top: 6px; }
+.use-tag { font-size: 8px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 2px; }
+.use-tag.pump  { color: #1d5fa8; }
+.use-tag.valve { color: #1a3660; }
+.use-tag.filter { color: #cc8800; }
+.use-tag.air   { color: #7a5000; }
+.use-q { font-size: 9px; font-weight: bold; color: #1a3660; }
+.use-a { font-size: 8.5px; color: #334466; line-height: 1.5; }
+
+.key-concept-bar { background: #fff4ee; border: 1px solid #e8c0a8; border-left: 4px solid #cc3d00; border-radius: 7px; padding: 8px 16px; }
+.key-concept-text { font-size: 10px; color: #334466; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-title">Hydraulic and Pneumatic Reference Use</div>
+  <div class="header-tag">Section 6</div>
+</div>
+<div class="main">
+  <!-- LEFT: Vendor docs -->
+  <div class="panel">
+    <div class="panel-heading">Hydraulic and Air System OEM Documents</div>
+
+    <div class="vendor-row">
+      <div class="vendor-badge v-blue">REXROTH</div>
+      <div class="vendor-body">
+        <div class="vendor-title">Variable Piston Pumps and Directional Valves</div>
+        <div class="vendor-docs">Docs 11a–11f: A10V pump, A10VSO pump, D-Pilot valve, CD-7 valve, SM-300 service manual, relay valve</div>
+        <div class="vendor-desc">Primary hydraulic power source for travel and work circuits. Use pump docs for flow/pressure curves, case drain specs, and shaft torque limits. Use valve docs for spool identification, pressure settings, and pilot signal requirements.</div>
+      </div>
+    </div>
+    <div class="vendor-row">
+      <div class="vendor-badge v-navy">MARZOCCHI</div>
+      <div class="vendor-body">
+        <div class="vendor-title">GHM2 Gear Pump</div>
+        <div class="vendor-docs">Doc 09: GHM2 Pump Catalog</div>
+        <div class="vendor-desc">Auxiliary gear pump for low-pressure circuits (steering, pilot supply, or cooling fan). Catalog covers displacement options, pressure ratings, and port configurations.</div>
+      </div>
+    </div>
+    <div class="vendor-row">
+      <div class="vendor-badge v-green">SUN HYD</div>
+      <div class="vendor-body">
+        <div class="vendor-title">Sun Hydraulics Cartridge Valves</div>
+        <div class="vendor-docs">Docs 15a–15b: Service bulletin and circuit drawing A71012VB03</div>
+        <div class="vendor-desc">Sun cartridge valves are used in manifold blocks throughout the RK24 hydraulic circuits. The circuit drawing is essential for identifying cartridge positions and setting sequences.</div>
+      </div>
+    </div>
+    <div class="vendor-row">
+      <div class="vendor-badge v-amber">HYDAC</div>
+      <div class="vendor-body">
+        <div class="vendor-title">DF/LF Filter Assemblies</div>
+        <div class="vendor-docs">Doc 06: Hydac DF LF filter assembly</div>
+        <div class="vendor-desc">Return-line and pressure-line filtration. Use for element cross-reference, bypass valve cracking pressure, and visual indicator interpretation during maintenance.</div>
+      </div>
+    </div>
+    <div class="vendor-row">
+      <div class="vendor-badge v-amber">BENDIX / AAA</div>
+      <div class="vendor-body">
+        <div class="vendor-title">Air Dryer and Brake Circuit Valves</div>
+        <div class="vendor-docs">Docs 03, 01a–01b: AD-9 air dryer, remote pilot and solenoid air valves</div>
+        <div class="vendor-desc">AD-9 covers purge cycle, heater element, and desiccant service intervals. Air valve spec sheets define port sizes, operating pressure ranges, and coil voltage for the brake and auxiliary pneumatic circuits.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Use scenarios -->
+  <div class="panel">
+    <div class="panel-heading">When to Open These Documents</div>
+    <div class="use-intro">These are service-level references. The scenarios below show the specific question that sends a technician to each document bundle.</div>
+
+    <div class="use-scenario">
+      <div class="use-tag pump">Pump / Flow Question</div>
+      <div class="use-q">Hydraulic pressure is building but flow seems low under load. Where do I look?</div>
+      <div class="use-a">Start with Rexroth 11a/11b (pump specs) — check variable displacement setting and case drain flow limits. If pump is within spec, move to 11d (CD-7 valve) for internal leakage data.</div>
+    </div>
+    <div class="use-scenario">
+      <div class="use-tag valve">Valve / Circuit Question</div>
+      <div class="use-q">A cylinder is not holding position at rest. What's the reference?</div>
+      <div class="use-a">Sun Hydraulics 15b circuit drawing — identify the counterbalance or load-holding cartridge for that circuit. Use 15a service bulletin for leakage specs and test procedure.</div>
+    </div>
+    <div class="use-scenario">
+      <div class="use-tag filter">Filter Question</div>
+      <div class="use-q">Bypass indicator is showing on the return filter. Is the element serviceable?</div>
+      <div class="use-a">Hydac Doc 06 — cross-reference element part number, confirm bypass cracking pressure, and check if the indicator is a flow indicator or differential pressure switch.</div>
+    </div>
+    <div class="use-scenario">
+      <div class="use-tag air">Air System Question</div>
+      <div class="use-q">Air reservoirs are not building to full pressure and purge frequency has increased. Where do I start?</div>
+      <div class="use-a">Bendix AD-9 Doc 03 — check purge cycle timing, desiccant condition, and heater element operation. If dryer is OK, check AAA solenoid valve (01b) for seat leakage.</div>
+    </div>
+
+    <div class="key-concept-bar" style="margin-top:auto;">
+      <div class="key-concept-text"><strong>Service-level boundary:</strong> Operators read gauges and report. Technicians open the OEM documents. Do not adjust hydraulic or pneumatic settings without the correct document in hand.</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
