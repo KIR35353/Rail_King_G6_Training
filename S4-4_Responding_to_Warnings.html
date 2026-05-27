@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>Responding to Warnings | Section 4</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #f8fafb; font-family: Arial, Helvetica, sans-serif; width: 1040px; min-height: 510px; overflow: hidden; }
+.header { background: #002060; color: #fff; height: 50px; display: flex; align-items: center; padding: 0 24px; justify-content: space-between; }
+.header-title { font-size: 13px; font-weight: bold; letter-spacing: 0.9px; text-transform: uppercase; }
+.header-tag { background: #1a3660; border: 1px solid #3d7fbd; border-radius: 12px; padding: 4px 16px; font-size: 10px; font-weight: bold; color: #88aacc; letter-spacing: 0.5px; }
+.outer { padding: 10px 16px 0; display: flex; flex-direction: column; gap: 8px; }
+.main-row { display: flex; gap: 14px; align-items: flex-start; }
+.layers-panel { flex: 0 0 545px; display: flex; flex-direction: column; gap: 0; }
+.layer { display: flex; align-items: stretch; border-radius: 4px; overflow: hidden; border: 1.5px solid #c8d8e8; }
+.layer-bar { width: 8px; flex-shrink: 0; }
+.layer-inner { flex: 1; display: flex; align-items: center; padding: 6px 12px; gap: 10px; background: #fff; }
+.layer-badge { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: bold; color: #fff; flex-shrink: 0; }
+.layer-content { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.layer-title { font-size: 9px; font-weight: bold; color: #1a3660; letter-spacing: 0.3px; }
+.layer-desc { font-size: 8.5px; color: #334466; line-height: 1.5; }
+.layer-action { text-align: right; flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-end; justify-content: center; gap: 2px; min-width: 72px; }
+.layer-action-val { font-size: 8px; font-weight: bold; padding: 2px 7px; border-radius: 3px; }
+.layer-arrow { display: flex; align-items: center; justify-content: center; height: 9px; margin: 0 0 0 12px; }
+.layer-arrow::before { content: ''; display: block; width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 7px solid #8899aa; }
+.layer-green  .layer-bar, .layer-green  .layer-badge { background: #1a7040; }
+.layer-green  .layer-inner { background: #e8f8ee; border-color: #1a7040; }
+.layer-amber  .layer-bar, .layer-amber  .layer-badge { background: #cc8800; }
+.layer-amber  .layer-inner { background: #fff8e0; border-color: #cc8800; }
+.layer-orange .layer-bar, .layer-orange .layer-badge { background: #cc6000; }
+.layer-orange .layer-inner { background: #fff0e8; border-color: #cc6000; }
+.layer-red    .layer-bar, .layer-red    .layer-badge { background: #cc3d00; }
+.layer-red    .layer-inner { background: #ffe8e0; border-color: #cc3d00; }
+.layer-darkred .layer-bar, .layer-darkred .layer-badge { background: #8b2000; }
+.layer-darkred .layer-inner { background: #fee8e8; border-color: #8b2000; }
+.notes-panel { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.note-box { background: #fff; border: 1.5px solid #c8d8e8; border-left: 4px solid #002060; border-radius: 0 7px 7px 0; padding: 8px 12px 8px 14px; }
+.note-box.red-accent { border-left-color: #cc3d00; }
+.note-head { font-size: 9.5px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.4px; color: #1a3660; margin-bottom: 4px; }
+.note-box.red-accent .note-head { color: #8b2000; }
+.note-body { font-size: 8.5px; color: #334466; line-height: 1.65; }
+.note-body strong { color: #002060; }
+.note-box.red-accent .note-body strong { color: #8b2000; }
+.key-concept-bar { background: #fff4ee; border: 1px solid #e8c0a8; border-left: 4px solid #cc3d00; border-radius: 7px; padding: 7px 18px 7px 22px; }
+.key-concept-text { font-size: 10px; color: #334466; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-title">Responding to Warnings</div>
+  <div class="header-tag">Section 4</div>
+</div>
+<div class="outer">
+  <div class="main-row">
+    <div class="layers-panel">
+
+      <div class="layer layer-green">
+        <div class="layer-bar"></div>
+        <div class="layer-inner">
+          <div class="layer-badge">1</div>
+          <div class="layer-content">
+            <div class="layer-title">Value Enters Upper or Lower Caution Zone</div>
+            <div class="layer-desc">Gauge reading approaches band limit but no lamp illuminated. Operator reduces load or duty cycle proactively. Record observation in shift log.</div>
+          </div>
+          <div class="layer-action"><div class="layer-action-val" style="background:#e8f8ee;color:#1a7040;border:1px solid #1a7040;">REDUCE LOAD</div><div style="font-size:7.5px;color:#778899;">log observation</div></div>
+        </div>
+      </div>
+      <div class="layer-arrow"></div>
+
+      <div class="layer layer-amber">
+        <div class="layer-bar"></div>
+        <div class="layer-inner">
+          <div class="layer-badge">2</div>
+          <div class="layer-content">
+            <div class="layer-title">Amber Warning Lamp Illuminates</div>
+            <div class="layer-desc">Non-critical fault or threshold crossed. Reduce load immediately, identify the system. Note fault code. Continue to nearest safe stop — do not complete the full work cycle.</div>
+          </div>
+          <div class="layer-action"><div class="layer-action-val" style="background:#fff8e0;color:#cc8800;border:1px solid #cc8800;">SAFE STOP</div><div style="font-size:7.5px;color:#778899;">note fault code</div></div>
+        </div>
+      </div>
+      <div class="layer-arrow"></div>
+
+      <div class="layer layer-amber">
+        <div class="layer-bar"></div>
+        <div class="layer-inner">
+          <div class="layer-badge">3</div>
+          <div class="layer-content">
+            <div class="layer-title">At Safe Stop — Assess and Decide</div>
+            <div class="layer-desc">Operator looks up fault code in model manual. Three outcomes: (a) operator-resolvable — act and restart. (b) monitor-and-continue — per manual guidance. (c) escalate — call service.</div>
+          </div>
+          <div class="layer-action"><div class="layer-action-val" style="background:#fff8e0;color:#cc8800;border:1px solid #cc8800;">ASSESS</div><div style="font-size:7.5px;color:#778899;">3 outcomes</div></div>
+        </div>
+      </div>
+      <div class="layer-arrow"></div>
+
+      <div class="layer layer-red">
+        <div class="layer-bar"></div>
+        <div class="layer-inner">
+          <div class="layer-badge">4</div>
+          <div class="layer-content">
+            <div class="layer-title">Red Warning Lamp — Critical Fault</div>
+            <div class="layer-desc">Critical system threshold crossed. Stop machine at next safe point within the current motion — do not continue a work cycle. Apply park brake, lower any raised load safely, shut down engine.</div>
+          </div>
+          <div class="layer-action"><div class="layer-action-val" style="background:#ffe8e0;color:#cc3d00;border:1px solid #cc3d00;">STOP NOW</div><div style="font-size:7.5px;color:#778899;">lower load first</div></div>
+        </div>
+      </div>
+      <div class="layer-arrow"></div>
+
+      <div class="layer layer-darkred">
+        <div class="layer-bar"></div>
+        <div class="layer-inner">
+          <div class="layer-badge">5</div>
+          <div class="layer-content">
+            <div class="layer-title">Machine Secured — Escalate to Service</div>
+            <div class="layer-desc">Park brake set, engine off, key removed. Complete the fault report form with fault codes, conditions, and timeline. Machine is out-of-service until service team clears and restarts.</div>
+          </div>
+          <div class="layer-action"><div class="layer-action-val" style="background:#fee8e8;color:#8b2000;border:1px solid #8b2000;">OUT OF SVC</div><div style="font-size:7.5px;color:#778899;">service team</div></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="notes-panel">
+      <div class="note-box">
+        <div class="note-head">Amber vs. Red — Know the Difference</div>
+        <div class="note-body"><strong>Amber</strong> = advisory — the system has crossed a threshold but has not failed. You have time to reach a safe stop and assess.<br><br><strong>Red</strong> = critical — a protected system is at or beyond its safety boundary. Stop is required immediately, not at the next convenient point.</div>
+      </div>
+      <div class="note-box">
+        <div class="note-head">Lowering a Load Before Shutdown</div>
+        <div class="note-body">When a red lamp illuminates while a load is suspended or raised: <strong>lower the load to the ground or a stable position before shutting down.</strong> Hydraulic pressure will bleed off after shutdown — an unsecured load will drop if left raised.</div>
+      </div>
+      <div class="note-box red-accent">
+        <div class="note-head">Do Not Clear and Retry</div>
+        <div class="note-body"><strong>Resetting a fault lamp and restarting does not repair the fault.</strong> If the same fault reappears within one work cycle, the machine must be taken out of service. Two occurrences = service mandatory.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="key-concept-bar">
+    <div class="key-concept-text"><strong>Warning response hierarchy:</strong> Proactive load reduction → amber safe stop + assess → red stop now + secure → escalate. Each level requires a log entry before resuming or handing off.</div>
+  </div>
+</div>
+</body>
+</html>

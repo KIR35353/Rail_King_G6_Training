@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>Common Adjustments in Operation | Section 4</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { width: 1040px; min-height: 510px; overflow: hidden; background: #f8fafb; font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #334466; }
+.header { background: #002060; color: #fff; height: 50px; display: flex; align-items: center; justify-content: space-between; padding: 0 18px; }
+.header-title { font-size: 13px; font-weight: bold; letter-spacing: 0.3px; text-transform: uppercase; }
+.header-tag { font-size: 9px; font-weight: bold; letter-spacing: 1.4px; text-transform: uppercase; color: #80b4dc; background: rgba(255,255,255,0.1); padding: 3px 10px; border-radius: 10px; }
+.main { height: 460px; display: flex; gap: 12px; padding: 14px 18px 12px; }
+.panel { flex: 1; background: #fff; border-radius: 8px; border: 1px solid #dce7f5; padding: 14px 16px; display: flex; flex-direction: column; gap: 7px; min-width: 0; }
+.panel-heading { font-size: 11px; font-weight: bold; color: #002060; border-bottom: 2px solid #cc3d00; padding-bottom: 5px; margin-bottom: 4px; }
+
+/* Adjustment cards */
+.adj-row { display: flex; align-items: flex-start; gap: 10px; padding: 5px 0; border-bottom: 1px solid #f0f4fa; }
+.adj-row:last-child { border-bottom: none; }
+.adj-icon { width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; }
+.adj-body { flex: 1; }
+.adj-title { font-size: 9.5px; font-weight: bold; color: #1a3660; margin-bottom: 2px; }
+.adj-desc  { font-size: 8.5px; color: #334466; line-height: 1.5; }
+.adj-scope { font-size: 8px; font-weight: bold; padding: 1px 6px; border-radius: 3px; display: inline-block; margin-top: 3px; }
+.scope-op  { background: #e8f8ee; color: #1a5c30; }
+.scope-svc { background: #fff0e8; color: #cc6000; }
+
+/* Right: boundary table */
+.boundary-intro { font-size: 9px; color: #6a7d94; line-height: 1.5; margin-bottom: 2px; }
+.b-table { width: 100%; border-collapse: collapse; font-size: 8.5px; }
+.b-table th { background: #002060; color: #fff; padding: 5px 8px; text-align: left; font-size: 8px; font-weight: bold; letter-spacing: 0.4px; text-transform: uppercase; }
+.b-table td { padding: 5px 8px; border-bottom: 1px solid #eef3fa; vertical-align: top; color: #334466; line-height: 1.45; }
+.b-table tr:last-child td { border-bottom: none; }
+.b-table tr:nth-child(even) td { background: #f8fafb; }
+.badge { display: inline-block; font-size: 7.5px; font-weight: bold; padding: 1px 5px; border-radius: 3px; }
+.badge-op  { background: #e8f8ee; color: #1a5c30; }
+.badge-svc { background: #fee8e8; color: #8b2000; }
+
+.key-concept-bar { background: #fff4ee; border: 1px solid #e8c0a8; border-left: 4px solid #cc3d00; border-radius: 7px; padding: 8px 16px; }
+.key-concept-text { font-size: 10px; color: #334466; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-title">Common Adjustments in Operation</div>
+  <div class="header-tag">Section 4</div>
+</div>
+<div class="main">
+  <!-- LEFT: Operator-level adjustments -->
+  <div class="panel">
+    <div class="panel-heading">Operator-Level Adjustments</div>
+    <div class="adj-row">
+      <div class="adj-icon" style="background:#e8f0f8;">⚙</div>
+      <div class="adj-body">
+        <div class="adj-title">Throttle / Engine Speed Control</div>
+        <div class="adj-desc">Adjust engine speed to match work demand. High-idle for heavy lifting and travel; low-idle during standby. Do not run at high-idle unloaded for extended periods.</div>
+        <div class="adj-scope scope-op">OPERATOR</div>
+      </div>
+    </div>
+    <div class="adj-row">
+      <div class="adj-icon" style="background:#e8f0f8;">🔄</div>
+      <div class="adj-body">
+        <div class="adj-title">Direction and Speed Selection</div>
+        <div class="adj-desc">Use the directional selector and speed range to match grade and load. Downshift before steep grades — do not change direction under load without coming to a full stop first.</div>
+        <div class="adj-scope scope-op">OPERATOR</div>
+      </div>
+    </div>
+    <div class="adj-row">
+      <div class="adj-icon" style="background:#fff0e8;">💧</div>
+      <div class="adj-body">
+        <div class="adj-title">Hydraulic Flow Adjustments (Operator Control)</div>
+        <div class="adj-desc">Modulate control inputs to reduce heat buildup during sustained actuation. If hydraulic temp rises above normal, pause and allow idle cool-down before resuming heavy actuation.</div>
+        <div class="adj-scope scope-op">OPERATOR</div>
+      </div>
+    </div>
+    <div class="adj-row">
+      <div class="adj-icon" style="background:#e8f8ee;">🌡</div>
+      <div class="adj-body">
+        <div class="adj-title">Load Reduction in Response to Temps</div>
+        <div class="adj-desc">If coolant or hydraulic temp approaches the upper band, reduce duty cycle before a warning lamp activates. Proactive load reduction prevents a forced shutdown.</div>
+        <div class="adj-scope scope-op">OPERATOR</div>
+      </div>
+    </div>
+    <div class="adj-row">
+      <div class="adj-icon" style="background:#fff8e0;">🔔</div>
+      <div class="adj-body">
+        <div class="adj-title">Horn and Light Controls</div>
+        <div class="adj-desc">Use horn before moving and when entering blind areas. Activate work lights as required for site conditions — not for decoration. Leaving lights on at shutdown drains the battery.</div>
+        <div class="adj-scope scope-op">OPERATOR</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Operator vs Service boundary table -->
+  <div class="panel">
+    <div class="panel-heading">Operator vs. Service Boundary</div>
+    <div class="boundary-intro">These adjustments look similar but require different authorisation levels. Never cross the boundary without proper authorisation and documentation.</div>
+    <table class="b-table">
+      <thead>
+        <tr><th>Adjustment</th><th>Who?</th><th>Why the line is here</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Engine throttle / speed selector</td><td><span class="badge badge-op">OPERATOR</span></td><td>Control input only — no hardware change involved.</td></tr>
+        <tr><td>Hydraulic relief valve pressure setting</td><td><span class="badge badge-svc">SERVICE</span></td><td>Requires calibrated gauge, procedure, and torque seal. Wrong setting causes system damage or safety risk.</td></tr>
+        <tr><td>Directional selector / gear range</td><td><span class="badge badge-op">OPERATOR</span></td><td>Normal operational control — within manufacturer design.</td></tr>
+        <tr><td>Flow control valve setting on circuit</td><td><span class="badge badge-svc">SERVICE</span></td><td>Affects cylinder speed; must match spec. Incorrect setting risks structural overload.</td></tr>
+        <tr><td>Idle speed dial (if fitted)</td><td><span class="badge badge-op">OPERATOR</span></td><td>Operator-accessible control with defined travel range.</td></tr>
+        <tr><td>Engine governor or fuel rack adjustment</td><td><span class="badge badge-svc">SERVICE</span></td><td>Certified technician only. Affects emissions and engine warranty.</td></tr>
+        <tr><td>Load shedding / duty cycle reduction</td><td><span class="badge badge-op">OPERATOR</span></td><td>Reducing work intensity is always within operator authority.</td></tr>
+        <tr><td>Air brake proportioning valve</td><td><span class="badge badge-svc">SERVICE</span></td><td>Safety-critical circuit. Requires post-adjustment brake test.</td></tr>
+      </tbody>
+    </table>
+    <div class="key-concept-bar" style="margin-top:auto;">
+      <div class="key-concept-text"><strong>If in doubt, it's a service item.</strong> Operators control inputs — technicians adjust components.</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

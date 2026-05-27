@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>Handoff Between Operators | Section 4</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { width: 1040px; min-height: 510px; overflow: hidden; background: #f8fafb; font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #334466; }
+.header { background: #002060; color: #fff; height: 50px; display: flex; align-items: center; justify-content: space-between; padding: 0 18px; }
+.header-title { font-size: 13px; font-weight: bold; letter-spacing: 0.3px; text-transform: uppercase; }
+.header-tag { font-size: 9px; font-weight: bold; letter-spacing: 1.4px; text-transform: uppercase; color: #80b4dc; background: rgba(255,255,255,0.1); padding: 3px 10px; border-radius: 10px; }
+.main { height: 460px; display: flex; gap: 12px; padding: 14px 18px 12px; }
+.panel { flex: 1; background: #fff; border-radius: 8px; border: 1px solid #dce7f5; padding: 14px 16px; display: flex; flex-direction: column; gap: 7px; min-width: 0; }
+.panel-heading { font-size: 11px; font-weight: bold; color: #002060; border-bottom: 2px solid #cc3d00; padding-bottom: 5px; margin-bottom: 4px; }
+
+/* Left: handoff steps */
+.step-row { display: flex; align-items: flex-start; gap: 10px; padding: 5px 0; border-bottom: 1px solid #f0f4fa; }
+.step-row:last-child { border-bottom: none; }
+.step-num { width: 22px; height: 22px; border-radius: 50%; background: #002060; color: #fff; font-size: 9px; font-weight: bold; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.step-body { flex: 1; }
+.step-title { font-size: 9.5px; font-weight: bold; color: #1a3660; margin-bottom: 2px; }
+.step-desc  { font-size: 8.5px; color: #334466; line-height: 1.5; }
+.step-who   { font-size: 8px; font-weight: bold; padding: 1px 6px; border-radius: 3px; display: inline-block; margin-top: 3px; }
+.who-out    { background: #e8f0f8; color: #1a3660; }
+.who-both   { background: #f0eefc; color: #4a3a8a; }
+.who-in     { background: #e8f8ee; color: #1a5c30; }
+
+/* Right panel */
+.handoff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; flex: 1; }
+.hg-card { border-radius: 6px; padding: 8px 10px; display: flex; flex-direction: column; gap: 3px; }
+.hg-card.blue   { background: #e8f0f8; border: 1px solid #3d7fbd; }
+.hg-card.orange { background: #fff0e8; border: 1px solid #cc6000; }
+.hg-card.green  { background: #e8f8ee; border: 1px solid #1a7040; }
+.hg-card.red    { background: #ffe8e0; border: 1px solid #cc3d00; }
+.hg-label { font-size: 8px; font-weight: bold; letter-spacing: 0.5px; text-transform: uppercase; }
+.hg-card.blue   .hg-label { color: #1d5fa8; }
+.hg-card.orange .hg-label { color: #cc6000; }
+.hg-card.green  .hg-label { color: #1a7040; }
+.hg-card.red    .hg-label { color: #cc3d00; }
+.hg-text { font-size: 8.5px; color: #334466; line-height: 1.45; }
+
+.key-concept-bar { background: #fff4ee; border: 1px solid #e8c0a8; border-left: 4px solid #cc3d00; border-radius: 7px; padding: 8px 16px; }
+.key-concept-text { font-size: 10px; color: #334466; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-title">Handoff Between Operators</div>
+  <div class="header-tag">Section 4</div>
+</div>
+<div class="main">
+  <!-- LEFT: Handoff sequence -->
+  <div class="panel">
+    <div class="panel-heading">Operator Handoff Sequence</div>
+
+    <div class="step-row">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-title">Outgoing Operator Brings Machine to Safe Hold</div>
+        <div class="step-desc">Complete the current work cycle. Bring unit to a designated handoff point — clear of loads, on level ground, park brake set, engine at low-idle.</div>
+        <div class="step-who who-out">OUTGOING</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-title">Outgoing Completes Shift Log Entry</div>
+        <div class="step-desc">Record hour meter reading, any fault codes observed, fluid top-ups performed, and anomalies noted during the shift. Entry must be complete before verbal handoff begins.</div>
+        <div class="step-who who-out">OUTGOING</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-title">Verbal Brief — Outgoing to Incoming</div>
+        <div class="step-desc">Cover: machine condition, any active or cleared faults, fuel and fluid status, any deferred items, and any site-specific hazards observed during the shift.</div>
+        <div class="step-who who-both">BOTH PRESENT</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <div class="step-title">Incoming Operator Performs Walk-Around</div>
+        <div class="step-desc">Do not accept the machine on the verbal brief alone. Incoming operator completes an abbreviated pre-op check: fluids, visible damage, tyre/track condition, attachment security.</div>
+        <div class="step-who who-in">INCOMING</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <div class="step-title">Incoming Signs On — Outgoing Signs Off</div>
+        <div class="step-desc">Both operators sign the shift log (or digital equivalent). Incoming's name and time recorded as accepting responsibility. Outgoing's shift is formally closed.</div>
+        <div class="step-who who-both">BOTH SIGN</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: What must transfer and what breaks the handoff -->
+  <div class="panel">
+    <div class="panel-heading">What the Handoff Must Transfer</div>
+    <div class="handoff-grid">
+      <div class="hg-card blue">
+        <div class="hg-label">Machine Status</div>
+        <div class="hg-text">Hour meter reading, fuel level, hydraulic fluid level, any top-ups performed during shift</div>
+      </div>
+      <div class="hg-card blue">
+        <div class="hg-label">Fault History</div>
+        <div class="hg-text">All fault codes seen, even if cleared. Whether codes re-appeared. Any amber lamps that came and went.</div>
+      </div>
+      <div class="hg-card orange">
+        <div class="hg-label">Deferred Items</div>
+        <div class="hg-text">Any defect noted but not resolved — seal weep, unusual noise, slow travel — that incoming must monitor.</div>
+      </div>
+      <div class="hg-card orange">
+        <div class="hg-label">Site Conditions</div>
+        <div class="hg-text">Ground conditions, overhead hazards, traffic patterns, or environmental changes observed during the shift.</div>
+      </div>
+      <div class="hg-card green">
+        <div class="hg-label">Work Order / Task Status</div>
+        <div class="hg-text">What work was completed, what is in-progress, what is pending — so the incoming can prioritise without rework.</div>
+      </div>
+      <div class="hg-card red">
+        <div class="hg-label">Do Not Accept If…</div>
+        <div class="hg-text">Active red fault lamp. Raised unsecured load. Missing log entry. Outgoing unable to brief. Escalate to supervisor.</div>
+      </div>
+    </div>
+    <div class="key-concept-bar" style="margin-top:auto;">
+      <div class="key-concept-text"><strong>Accepting the machine = accepting responsibility.</strong> If you did not perform the check, you cannot sign the log.</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
