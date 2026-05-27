@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>Post-Operation Inspection | Section 5</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #f8fafb; font-family: Arial, Helvetica, sans-serif; width: 1040px; min-height: 510px; overflow: hidden; }
+.header { background: #002060; color: #fff; height: 50px; display: flex; align-items: center; padding: 0 24px; justify-content: space-between; }
+.header-title { font-size: 13px; font-weight: bold; letter-spacing: 0.9px; text-transform: uppercase; }
+.header-tag { background: #1a3660; border: 1px solid #3d7fbd; border-radius: 12px; padding: 4px 16px; font-size: 10px; font-weight: bold; color: #88aacc; letter-spacing: 0.5px; }
+.outer { padding: 10px 16px 0; display: flex; flex-direction: column; gap: 8px; }
+.main-row { display: flex; gap: 14px; align-items: flex-start; }
+.layers-panel { flex: 0 0 545px; display: flex; flex-direction: column; gap: 0; }
+.layer { display: flex; align-items: stretch; border-radius: 4px; overflow: hidden; border: 1.5px solid #c8d8e8; }
+.layer-bar { width: 8px; flex-shrink: 0; }
+.layer-inner { flex: 1; display: flex; align-items: center; padding: 6px 12px; gap: 10px; background: #fff; }
+.layer-badge { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: bold; color: #fff; flex-shrink: 0; }
+.layer-content { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.layer-title { font-size: 9px; font-weight: bold; color: #1a3660; letter-spacing: 0.3px; }
+.layer-desc { font-size: 8.5px; color: #334466; line-height: 1.5; }
+.layer-flag { text-align: right; flex-shrink: 0; min-width: 72px; display: flex; flex-direction: column; align-items: flex-end; justify-content: center; gap: 2px; }
+.layer-flag-val { font-size: 8px; font-weight: bold; padding: 2px 7px; border-radius: 3px; }
+.layer-flag-label { font-size: 7.5px; color: #778899; }
+.layer-arrow { display: flex; align-items: center; justify-content: center; height: 9px; margin: 0 0 0 12px; }
+.layer-arrow::before { content: ''; display: block; width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 7px solid #8899aa; }
+.layer-navy   .layer-bar, .layer-navy   .layer-badge { background: #1a3660; }
+.layer-navy   .layer-inner { background: #e8f0f8; border-color: #1a3660; }
+.layer-blue   .layer-bar, .layer-blue   .layer-badge { background: #1d5fa8; }
+.layer-blue   .layer-inner { background: #eef4fb; border-color: #3d7fbd; }
+.layer-green  .layer-bar, .layer-green  .layer-badge { background: #1a7040; }
+.layer-green  .layer-inner { background: #e8f8ee; border-color: #1a7040; }
+.layer-amber  .layer-bar, .layer-amber  .layer-badge { background: #cc8800; }
+.layer-amber  .layer-inner { background: #fff8e0; border-color: #cc8800; }
+.layer-orange .layer-bar, .layer-orange .layer-badge { background: #cc6000; }
+.layer-orange .layer-inner { background: #fff0e8; border-color: #cc6000; }
+.notes-panel { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.note-box { background: #fff; border: 1.5px solid #c8d8e8; border-left: 4px solid #002060; border-radius: 0 7px 7px 0; padding: 8px 12px 8px 14px; }
+.note-box.amber-accent { border-left-color: #cc8800; }
+.note-head { font-size: 9.5px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.4px; color: #1a3660; margin-bottom: 4px; }
+.note-box.amber-accent .note-head { color: #7a5000; }
+.note-body { font-size: 8.5px; color: #334466; line-height: 1.65; }
+.note-body strong { color: #002060; }
+.defect-list { display: flex; flex-direction: column; gap: 3px; }
+.defect-row { display: flex; align-items: center; gap: 6px; font-size: 8px; }
+.defect-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.defect-text { color: #334466; }
+.key-concept-bar { background: #fff4ee; border: 1px solid #e8c0a8; border-left: 4px solid #cc3d00; border-radius: 7px; padding: 7px 18px 7px 22px; }
+.key-concept-text { font-size: 10px; color: #334466; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-title">Post-Operation Inspection</div>
+  <div class="header-tag">Section 5</div>
+</div>
+<div class="outer">
+  <div class="main-row">
+    <div class="layers-panel">
+
+      <div class="layer layer-navy">
+        <div class="layer-bar"></div>
+        <div class="layer-inner">
+          <div class="layer-badge">1</div>
+          <div class="layer-content">
+            <div class="layer-title">Walk the Exterior — Structural and Visible Damage</div>
+            <div class="layer-desc">Check frame, body panels, guards, and attachment mounting points. Look for cracks, bent components, missing fasteners, or impact damage not noticed during operation.</div>
+          </div>
+          <div class="layer-flag"><div class="layer-flag-val" style="background:#e2eaf8;color:#1a3660;border:1px solid #1a3660;">VISUAL</div><div class="layer-flag-label">360° walk</div></div>
+        </div>
+      </div>
+      <div class="layer-arrow"></div>
+
+      <div class="layer layer-blue">
+        <div class="layer-bar"></div>
+        <div class="layer-inner">
+          <div class="layer-badge">2</div>
+          <div class="layer-content">
+            <div class="layer-title">Check for Fluid Leaks</div>
+            <div class="layer-desc">Inspect ground beneath the machine and all circuit connections. Check engine oil, coolant, hydraulic lines, gearbox breathers, and air fittings for seepage, drips, or puddles.</div>
+          </div>
+          <div class="layer-flag"><div class="layer-flag-val" style="background:#eef4fb;color:#1d5fa8;border:1px solid #3d7fbd;">FLUIDS</div><div class="layer-flag-label">ground check</div></div>
+        </div>
+      </div>
+      <div class="layer-arrow"></div>
+
+      <div class="layer layer-blue">
+        <div class="layer-bar"></div>
+        <div class="layer-inner">
+          <div class="layer-badge">3</div>
+          <div class="layer-content">
+            <div class="layer-title">Fluid Level Top-Ups</div>
+            <div class="layer-desc">Top up engine oil, coolant, hydraulic reservoir, and diesel DEF as required. Record any quantity added in the shift log — unusual consumption indicates a developing fault.</div>
+          </div>
+          <div class="layer-flag"><div class="layer-flag-val" style="background:#eef4fb;color:#1d5fa8;border:1px solid #3d7fbd;">TOP-UP</div><div class="layer-flag-label">log qty</div></div>
+        </div>
+      </div>
+      <div class="layer-arrow"></div>
+
+      <div class="layer layer-green">
+        <div class="layer-bar"></div>
+        <div class="layer-inner">
+          <div class="layer-badge">4</div>
+          <div class="layer-content">
+            <div class="layer-title">Tyre / Track and Undercarriage Check</div>
+            <div class="layer-desc">Check tyre pressures visually (or with gauge per site procedure). Inspect tracks for tension, damaged pads, or missing hardware. Clear any debris packed into undercarriage.</div>
+          </div>
+          <div class="layer-flag"><div class="layer-flag-val" style="background:#e8f8ee;color:#1a7040;border:1px solid #1a7040;">RUNNING GEAR</div><div class="layer-flag-label">clear debris</div></div>
+        </div>
+      </div>
+      <div class="layer-arrow"></div>
+
+      <div class="layer layer-amber">
+        <div class="layer-bar"></div>
+        <div class="layer-inner">
+          <div class="layer-badge">5</div>
+          <div class="layer-content">
+            <div class="layer-title">Attachment Condition and Security</div>
+            <div class="layer-desc">Check cutting edges, wear plates, pins, and retaining hardware. Any excessive wear, cracking, or loose pins must be documented and flagged to service before next shift use.</div>
+          </div>
+          <div class="layer-flag"><div class="layer-flag-val" style="background:#fff8e0;color:#cc8800;border:1px solid #cc8800;">ATTACHMENT</div><div class="layer-flag-label">wear / pins</div></div>
+        </div>
+      </div>
+      <div class="layer-arrow"></div>
+
+      <div class="layer layer-orange">
+        <div class="layer-bar"></div>
+        <div class="layer-inner">
+          <div class="layer-badge">6</div>
+          <div class="layer-content">
+            <div class="layer-title">Complete Post-Op Log Entry and Defect Report</div>
+            <div class="layer-desc">Record final hour meter, any defects found during post-op, fluid quantities added, and machine condition on handover. Any defect that affects safety or operability must be formally reported.</div>
+          </div>
+          <div class="layer-flag"><div class="layer-flag-val" style="background:#fff0e8;color:#cc6000;border:1px solid #cc6000;">LOG + REPORT</div><div class="layer-flag-label">before leaving</div></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="notes-panel">
+      <div class="note-box">
+        <div class="note-head">Why Post-Op Matters</div>
+        <div class="note-body">The post-op inspection is the best time to find faults — the machine is warm and any leaks or loose hardware that developed during operation are visible. A defect found at shutdown is an orderly repair; the same defect found mid-shift next day becomes a breakdown and potential safety event.</div>
+      </div>
+      <div class="note-box amber-accent">
+        <div class="note-head">Defect Severity Classification</div>
+        <div class="defect-list">
+          <div class="defect-row"><div class="defect-dot" style="background:#cc3d00;"></div><div class="defect-text"><strong>Red — Out of service:</strong> Fluid loss, brake fault, structural crack, attachment pin missing</div></div>
+          <div class="defect-row"><div class="defect-dot" style="background:#cc8800;"></div><div class="defect-text"><strong>Amber — Monitor / plan repair:</strong> Seep (not a drip), minor wear, non-critical lamp</div></div>
+          <div class="defect-row"><div class="defect-dot" style="background:#1a7040;"></div><div class="defect-text"><strong>Green — Serviceable:</strong> Logged, no immediate impact on safety or operation</div></div>
+        </div>
+      </div>
+      <div class="note-box">
+        <div class="note-head">Unusual Fluid Consumption</div>
+        <div class="note-body"><strong>Any fluid consumption greater than normal should be logged with quantity.</strong> A machine that requires 2 L of hydraulic oil top-up every shift has a leak — finding it early prevents a major failure and environmental contamination incident.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="key-concept-bar">
+    <div class="key-concept-text"><strong>The post-op inspection closes the shift.</strong> No operator leaves a machine without completing the log entry and filing any defect report — even if the next operator will be on site immediately.</div>
+  </div>
+</div>
+</body>
+</html>

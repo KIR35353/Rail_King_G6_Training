@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>Service Handoff Packet | Section 5</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { width: 1040px; min-height: 510px; overflow: hidden; background: #f8fafb; font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #334466; }
+.header { background: #002060; color: #fff; height: 50px; display: flex; align-items: center; justify-content: space-between; padding: 0 18px; }
+.header-title { font-size: 13px; font-weight: bold; letter-spacing: 0.3px; text-transform: uppercase; }
+.header-tag { font-size: 9px; font-weight: bold; letter-spacing: 1.4px; text-transform: uppercase; color: #80b4dc; background: rgba(255,255,255,0.1); padding: 3px 10px; border-radius: 10px; }
+.main { height: 460px; display: flex; gap: 12px; padding: 14px 18px 12px; }
+.panel { flex: 1; background: #fff; border-radius: 8px; border: 1px solid #dce7f5; padding: 14px 16px; display: flex; flex-direction: column; gap: 7px; min-width: 0; }
+.panel-heading { font-size: 11px; font-weight: bold; color: #002060; border-bottom: 2px solid #cc3d00; padding-bottom: 5px; margin-bottom: 4px; }
+
+/* Left: packet contents */
+.packet-intro { font-size: 9px; color: #6a7d94; line-height: 1.5; }
+.doc-row { display: flex; align-items: flex-start; gap: 10px; padding: 5px 0; border-bottom: 1px solid #f0f4fa; }
+.doc-row:last-child { border-bottom: none; }
+.doc-icon { width: 26px; height: 26px; border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; margin-top: 1px; }
+.doc-body { flex: 1; }
+.doc-title { font-size: 9.5px; font-weight: bold; color: #1a3660; margin-bottom: 2px; }
+.doc-desc  { font-size: 8.5px; color: #334466; line-height: 1.45; }
+.doc-req   { font-size: 8px; font-weight: bold; padding: 1px 6px; border-radius: 3px; display: inline-block; margin-top: 3px; }
+.req-must  { background: #ffe8e0; color: #8b2000; }
+.req-cond  { background: #fff8e0; color: #7a5000; }
+
+/* Right: quality + flow */
+.flow-intro { font-size: 9px; color: #6a7d94; line-height: 1.5; margin-bottom: 2px; }
+.flow-step { display: flex; align-items: center; gap: 10px; padding: 6px 10px; border-radius: 6px; margin-bottom: 6px; }
+.flow-step.op   { background: #e8f0f8; border: 1px solid #3d7fbd; }
+.flow-step.svc  { background: #e8f8ee; border: 1px solid #1a7040; }
+.flow-step.sup  { background: #fff8e0; border: 1px solid #cc8800; }
+.flow-icon { font-size: 14px; flex-shrink: 0; }
+.flow-body { flex: 1; }
+.flow-who  { font-size: 8px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 1px; }
+.flow-step.op  .flow-who { color: #1d5fa8; }
+.flow-step.svc .flow-who { color: #1a7040; }
+.flow-step.sup .flow-who { color: #7a5000; }
+.flow-text { font-size: 8.5px; color: #334466; line-height: 1.45; }
+.flow-arrow { text-align: center; font-size: 12px; color: #8899aa; margin: -2px 0; }
+
+.quality-note { background: #e8f0f8; border: 1px solid #3d7fbd; border-radius: 6px; padding: 8px 12px; }
+.quality-text { font-size: 8.5px; color: #1a3660; line-height: 1.5; }
+.quality-text strong { color: #002060; }
+
+.key-concept-bar { background: #fff4ee; border: 1px solid #e8c0a8; border-left: 4px solid #cc3d00; border-radius: 7px; padding: 8px 16px; }
+.key-concept-text { font-size: 10px; color: #334466; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-title">Service Handoff Packet</div>
+  <div class="header-tag">Section 5</div>
+</div>
+<div class="main">
+  <!-- LEFT: What goes in the packet -->
+  <div class="panel">
+    <div class="panel-heading">What the Service Handoff Packet Contains</div>
+    <div class="packet-intro">When a machine is handed to service — planned or unplanned — the operator assembles this packet. It is the service team's starting point and must be complete before the machine is accepted.</div>
+
+    <div class="doc-row">
+      <div class="doc-icon" style="background:#e2eaf8;">📋</div>
+      <div class="doc-body">
+        <div class="doc-title">Completed Shift Log (all entries current)</div>
+        <div class="doc-desc">Every shift entry from the last service event, including fault codes, fluid top-ups, and anomaly notes. Not just the most recent shift.</div>
+        <div class="doc-req req-must">MANDATORY</div>
+      </div>
+    </div>
+    <div class="doc-row">
+      <div class="doc-icon" style="background:#ffe8e0;">⚠</div>
+      <div class="doc-body">
+        <div class="doc-title">Defect Report Form</div>
+        <div class="doc-desc">Completed equipment tech support form (form_equip_tech_support) describing the fault: what happened, when, under what conditions, and how often it occurred.</div>
+        <div class="doc-req req-must">MANDATORY</div>
+      </div>
+    </div>
+    <div class="doc-row">
+      <div class="doc-icon" style="background:#fff8e0;">🔢</div>
+      <div class="doc-body">
+        <div class="doc-title">Current Hour Meter Reading</div>
+        <div class="doc-desc">Recorded at the moment of service handoff — not from memory or the last log entry. The service team uses this to determine which scheduled maintenance items are due.</div>
+        <div class="doc-req req-must">MANDATORY</div>
+      </div>
+    </div>
+    <div class="doc-row">
+      <div class="doc-icon" style="background:#e8f8ee;">📸</div>
+      <div class="doc-body">
+        <div class="doc-title">Photos of Visible Defects</div>
+        <div class="doc-desc">If the defect involves visible damage, leaks, or wear — photograph before handing off. Photos are attached to the defect report or sent with the tech support form.</div>
+        <div class="doc-req req-cond">IF APPLICABLE</div>
+      </div>
+    </div>
+    <div class="doc-row">
+      <div class="doc-icon" style="background:#e8f8ee;">🔑</div>
+      <div class="doc-body">
+        <div class="doc-title">Keys and Access Items</div>
+        <div class="doc-desc">Machine key, fuel card (if applicable), and any access codes or site-specific items the service technician will need to perform the work.</div>
+        <div class="doc-req req-cond">IF APPLICABLE</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Handoff flow + quality note -->
+  <div class="panel">
+    <div class="panel-heading">Handoff Flow — Operator to Service</div>
+    <div class="flow-intro">The packet moves through three hands. Each stage has a defined responsibility.</div>
+
+    <div class="flow-step op">
+      <div class="flow-icon">👷</div>
+      <div class="flow-body">
+        <div class="flow-who">Operator</div>
+        <div class="flow-text">Completes shift log, defect report, and hour meter record. Assembles packet. Secures machine. Notifies supervisor of out-of-service status.</div>
+      </div>
+    </div>
+    <div class="flow-arrow">▼</div>
+    <div class="flow-step sup">
+      <div class="flow-icon">📎</div>
+      <div class="flow-body">
+        <div class="flow-who">Supervisor / Site Coordinator</div>
+        <div class="flow-text">Reviews packet for completeness. Confirms machine is locked out. Submits tech support form to dealer or service contact. Sets repair priority.</div>
+      </div>
+    </div>
+    <div class="flow-arrow">▼</div>
+    <div class="flow-step svc">
+      <div class="flow-icon">🔧</div>
+      <div class="flow-body">
+        <div class="flow-who">Service Technician</div>
+        <div class="flow-text">Receives complete packet. Uses shift log history and defect report to diagnose before opening the machine. Returns machine with a signed service record.</div>
+      </div>
+    </div>
+
+    <div class="quality-note" style="margin-top:auto;">
+      <div class="quality-text"><strong>Incomplete packets create delays.</strong> A service technician who arrives without a defect report, shift log, or hour meter reading must spend diagnostic time reconstructing what the operator already knew. Every missing piece adds time and cost to the repair.</div>
+    </div>
+
+    <div class="key-concept-bar">
+      <div class="key-concept-text"><strong>The operator's job ends when the packet is complete</strong> — not when the key is handed over. The packet is as important as securing the machine.</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
