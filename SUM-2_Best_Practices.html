@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>Best Practices | Course Summary</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { width: 1040px; min-height: 510px; overflow: hidden; background: #f8fafb; font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #334466; }
+.header { background: #002060; color: #fff; height: 50px; display: flex; align-items: center; justify-content: space-between; padding: 0 18px; }
+.header-title { font-size: 13px; font-weight: bold; letter-spacing: 0.3px; text-transform: uppercase; }
+.header-tag { font-size: 9px; font-weight: bold; letter-spacing: 1.4px; text-transform: uppercase; color: #80b4dc; background: rgba(255,255,255,0.1); padding: 3px 10px; border-radius: 10px; }
+.main { height: 460px; display: flex; gap: 12px; padding: 14px 18px 12px; }
+.panel { flex: 1; background: #fff; border-radius: 8px; border: 1px solid #dce7f5; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.panel-heading { font-size: 11px; font-weight: bold; color: #002060; border-bottom: 2px solid #cc3d00; padding-bottom: 5px; margin-bottom: 4px; }
+
+.bp-row { display: flex; align-items: flex-start; gap: 10px; padding: 5px 0; border-bottom: 1px solid #f0f4fa; }
+.bp-row:last-child { border-bottom: none; }
+.bp-icon { width: 26px; height: 26px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; }
+.bp-body { flex: 1; }
+.bp-title { font-size: 9.5px; font-weight: bold; color: #1a3660; margin-bottom: 2px; }
+.bp-desc  { font-size: 8.5px; color: #334466; line-height: 1.5; }
+.bp-tag   { font-size: 8px; font-weight: bold; padding: 1px 6px; border-radius: 3px; display: inline-block; margin-top: 3px; }
+
+/* Right panel — never/always grid */
+.na-intro { font-size: 9px; color: #6a7d94; line-height: 1.5; margin-bottom: 4px; }
+.na-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; flex: 1; }
+.na-col { display: flex; flex-direction: column; gap: 5px; }
+.na-col-header { padding: 5px 10px; border-radius: 5px 5px 0 0; font-size: 8.5px; font-weight: bold; text-align: center; letter-spacing: 0.4px; text-transform: uppercase; }
+.always .na-col-header { background: #1a7040; color: #fff; }
+.never  .na-col-header { background: #cc3d00; color: #fff; }
+.na-item { background: #fff; border: 1px solid #dce7f5; border-radius: 4px; padding: 6px 9px; font-size: 8.5px; color: #334466; line-height: 1.45; display: flex; align-items: flex-start; gap: 6px; }
+.na-item-icon { flex-shrink: 0; font-size: 10px; margin-top: 1px; }
+.always .na-item { border-left: 3px solid #1a7040; }
+.never  .na-item { border-left: 3px solid #cc3d00; }
+
+.exam-callout { background: #002060; border-radius: 8px; padding: 10px 16px; display: flex; align-items: center; gap: 14px; }
+.exam-icon { font-size: 22px; flex-shrink: 0; }
+.exam-body { flex: 1; }
+.exam-head { font-size: 11px; font-weight: bold; color: #e8a840; margin-bottom: 4px; }
+.exam-text { font-size: 9px; color: #dce7f5; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-title">Best Practices</div>
+  <div class="header-tag">Course Summary</div>
+</div>
+<div class="main">
+  <!-- LEFT: Operational best practices -->
+  <div class="panel">
+    <div class="panel-heading">Operational Best Practices</div>
+
+    <div class="bp-row">
+      <div class="bp-icon" style="background:#e8f8ee;">📋</div>
+      <div class="bp-body">
+        <div class="bp-title">Log Every Shift — Even Uneventful Ones</div>
+        <div class="bp-desc">A "nothing to report" entry with unit ID, hour meter, and operator name is a valid and valuable record. It establishes baseline condition and supports warranty coverage.</div>
+        <div class="bp-tag" style="background:#e8f8ee;color:#1a7040;">DOCUMENTATION</div>
+      </div>
+    </div>
+    <div class="bp-row">
+      <div class="bp-icon" style="background:#e8f0f8;">🌡</div>
+      <div class="bp-body">
+        <div class="bp-title">Act on Trend, Not on Alarm</div>
+        <div class="bp-desc">Reduce load when a gauge climbs toward the upper band — before the lamp illuminates. Proactive response avoids forced shutdowns and protects components from threshold damage.</div>
+        <div class="bp-tag" style="background:#e8f0f8;color:#1d5fa8;">MONITORING</div>
+      </div>
+    </div>
+    <div class="bp-row">
+      <div class="bp-icon" style="background:#fff8e0;">⚙</div>
+      <div class="bp-body">
+        <div class="bp-title">Warm Up and Cool Down Are Not Optional</div>
+        <div class="bp-desc">Low-idle warm-up before loading and low-idle cool-down before shutdown protect the turbocharger, hydraulic seals, and engine bearings — the most expensive components on the machine.</div>
+        <div class="bp-tag" style="background:#fff8e0;color:#7a5000;">OPERATION</div>
+      </div>
+    </div>
+    <div class="bp-row">
+      <div class="bp-icon" style="background:#ffe8e0;">🔍</div>
+      <div class="bp-body">
+        <div class="bp-title">Post-Op Is the Best Time to Find Faults</div>
+        <div class="bp-desc">A warm machine shows its leaks. An end-of-shift inspection costs 5 minutes; a mid-shift breakdown costs hours and risks safety. Inspect while you still have time to act in an orderly way.</div>
+        <div class="bp-tag" style="background:#ffe8e0;color:#cc3d00;">INSPECTION</div>
+      </div>
+    </div>
+    <div class="bp-row">
+      <div class="bp-icon" style="background:#e8f8ee;">🤝</div>
+      <div class="bp-body">
+        <div class="bp-title">Accept the Machine — Accept the Responsibility</div>
+        <div class="bp-desc">Never sign a handoff log without completing your own walk-around. The incoming operator who skips the check is the operator who inherits an undiscovered fault.</div>
+        <div class="bp-tag" style="background:#e8f8ee;color:#1a7040;">HANDOFF</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Never / Always + exam callout -->
+  <div class="panel">
+    <div class="panel-heading">On the Job — Always and Never</div>
+    <div class="na-intro">These are the hard rules that do not bend under time pressure or convenience.</div>
+    <div class="na-grid">
+      <div class="na-col always">
+        <div class="na-col-header">✓ Always</div>
+        <div class="na-item"><span class="na-item-icon">✓</span>Complete the walk-around before every startup — no exceptions.</div>
+        <div class="na-item"><span class="na-item-icon">✓</span>Lower all loads before shutdown or emergency stop.</div>
+        <div class="na-item"><span class="na-item-icon">✓</span>Record fault codes exactly as displayed — don't rely on memory.</div>
+        <div class="na-item"><span class="na-item-icon">✓</span>Match the model to the manual before applying any specification.</div>
+        <div class="na-item"><span class="na-item-icon">✓</span>Escalate when the fault is beyond your authority to resolve.</div>
+      </div>
+      <div class="na-col never">
+        <div class="na-col-header">✗ Never</div>
+        <div class="na-item"><span class="na-item-icon">✗</span>Clear a red fault lamp and restart without identifying the cause.</div>
+        <div class="na-item"><span class="na-item-icon">✗</span>Leave the ignition key in an unattended machine.</div>
+        <div class="na-item"><span class="na-item-icon">✗</span>Park with a load raised — pressure bleeds after shutdown.</div>
+        <div class="na-item"><span class="na-item-icon">✗</span>Apply a service-level adjustment without the correct document in hand.</div>
+        <div class="na-item"><span class="na-item-icon">✗</span>Accept a machine handoff without performing your own check.</div>
+      </div>
+    </div>
+
+    <div class="exam-callout" style="margin-top:auto;">
+      <div class="exam-icon">📝</div>
+      <div class="exam-body">
+        <div class="exam-head">Ready for the Final Assessment?</div>
+        <div class="exam-text">The final exam covers all six sections — 20 questions, 80% pass mark (16 correct). Questions test the concepts, rules, and document knowledge from this course. Review any section you feel less confident in before proceeding.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

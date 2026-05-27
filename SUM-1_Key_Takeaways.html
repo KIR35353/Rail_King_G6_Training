@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>Key Takeaways | Course Summary</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #f8fafb; font-family: Arial, Helvetica, sans-serif; width: 1040px; min-height: 510px; overflow: hidden; }
+.header { background: #002060; color: #fff; height: 50px; display: flex; align-items: center; padding: 0 24px; justify-content: space-between; }
+.header-title { font-size: 13px; font-weight: bold; letter-spacing: 0.9px; text-transform: uppercase; }
+.header-tag { background: #1a3660; border: 1px solid #3d7fbd; border-radius: 12px; padding: 4px 16px; font-size: 10px; font-weight: bold; color: #88aacc; letter-spacing: 0.5px; }
+.outer { padding: 10px 16px 8px; display: flex; flex-direction: column; gap: 8px; }
+.intro-bar { background: #f0f4ff; border: 1px solid #3d7fbd; border-radius: 6px; padding: 6px 14px; font-size: 9px; color: #334466; line-height: 1.5; }
+.intro-bar strong { color: #1a3a80; }
+.cards-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 9px; }
+.tk-card { background: #fff; border: 1.5px solid #c8d8e8; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
+.tk-header { padding: 6px 12px; display: flex; align-items: center; gap: 8px; }
+.tk-num { width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: bold; color: #fff; flex-shrink: 0; }
+.tk-section-label { font-size: 8px; font-weight: bold; letter-spacing: 0.5px; text-transform: uppercase; }
+.tk-body { padding: 7px 12px 9px; flex: 1; display: flex; flex-direction: column; gap: 4px; }
+.tk-heading { font-size: 9.5px; font-weight: bold; color: #1a3660; line-height: 1.3; margin-bottom: 2px; }
+.tk-point { display: flex; align-items: flex-start; gap: 6px; font-size: 8.5px; color: #334466; line-height: 1.45; padding: 2px 0; }
+.tk-point::before { content: '▸'; color: #cc3d00; font-size: 8px; flex-shrink: 0; margin-top: 1px; }
+/* Per-section accent colours */
+.s1 .tk-header { background: #e2eaf8; } .s1 .tk-num { background: #1a3660; } .s1 .tk-section-label { color: #1a3660; }
+.s2 .tk-header { background: #eef4fb; } .s2 .tk-num { background: #1d5fa8; } .s2 .tk-section-label { color: #1d5fa8; }
+.s3 .tk-header { background: #e8f8ee; } .s3 .tk-num { background: #1a7040; } .s3 .tk-section-label { color: #1a7040; }
+.s4 .tk-header { background: #fff8e0; } .s4 .tk-num { background: #cc8800; } .s4 .tk-section-label { color: #7a5000; }
+.s5 .tk-header { background: #fff0e8; } .s5 .tk-num { background: #cc6000; } .s5 .tk-section-label { color: #cc6000; }
+.s6 .tk-header { background: #ffe8e0; } .s6 .tk-num { background: #cc3d00; } .s6 .tk-section-label { color: #8b2000; }
+.key-concept-bar { background: #002060; border-radius: 7px; padding: 9px 20px; }
+.key-concept-text { font-size: 10px; color: #dce7f5; line-height: 1.6; }
+.key-concept-text strong { color: #e8a840; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-title">Key Takeaways</div>
+  <div class="header-tag">Course Summary</div>
+</div>
+<div class="outer">
+  <div class="intro-bar"><strong>Six sections, one machine.</strong> These are the critical concepts from each section that stay with you on the job.</div>
+
+  <div class="cards-grid">
+    <div class="tk-card s1">
+      <div class="tk-header">
+        <div class="tk-num">1</div>
+        <div class="tk-section-label">Documentation, Safety and Support</div>
+      </div>
+      <div class="tk-body">
+        <div class="tk-heading">Know Your Documents Before You Need Them</div>
+        <div class="tk-point">Three document tiers: G6 Reference Guide, model manuals, OEM vendor docs</div>
+        <div class="tk-point">Operator role is bounded — safety, warranty, and escalation rules are non-negotiable</div>
+        <div class="tk-point">Support forms exist for a reason — complete data creates a traceable service history</div>
+      </div>
+    </div>
+
+    <div class="tk-card s2">
+      <div class="tk-header">
+        <div class="tk-num">2</div>
+        <div class="tk-section-label">Platform Overview</div>
+      </div>
+      <div class="tk-body">
+        <div class="tk-heading">RK22, RK23, RK24 Are Not the Same Machine</div>
+        <div class="tk-point">Core subsystems are shared — but specifications, limits, and fault codes differ by model</div>
+        <div class="tk-point">The RK24 has the IFM control system and C6 OEM vendor document package — unique to that model</div>
+        <div class="tk-point">Verify the model before opening any procedure or applying any threshold value</div>
+      </div>
+    </div>
+
+    <div class="tk-card s3">
+      <div class="tk-header">
+        <div class="tk-num">3</div>
+        <div class="tk-section-label">Pre-Operation and Startup</div>
+      </div>
+      <div class="tk-body">
+        <div class="tk-heading">Three Gates — All Must Pass</div>
+        <div class="tk-point">Gate 1: pre-op walk-around complete. Gate 2: panel clear and neutral confirmed. Gate 3: warm-up done, all systems in range</div>
+        <div class="tk-point">Hold points cannot be bypassed — identify the cause before attempting any restart</div>
+        <div class="tk-point">Every startup requires a log entry — fault codes observed, even if cleared, must be recorded</div>
+      </div>
+    </div>
+
+    <div class="tk-card s4">
+      <div class="tk-header">
+        <div class="tk-num">4</div>
+        <div class="tk-section-label">Normal Operation and Monitoring</div>
+      </div>
+      <div class="tk-body">
+        <div class="tk-heading">Monitor Trend, Not Just Snapshot</div>
+        <div class="tk-point">Four systems to track: coolant temp, oil pressure, hydraulic temp, air reservoir pressure</div>
+        <div class="tk-point">Respond before a red lamp — proactive load reduction prevents forced shutdowns</div>
+        <div class="tk-point">Operators control inputs; technicians adjust components — know the boundary</div>
+      </div>
+    </div>
+
+    <div class="tk-card s5">
+      <div class="tk-header">
+        <div class="tk-num">5</div>
+        <div class="tk-section-label">Shutdown and Service Interface</div>
+      </div>
+      <div class="tk-body">
+        <div class="tk-heading">A Shift Closes With the Log Entry</div>
+        <div class="tk-point">Lower loads, cool down the turbo, park on level ground — the shutdown sequence is not optional</div>
+        <div class="tk-point">Post-op inspection is the best time to find faults — warm machine, defects are visible</div>
+        <div class="tk-point">The service handoff packet is the operator's final responsibility — incomplete packets delay repairs</div>
+      </div>
+    </div>
+
+    <div class="tk-card s6">
+      <div class="tk-header">
+        <div class="tk-num">6</div>
+        <div class="tk-section-label">Advanced Service Reference</div>
+      </div>
+      <div class="tk-body">
+        <div class="tk-heading">Every Symptom Has a Document Path</div>
+        <div class="tk-point">31 OEM documents across 16 vendor families — know the subsystem first, then go to the bundle</div>
+        <div class="tk-point">The IFM CR0020 is the fault source — the CR1081 display is the window, not the origin</div>
+        <div class="tk-point">Documentation at every step: operator observation → technician diagnosis → service record closes the loop</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="key-concept-bar">
+    <div class="key-concept-text"><strong>The common thread across all six sections:</strong> Observe accurately. Document completely. Stay within your role. Escalate when in doubt. These four habits protect the equipment, the operator, and the organisation.</div>
+  </div>
+</div>
+</body>
+</html>
