@@ -159,37 +159,37 @@
           "id": "s-s1-0",
           "file": "S1-0_Section_Intro.html",
           "label": "Section Intro",
-          "vo": "Section one introduces the RailKing document ecosystem, safety responsibilities, and support channels used during normal operation and escalation."
+          "vo": "Welcome to Section 1. This section introduces the three-tier document ecosystem for RailKing Gen6 equipment, your role boundaries as an operator, and the support channels you will use when escalation is required. By the end of this section you will know exactly which document to reach for and when to stop and call for help."
         },
         {
           "id": "s-s1-1",
           "file": "S1-1_Document_Library_Map.html",
           "label": "Document Library Map",
-          "vo": "This screen maps the main source sets and identifies which document families are intended for operation, service, and support communication."
+          "vo": "The RailKing Gen6 documentation is organised in three tiers. The G6 Operator Reference Guide covers shared workflow principles for all models. Model-specific manuals — RK22, RK23, and RK24 — cover specifications, thresholds, and procedures unique to each unit. For the RK24, the C5 drawing set and C6 OEM vendor package complete the advanced service reference stack."
         },
         {
           "id": "s-s1-2",
           "file": "S1-2_Safety_and_Responsibility.html",
           "label": "Safety and Responsibility",
-          "vo": "Review safety responsibilities, role boundaries, and the requirement to follow approved procedures before attempting corrective actions."
+          "vo": "Operator responsibilities are defined before any machine interaction. Your authority is bounded — execute approved procedures, monitor indicators, and escalate when conditions move outside your role. The non-negotiable safety rules on this screen apply every shift, without exception regardless of schedule pressure or familiarity with the equipment."
         },
         {
           "id": "s-s1-3",
           "file": "S1-3_Warranty_and_Limits.html",
           "label": "Warranty and Limits",
-          "vo": "Understand warranty context and decision limits that determine when to stop, document conditions, and escalate to support."
+          "vo": "Warranty coverage depends on correct documentation and staying within approved procedures. Review the four warranty outcome categories — covered, review required, voided, and reference only. When an action is outside your authority, the warranty document defines what is at stake. Knowing the boundaries before you act is always easier than explaining an exception afterwards."
         },
         {
           "id": "s-s1-4",
           "file": "S1-4_Contacts_and_Support_Path.html",
           "label": "Contacts and Support Path",
-          "vo": "Follow the contact pathway so support requests include the right team, urgency, and machine context on first submission."
+          "vo": "When a fault or defect exceeds your authority to resolve, the support path has five escalation stages. Know your site supervisor, the RailKing dealer contact, and when to move from one stage to the next. Submitting a complete, well-documented request on the first attempt is the single biggest factor in reducing response time and getting the machine back to service quickly."
         },
         {
           "id": "s-s1-5",
           "file": "S1-5_Forms_and_Data_Quality.html",
           "label": "Forms and Data Quality",
-          "vo": "Use the standard forms to provide complete, high-quality data that reduces troubleshooting cycle time."
+          "vo": "There are four standard forms — parts orders, equipment technical support, technical manual feedback, and sales feedback. Each form has a specific purpose and a defined set of required fields. A form with complete, accurate data takes the same time to fill in as an incomplete one — but produces a far better outcome. The good and poor entry examples on the right side of this screen show exactly what that difference looks like in practice."
         }
       ],
       "quiz": {
@@ -321,31 +321,31 @@
           "id": "s-s2-0",
           "file": "S2-0_Section_Intro.html",
           "label": "Section Intro",
-          "vo": "Section two compares RK22, RK23, and RK24 models and clarifies shared systems versus model-specific references."
+          "vo": "Section 2 maps the three Gen6 models — RK22, RK23, and RK24 — to their shared architecture and their model-specific differences. Understanding where the models converge and where they diverge determines which document you reach for and how quickly you can make a safe, confident decision in the field."
         },
         {
           "id": "s-s2-1",
           "file": "S2-1_Model_Family_Comparison.html",
           "label": "Model Family Comparison",
-          "vo": "Use this comparison to identify where model behavior is common and where procedural differences must be checked in model manuals."
+          "vo": "The RK22, RK23, and RK24 share a common operational philosophy but differ in rated capacity, configuration, and available technology. The RK24 is the most advanced unit in the family — it includes the IFM electronic control system, the C5 engineering drawing set, and the C6 OEM vendor documentation package. Always verify the model from the data plate before applying any specification or threshold value."
         },
         {
           "id": "s-s2-2",
           "file": "S2-2_Common_Subsystems.html",
           "label": "Common Subsystems",
-          "vo": "This screen highlights subsystem categories that remain conceptually common across the model family."
+          "vo": "The Gen6 family shares nine core subsystems across all models — shown in blue on this diagram. The orange blocks represent RK24-specific extensions — subsystems that exist only on that model and require dedicated OEM documentation for any service work. Use the G6 Reference Guide for decisions about the shared systems. Switch to model-specific references the moment an orange-block subsystem is involved."
         },
         {
           "id": "s-s2-3",
           "file": "S2-3_Operator_Interface_Overview.html",
           "label": "Operator Interface Overview",
-          "vo": "Review interface concepts and where to validate model-specific indicator and control behavior."
+          "vo": "The operator display is the primary window into machine status. On the RK22 and RK23 it uses a conventional gauge and warning lamp layout. The RK24 adds the IFM CR1081 digital display with active fault code reporting and a structured menu system. Before responding to any indicator, confirm which model you are operating — the procedure that follows may differ between models in ways that matter."
         },
         {
           "id": "s-s2-4",
           "file": "S2-4_When_to_Use_Model_Specific_Manuals.html",
           "label": "When to Use Model Manuals",
-          "vo": "Learn trigger points for switching from generic guidance to RK22, RK23, or RK24 model-specific documentation."
+          "vo": "Use the G6 Reference Guide for workflow and process decisions — startup gates, escalation paths, and handoff structure. Switch to the model-specific manual as soon as any number is involved — thresholds, fault codes, fluid types, torque values, or service intervals. The three-column decision guide on this screen gives you the trigger condition, the response, and the correct manual to open. If you are not sure which manual applies, that uncertainty is itself a reason to stop and check before proceeding."
         }
       ],
       "quiz": {
@@ -477,37 +477,37 @@
           "id": "s-s3-0",
           "file": "S3-0_Section_Intro.html",
           "label": "Section Intro",
-          "vo": "Section three standardizes pre-operation checks and startup sequencing across the RailKing Gen6 workflow."
+          "vo": "Section 3 follows the operator through pre-operation, startup sequencing, and the hold-point framework that prevents unsafe progression. Three go and no-go gates structure the entire startup process — and none of them may be bypassed for any reason."
         },
         {
           "id": "s-s3-1",
           "file": "S3-1_PreOp_Inspection_Zones.html",
           "label": "Pre-Op Inspection Zones",
-          "vo": "Follow the inspection zone sequence to confirm readiness before control-system interaction."
+          "vo": "The walk-around covers four zones in a defined sequence — front and right side, rear, left side, and undercarriage. Each zone has a specific inspection focus described in the zone diagram on the left. Any finding that prevents safe operation is a hold condition — it stops your progress at Gate 1 before you ever touch the control panel."
         },
         {
           "id": "s-s3-2",
           "file": "S3-2_Control_Panel_Readiness.html",
           "label": "Control Panel Readiness",
-          "vo": "Verify panel readiness indicators and prerequisites before initiating startup commands."
+          "vo": "The control panel has four monitoring zones — engine and power, hydraulic system, air and brake circuit, and transmission and drive. Before engaging the starter, four conditions must be confirmed: master power on, neutral selected, air reservoirs building, and no active fault lamps. The five-step pre-ignition sequence on the right side of this screen completes Gate 2 of the startup process."
         },
         {
           "id": "s-s3-3",
           "file": "S3-3_Startup_Sequence.html",
           "label": "Startup Sequence",
-          "vo": "Execute startup in procedural order, using hold points where conditions are not confirmed."
+          "vo": "The startup sequence has six steps and three go and no-go gates. Gate 1 is a clean walk-around. Gate 2 is panel readiness with no active fault lamps. Gate 3 is warm-up confirmation — all four key systems in their operating band before the first load is applied. In cold conditions extend the warm-up period. The hydraulic pump is the most vulnerable component at low operating temperature, and rushing it causes premature wear."
         },
         {
           "id": "s-s3-4",
           "file": "S3-4_Abnormal_Conditions_HoldPoints.html",
           "label": "Abnormal Hold Points",
-          "vo": "Apply stop and hold criteria for abnormal conditions and escalate when needed."
+          "vo": "Five hold conditions can interrupt the startup sequence. An amber lamp is a hold — identify the fault code and determine if continuation is safe before proceeding. A red lamp is a no-start condition, full stop. Oil pressure failure after crank is an immediate shutdown. Abnormal noise and air pressure failure round out the five conditions. The operator boundary is clear: amber means identify and assess, red means stop and escalate."
         },
         {
           "id": "s-s3-5",
           "file": "S3-5_Startup_Confirmation_and_Recordkeeping.html",
           "label": "Startup Confirmation and Records",
-          "vo": "Document startup status and required records to maintain operational continuity across shifts."
+          "vo": "Before releasing the park brake, six confirmation items must all be checked green. The shift log entry is not optional — even a clean start with no faults requires a record. A complete entry includes unit ID, date, operator name, hour meter reading, fault codes observed or the word none, and any anomalies noted during the walk-around. Missing entries create gaps that become problems when a fault pattern develops over time."
         }
       ],
       "quiz": {
@@ -639,37 +639,37 @@
           "id": "s-s4-0",
           "file": "S4-0_Section_Intro.html",
           "label": "Section Intro",
-          "vo": "Section four focuses on stable operation, indicator interpretation, and warning response during normal work cycles."
+          "vo": "Section 4 covers the normal operating workflow — monitoring key system indicators, applying operator versus service-level adjustments, and responding to warnings in a structured way. The discipline you apply during normal operation is the single biggest factor in how often the machine reaches an unexpected shutdown."
         },
         {
           "id": "s-s4-1",
           "file": "S4-1_Operating_Cycle_Overview.html",
           "label": "Operating Cycle Overview",
-          "vo": "Review the standard operating cycle and expected monitoring checkpoints."
+          "vo": "The normal operating cycle has four phases — startup and warm-up, productive work, cool-down, and shutdown. Monitoring occurs continuously throughout, but the structured checkpoints shown here are your defined opportunities to confirm all four key systems are within their bands and trending correctly. A trend moving toward the caution threshold is worth noting even before any alarm activates."
         },
         {
           "id": "s-s4-2",
           "file": "S4-2_Key_Indicators_and_Thresholds.html",
           "label": "Indicators and Thresholds",
-          "vo": "Track key indicators and thresholds and verify model-specific values before action."
+          "vo": "Four systems require active monitoring during every shift — engine coolant temperature, engine oil pressure, hydraulic oil temperature, and air reservoir pressure. Each has an operating band, an amber caution threshold, and a red shutdown boundary. The values shown here are representative Gen6 ranges. Always verify the exact limits for your specific model in the model manual — do not assume the numbers are identical across models."
         },
         {
           "id": "s-s4-3",
           "file": "S4-3_Common_Adjustments_in_Service.html",
           "label": "Common Adjustments",
-          "vo": "Apply common in-service adjustments only within approved guidance and operating limits."
+          "vo": "Operators control inputs — throttle, direction, speed range, and hydraulic flow rate. Technicians adjust components — relief valve pressure, flow control valves, governor settings, and brake proportioning. The boundary table on the right side of this screen is your reference when any adjustment decision comes up. If the adjustment involves opening a component or changing a calibrated setting, it belongs on the service side of the line."
         },
         {
           "id": "s-s4-4",
           "file": "S4-4_Responding_to_Warnings.html",
           "label": "Responding to Warnings",
-          "vo": "Use warning response logic to stabilize operation and determine if escalation is required."
+          "vo": "Warning response follows a five-step hierarchy. When a gauge approaches its band limit, reduce load proactively before any alarm activates. An amber lamp triggers a safe stop and fault code lookup. A red lamp requires an immediate stop — lower any raised load, set the park brake, then shut down. Once the machine is secured, complete the fault report and escalate. Resetting a warning lamp without identifying the cause is never an acceptable response."
         },
         {
           "id": "s-s4-5",
           "file": "S4-5_Handoff_Between_Operators.html",
           "label": "Operator Handoff",
-          "vo": "Perform complete operator handoff to maintain state awareness and avoid repeated diagnostic work."
+          "vo": "A complete operator handoff takes five steps. The outgoing operator brings the machine to safe hold, completes the shift log, and delivers a verbal brief. The incoming operator performs their own walk-around before signing. Both operators sign the log — the outgoing operator to close the shift, the incoming operator to formally accept responsibility. An incoming operator who skips the walk-around has accepted a machine they have not inspected."
         }
       ],
       "quiz": {
@@ -801,31 +801,31 @@
           "id": "s-s5-0",
           "file": "S5-0_Section_Intro.html",
           "label": "Section Intro",
-          "vo": "Section five standardizes shutdown, securing actions, and the service handoff packet required for fast support response."
+          "vo": "Section 5 covers the end of the operational cycle — controlled shutdown, post-operation inspection, and the service handoff packet. The quality of your work at the end of a shift directly determines the quality of the next shift's start and the speed of any service response that follows."
         },
         {
           "id": "s-s5-1",
           "file": "S5-1_Normal_Shutdown_Sequence.html",
           "label": "Normal Shutdown Sequence",
-          "vo": "Follow the ordered shutdown sequence and confirm all required criteria before leaving operational mode."
+          "vo": "The normal shutdown sequence mirrors the startup sequence in reverse — finish the work cycle, reduce load, reach a safe position, reduce to low idle, and execute shutdown after the cool-down period. Never shut down from high load. The turbocharger requires oil flow to cool its bearings after the engine stops, and skipping the cool-down period shortens turbo life significantly."
         },
         {
           "id": "s-s5-2",
           "file": "S5-2_Securing_the_Unit.html",
           "label": "Securing the Unit",
-          "vo": "Apply securing steps to ensure the unit remains in the expected post-operation state."
+          "vo": "A machine is not secured until six conditions are confirmed — attachment lowered to ground, park brake engaged, transmission in neutral or park, engine off, key removed, and master electrical isolated for extended parking. Leaving a machine with a raised load or key in the ignition is a site safety exposure regardless of how long you expect to be away from the cab."
         },
         {
           "id": "s-s5-3",
           "file": "S5-3_Post_Operation_Inspection.html",
           "label": "Post-Operation Inspection",
-          "vo": "Perform post-operation inspection and capture findings for follow-up actions."
+          "vo": "The post-operation inspection runs the same six zones as the walk-around — structural, fluids, fluid levels, tyres and tracks, attachments, and the log entry. Defects are classified red, amber, or green. A red defect puts the machine out of service before the next shift starts. Note any fluid quantity added during the inspection — unusual consumption is an early fault signal that is easy to miss if you're not tracking it."
         },
         {
           "id": "s-s5-4",
           "file": "S5-4_Service_Handoff_Packet.html",
           "label": "Service Handoff Packet",
-          "vo": "Compile the required records and forms so service teams can begin diagnosis without delays."
+          "vo": "When a machine goes to service, the operator assembles the handoff packet before handing over the key. The packet includes the complete shift log, a completed equipment tech support form, the current hour meter reading, and photos of any visible defects. Incomplete packets delay the repair — a technician who arrives without complete context must reconstruct information you already had when you drove it in."
         }
       ],
       "quiz": {
@@ -957,43 +957,43 @@
           "id": "s-s6-0",
           "file": "S6-0_Section_Intro.html",
           "label": "Section Intro",
-          "vo": "Section six covers advanced service reference navigation using the RK24 drawing package and OEM vendor documentation."
+          "vo": "Section 6 extends to service technicians working with the RK24 advanced reference package. This section covers the C5 engineering drawing set, the 31-document C6 OEM vendor package, and a case study that traces a hydraulic fault from observed symptom through the complete document chain to the repair action."
         },
         {
           "id": "s-s6-1",
           "file": "S6-1_RK24_Drawing_Set_Navigation.html",
           "label": "RK24 Drawing Navigation",
-          "vo": "Navigate the RK24 C5 drawing set to locate the correct reference quickly by symptom domain and assembly context."
+          "vo": "The C5 drawing set contains 58 engineering drawings organised by assembly and system. Navigate by identifying the symptom domain first — hydraulic circuit, structural, electrical, or powertrain — then locate the relevant drawing family. The drawing number prefix identifies the system domain and is the fastest path to the correct sheet without scanning the entire index."
         },
         {
           "id": "s-s6-2",
           "file": "S6-2_OEM_Document_Bundles_by_Subsystem.html",
           "label": "OEM Bundles by Subsystem",
-          "vo": "Map OEM document bundles to subsystem categories so technical references are selected correctly on the first pass."
+          "vo": "Thirty-one OEM documents across sixteen vendor families are grouped into ten subsystem bundles in this interactive table. Click any row to expand the documents in that bundle. The rule is simple — identify the subsystem first, then select from the correct bundle. Applying a document from one subsystem to diagnose a different one is a common error that wastes time and produces incorrect conclusions."
         },
         {
           "id": "s-s6-3",
           "file": "S6-3_Hydraulic_and_Pneumatic_Reference_Use.html",
           "label": "Hydraulic and Pneumatic References",
-          "vo": "Use hydraulic and pneumatic source documents to validate component behavior, limits, and maintenance notes."
+          "vo": "Five vendor families cover hydraulic and pneumatic systems on the RK24 — Rexroth for pumps and directional valves, Marzocchi for the auxiliary gear pump, Sun Hydraulics for cartridge valves, Hydac for filtration, and Bendix with AAA Valve for the air and brake circuits. Each diagnostic path on the right panel identifies the fault type and directs you to the specific document that answers it."
         },
         {
           "id": "s-s6-4",
           "file": "S6-4_Controls_Display_and_Camera_References.html",
           "label": "Controls and Camera References",
-          "vo": "Use controller, display, and camera documentation for diagnostics and integration checks."
+          "vo": "The IFM system on the RK24 comprises nine documents covering the CR0020 mobile controller, the CR1081 display, and the camera subsystem. The CR0020 is the fault source — the CR1081 is the display window. A fault code appearing on the display originates in the controller software logic. When diagnosing a display fault, open the CR0020 Software Manual first, then cross-reference the CR1081 System Manual for the display-side behaviour."
         },
         {
           "id": "s-s6-5",
           "file": "S6-5_Powertrain_Brake_and_Auxiliary_References.html",
           "label": "Powertrain and Auxiliary References",
-          "vo": "Cross-reference powertrain, braking, and auxiliary component documentation during advanced troubleshooting."
+          "vo": "Four vendor families cover the RK24 powertrain — John Deere for the engine, Funk for the two gearbox variants, CTD for the hub-wheel assembly, and a family of auxiliary system vendors for cab and ancillary components. Engine warranty work must be performed by an authorised John Deere dealer. For the Funk gearboxes, verify the variant from the data plate — CTM147 and CTM157 are not interchangeable and require different service procedures."
         },
         {
           "id": "s-s6-6",
           "file": "S6-6_Case_Study_From_Symptom_to_Doc_to_Action.html",
           "label": "Symptom-to-Action Case Study",
-          "vo": "This case study demonstrates how to move from observed symptom to correct document set to recommended action pathway."
+          "vo": "In this case study, one symptom — sluggish hydraulics with elevated temperature — leads through four separate OEM documents before reaching a root cause. The operator observed and recorded. The technician decoded the fault code, mapped the circuit, verified the pump specification, and closed the repair with a service record. Without the operator log entry, the technician starts at square one. This is why every shift entry matters."
         }
       ],
       "quiz": {
@@ -1121,13 +1121,13 @@
         "id": "s-sum-0",
         "file": "SUM-1_Key_Takeaways.html",
         "label": "Key Takeaways",
-        "vo": "This summary consolidates the core operational workflow and the advanced reference process required for consistent RailKing Gen6 support performance."
+        "vo": "Six sections, six takeaways. From Section 1 — know your documents before you need them. From Section 2 — the three models are not the same machine. From Section 3 — three startup gates, all must pass. From Section 4 — monitor trend, not just snapshot. From Section 5 — a shift closes with a complete log entry. From Section 6 — every symptom has a document path. These six principles cover the full operational and service workflow for RailKing Gen6 equipment."
       },
       {
         "id": "s-sum-1",
         "file": "SUM-2_Best_Practices.html",
         "label": "Best Practices",
-        "vo": "Apply these best practices to reduce troubleshooting cycle time, improve handoffs, and maintain safe operation across shifts and teams."
+        "vo": "These best practices represent the habits that separate reliable operators from reactive ones. Log every shift. Reduce load before the alarm. Allow proper warm-up and cool-down. Inspect after every operation. Accept the machine only after you have checked it yourself. The always and never grid on the right side of this screen is the short version — the list you carry in your head every day when you get in the cab."
       }
     ]
   },
