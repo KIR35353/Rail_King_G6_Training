@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>Common Subsystems | Section 2</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #f8fafb; font-family: Arial, Helvetica, sans-serif; width: 1040px; min-height: 510px; overflow: hidden; }
+.header { background: #002060; color: #fff; height: 50px; display: flex; align-items: center; padding: 0 24px; justify-content: space-between; }
+.header-title { font-size: 13px; font-weight: bold; letter-spacing: 0.9px; text-transform: uppercase; }
+.header-tag { background: #1a3660; border: 1px solid #3d7fbd; border-radius: 12px; padding: 4px 16px; font-size: 10px; font-weight: bold; color: #88aacc; letter-spacing: 0.5px; }
+.outer { padding: 10px 16px 0; display: flex; flex-direction: column; gap: 8px; }
+.main-row { display: flex; gap: 12px; align-items: stretch; }
+.diagram-panel { flex: 0 0 540px; background: #fff; border: 1.5px solid #c8d8e8; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
+.diagram-banner { background: #1a3660; color: #88aacc; padding: 5px 14px; font-size: 9px; font-weight: bold; letter-spacing: 0.6px; text-transform: uppercase; flex-shrink: 0; }
+.diagram-body { flex: 1; display: flex; align-items: center; justify-content: center; padding: 12px; }
+.card-stack { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.info-card { background: #fff; border: 1.5px solid #c8d8e8; border-left: 4px solid #002060; border-radius: 0 7px 7px 0; padding: 7px 12px 7px 14px; display: flex; flex-direction: column; gap: 3px; flex: 1; }
+.card-head { font-size: 9.5px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.4px; color: #1a3660; }
+.card-body { font-size: 9px; color: #334466; line-height: 1.5; }
+/* subsystem diagram */
+.sys-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); gap: 8px; width: 100%; height: 340px; }
+.sys-block { background: #f3f7fc; border: 1.5px solid #3d7fbd; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 6px; }
+.sys-icon { font-size: 20px; line-height: 1; }
+.sys-name { font-size: 8.5px; font-weight: bold; color: #002060; text-align: center; line-height: 1.3; }
+.sys-block.shared { background: #f0f4ff; border-color: #1d5fa8; }
+.sys-block.adv    { background: #fff4ee; border-color: #cc6000; }
+.legend { display: flex; gap: 10px; padding: 0 4px; }
+.leg-item { display: flex; align-items: center; gap: 5px; font-size: 8px; color: #334466; }
+.leg-dot { width: 10px; height: 10px; border-radius: 2px; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-title">Common Subsystems Across the Gen6 Family</div>
+  <div class="header-tag">Section 2</div>
+</div>
+<div class="outer">
+  <div class="main-row">
+    <div class="diagram-panel">
+      <div class="diagram-banner">Subsystem Architecture — RK22 / RK23 / RK24</div>
+      <div class="diagram-body">
+        <div style="display:flex;flex-direction:column;gap:8px;width:100%;">
+          <div class="sys-grid">
+            <div class="sys-block shared"><div class="sys-icon">⚙️</div><div class="sys-name">Powertrain / Drive</div></div>
+            <div class="sys-block shared"><div class="sys-icon">💧</div><div class="sys-name">Hydraulic System</div></div>
+            <div class="sys-block shared"><div class="sys-icon">🌡️</div><div class="sys-name">Cooling &amp; Thermal</div></div>
+            <div class="sys-block shared"><div class="sys-icon">🛑</div><div class="sys-name">Braking System</div></div>
+            <div class="sys-block shared"><div class="sys-icon">🔌</div><div class="sys-name">Electrical / Controls</div></div>
+            <div class="sys-block shared"><div class="sys-icon">🌬️</div><div class="sys-name">Air / Pneumatic</div></div>
+            <div class="sys-block shared"><div class="sys-icon">⛽</div><div class="sys-name">Fuel System</div></div>
+            <div class="sys-block adv"><div class="sys-icon">📷</div><div class="sys-name">Camera / Vision (RK24)</div></div>
+            <div class="sys-block adv"><div class="sys-icon">🖥️</div><div class="sys-name">IFM Controller (RK24)</div></div>
+          </div>
+          <div class="legend">
+            <div class="leg-item"><div class="leg-dot" style="background:#1d5fa8;"></div>Common across family</div>
+            <div class="leg-item"><div class="leg-dot" style="background:#cc6000;"></div>RK24-specific / advanced</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-stack">
+      <div class="info-card" style="border-left-color:#1d5fa8;">
+        <div class="card-head">Shared Principles Apply</div>
+        <div class="card-body">Blue subsystems follow common operating concepts across RK22, RK23, and RK24. G6 Operator Reference Guide covers these.</div>
+      </div>
+      <div class="info-card" style="border-left-color:#cc6000;">
+        <div class="card-head">Model-Specific Validation Required</div>
+        <div class="card-body">Orange subsystems are unique to RK24. Always consult RK24 Service Manual and C6 OEM docs for these systems.</div>
+      </div>
+      <div class="info-card" style="border-left-color:#cc8800;">
+        <div class="card-head">Threshold Differences Exist</div>
+        <div class="card-body">Even for shared subsystems, operating limits and threshold values differ by model. Never assume identical numbers.</div>
+      </div>
+      <div class="info-card" style="border-left-color:#1a7040;">
+        <div class="card-head">Practical Rule</div>
+        <div class="card-body">Identify the subsystem → check if it's shared or model-specific → select the appropriate reference document before acting.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

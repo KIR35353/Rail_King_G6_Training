@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>When to Use Model-Specific Manuals | Section 2</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #f8fafb; font-family: Arial, Helvetica, sans-serif; width: 1040px; min-height: 510px; overflow: hidden; }
+.header { background: #002060; color: #fff; height: 50px; display: flex; align-items: center; padding: 0 24px; justify-content: space-between; }
+.header-title { font-size: 13px; font-weight: bold; letter-spacing: 0.9px; text-transform: uppercase; }
+.header-tag { background: #1a3660; border: 1px solid #3d7fbd; border-radius: 12px; padding: 4px 16px; font-size: 10px; font-weight: bold; color: #88aacc; letter-spacing: 0.5px; }
+.outer { padding: 10px 16px 0; display: flex; flex-direction: column; gap: 8px; }
+.intro-bar { background: #f0f4ff; border: 1px solid #3d7fbd; border-radius: 6px; padding: 6px 14px; font-size: 8.5px; color: #334466; line-height: 1.5; }
+.intro-bar strong { color: #1a3a80; }
+.columns-row { display: flex; gap: 10px; }
+.col { flex: 1; background: #fff; border: 1.5px solid #c8d8e8; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
+.col-header { padding: 7px 14px 6px; font-size: 9px; font-weight: bold; letter-spacing: 0.6px; text-transform: uppercase; color: #fff; display: flex; align-items: center; gap: 8px; }
+.col-header .col-icon { font-size: 13px; line-height: 1; }
+.col-header-green { background: #1a5c30; }
+.col-header-amber { background: #8b6000; }
+.col-header-navy  { background: #1a3660; }
+.col-body { flex: 1; padding: 8px 12px; display: flex; flex-direction: column; gap: 5px; }
+.col-row { display: flex; align-items: flex-start; gap: 8px; padding: 5px 0; border-bottom: 1px solid #eef3fa; }
+.col-row:last-child { border-bottom: none; }
+.col-tag { font-size: 8px; font-weight: bold; padding: 2px 6px; border-radius: 3px; flex-shrink: 0; min-width: 54px; text-align: center; margin-top: 1px; }
+.col-tag.g { background: #d4edda; color: #1a5c30; }
+.col-tag.a { background: #fff3cd; color: #8b6000; }
+.col-tag.n { background: #e2eaf8; color: #1a3660; }
+.col-text { font-size: 9px; color: #334466; line-height: 1.5; }
+.key-bar { background: #fff4ee; border: 1px solid #e8c0a8; border-left: 4px solid #cc3d00; border-radius: 7px; padding: 8px 16px; }
+.key-bar-text { font-size: 10px; color: #334466; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-title">When to Use Model-Specific Manuals</div>
+  <div class="header-tag">Section 2</div>
+</div>
+<div class="outer">
+  <div class="intro-bar"><strong>Reference selection rule:</strong> Start with the G6 Operator Reference Guide for general workflow. Switch to a model manual the moment you encounter thresholds, procedures, or components that may differ by model.</div>
+  <div class="columns-row">
+    <div class="col">
+      <div class="col-header col-header-green"><span class="col-icon">✓</span> Use G6 Reference Guide</div>
+      <div class="col-body">
+        <div class="col-row"><div class="col-tag g">STARTUP</div><div class="col-text">General startup flow and safety gate sequence applies across the family.</div></div>
+        <div class="col-row"><div class="col-tag g">SHUTDOWN</div><div class="col-text">Controlled shutdown concepts and idle-before-shutdown requirements are shared.</div></div>
+        <div class="col-row"><div class="col-tag g">HANDOFF</div><div class="col-text">Operator handoff structure and documentation expectations are common.</div></div>
+        <div class="col-row"><div class="col-tag g">SUPPORT</div><div class="col-text">Escalation pathway and form-use procedures apply regardless of model.</div></div>
+        <div class="col-row"><div class="col-tag g">SAFETY</div><div class="col-text">Role boundaries and stop/escalate rules are universal across the Gen6 family.</div></div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="col-header col-header-amber"><span class="col-icon">⚠</span> Switch to Model Manual</div>
+      <div class="col-body">
+        <div class="col-row"><div class="col-tag a">LIMITS</div><div class="col-text">Any specific PSI, temperature, RPM, or pressure value — verify against model manual.</div></div>
+        <div class="col-row"><div class="col-tag a">FAULTS</div><div class="col-text">Fault code lookup and diagnostic steps differ by model controller and sensor set.</div></div>
+        <div class="col-row"><div class="col-tag a">SERVICE</div><div class="col-text">Maintenance intervals, fluid specifications, and service torque values are model-specific.</div></div>
+        <div class="col-row"><div class="col-tag a">DISPLAY</div><div class="col-text">Menu navigation and display behaviour differ between RK22/23 and the RK24 IFM system.</div></div>
+        <div class="col-row"><div class="col-tag a">OEM</div><div class="col-text">Any subsystem with an OEM vendor component requires the C6 vendor documentation (RK24 only).</div></div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="col-header col-header-navy"><span class="col-icon">📄</span> Which Manual to Pick</div>
+      <div class="col-body">
+        <div class="col-row"><div class="col-tag n">RK22</div><div class="col-text">Use RK22.pdf for all model-specific procedures, limits, and service guidance on RK22 units.</div></div>
+        <div class="col-row"><div class="col-tag n">RK23</div><div class="col-text">Use RK23.pdf for all model-specific content on RK23 units — do not substitute RK22 values.</div></div>
+        <div class="col-row"><div class="col-tag n">RK24</div><div class="col-text">Use RK24 Service Manual plus C5 drawings and C6 OEM docs as needed for RK24 units.</div></div>
+        <div class="col-row"><div class="col-tag n">UNSURE</div><div class="col-text">If you cannot confirm which manual applies, stop and escalate. Do not guess across models.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="key-bar">
+    <div class="key-bar-text"><strong>Decision shortcut:</strong> Numbers and component details → model manual. Workflow and process → G6 Reference Guide. Both uncertain → escalate before acting.</div>
+  </div>
+</div>
+</body>
+</html>

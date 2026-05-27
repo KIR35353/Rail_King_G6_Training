@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>Operator Interface Overview | Section 2</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #f8fafb; font-family: Arial, Helvetica, sans-serif; width: 1040px; min-height: 510px; overflow: hidden; }
+.header { background: #002060; color: #fff; height: 50px; display: flex; align-items: center; padding: 0 24px; justify-content: space-between; }
+.header-title { font-size: 13px; font-weight: bold; letter-spacing: 0.9px; text-transform: uppercase; }
+.header-tag { background: #1a3660; border: 1px solid #3d7fbd; border-radius: 12px; padding: 4px 16px; font-size: 10px; font-weight: bold; color: #88aacc; letter-spacing: 0.5px; }
+.main { height: 460px; display: flex; gap: 12px; padding: 14px 18px 12px; }
+.panel { background: #ffffff; border-radius: 8px; border: 1px solid #dce7f5; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; }
+.panel.left  { flex: 0 0 460px; }
+.panel.right { flex: 1; }
+.panel-heading { font-size: 11px; font-weight: bold; color: #002060; border-bottom: 2px solid #cc3d00; padding-bottom: 5px; margin-bottom: 6px; }
+/* Interface mock */
+.interface-mock { background: #1a2740; border-radius: 6px; padding: 10px; display: flex; flex-direction: column; gap: 6px; }
+.mock-topbar { background: #002060; border-radius: 4px; padding: 4px 10px; display: flex; justify-content: space-between; align-items: center; }
+.mock-topbar-label { font-size: 8px; font-weight: bold; color: #88aacc; text-transform: uppercase; letter-spacing: 0.5px; }
+.mock-topbar-status { font-size: 8px; color: #4caf50; font-weight: bold; }
+.mock-gauges { display: flex; gap: 6px; }
+.gauge { flex: 1; background: #0d1f3a; border-radius: 4px; padding: 6px 8px; text-align: center; }
+.gauge-label { font-size: 7px; color: #6a8aaa; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 2px; }
+.gauge-val { font-size: 16px; font-weight: bold; color: #80d4ff; line-height: 1; }
+.gauge-val.warn { color: #ffcc44; }
+.gauge-unit { font-size: 7px; color: #6a8aaa; }
+.mock-indicators { display: flex; gap: 6px; flex-wrap: wrap; }
+.indicator { display: flex; align-items: center; gap: 4px; background: #0d1f3a; padding: 3px 8px; border-radius: 3px; }
+.ind-dot { width: 7px; height: 7px; border-radius: 50%; }
+.ind-label { font-size: 7.5px; color: #aabbcc; }
+.ind-dot.green { background: #4caf50; }
+.ind-dot.amber { background: #ffaa00; }
+.ind-dot.grey  { background: #445566; }
+/* Right panel notes */
+.interface-note { background: #f3f7fc; border-left: 3px solid #3d7fbd; padding: 8px 10px; border-radius: 3px; margin-bottom: 7px; }
+.note-label { font-size: 9.5px; font-weight: bold; color: #002060; margin-bottom: 2px; }
+.note-desc  { font-size: 9px; color: #334466; line-height: 1.5; }
+.caution-box { background: #fef5e7; border-left: 3px solid #cc8800; padding: 8px 10px; border-radius: 3px; }
+.caution-text { font-size: 9px; color: #7a5000; line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-title">Operator Interface Overview</div>
+  <div class="header-tag">Section 2</div>
+</div>
+<div class="main">
+  <div class="panel left">
+    <div class="panel-heading">Representative Interface Layout</div>
+    <div class="interface-mock">
+      <div class="mock-topbar">
+        <div class="mock-topbar-label">RailKing Gen6 — Control Display</div>
+        <div class="mock-topbar-status">● OPERATIONAL</div>
+      </div>
+      <div class="mock-gauges">
+        <div class="gauge">
+          <div class="gauge-label">Hydraulic PSI</div>
+          <div class="gauge-val">2400</div>
+          <div class="gauge-unit">PSI</div>
+        </div>
+        <div class="gauge">
+          <div class="gauge-label">Oil Temp</div>
+          <div class="gauge-val warn">88</div>
+          <div class="gauge-unit">°C</div>
+        </div>
+        <div class="gauge">
+          <div class="gauge-label">Fuel Level</div>
+          <div class="gauge-val">74</div>
+          <div class="gauge-unit">%</div>
+        </div>
+        <div class="gauge">
+          <div class="gauge-label">Engine RPM</div>
+          <div class="gauge-val">1800</div>
+          <div class="gauge-unit">RPM</div>
+        </div>
+      </div>
+      <div class="mock-indicators">
+        <div class="indicator"><div class="ind-dot green"></div><div class="ind-label">Engine Run</div></div>
+        <div class="indicator"><div class="ind-dot green"></div><div class="ind-label">Hydraulics OK</div></div>
+        <div class="indicator"><div class="ind-dot amber"></div><div class="ind-label">Temp — Watch</div></div>
+        <div class="indicator"><div class="ind-dot green"></div><div class="ind-label">Brakes Clear</div></div>
+        <div class="indicator"><div class="ind-dot grey"></div><div class="ind-label">Camera — Off</div></div>
+        <div class="indicator"><div class="ind-dot green"></div><div class="ind-label">Air Press OK</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="panel right">
+    <div class="panel-heading">What to Verify by Model</div>
+    <div class="interface-note">
+      <div class="note-label">Gauge Ranges</div>
+      <div class="note-desc">Numeric ranges and normal operating bands vary by model. Confirm acceptable values in the model manual before interpreting readings.</div>
+    </div>
+    <div class="interface-note">
+      <div class="note-label">Warning Indicator Logic</div>
+      <div class="note-desc">Amber and red indicator trigger thresholds differ between RK22, RK23, and RK24. The same reading may be normal on one model and a warning on another.</div>
+    </div>
+    <div class="interface-note">
+      <div class="note-label">Advanced Display (RK24)</div>
+      <div class="note-desc">The RK24 IFM CR1081 display provides additional diagnostic screens. Consult IFM documentation in C6 for menu navigation.</div>
+    </div>
+    <div class="caution-box">
+      <div class="caution-text"><strong>⚠ Caution:</strong> Do not use a visual indicator reading from one model as a baseline for a different model without checking model-specific thresholds first.</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
