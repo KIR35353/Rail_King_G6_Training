@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>Control Panel Readiness | Section 3</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { width: 1040px; min-height: 510px; overflow: hidden; background: #f8fafb; font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #334466; }
+.header { background: #002060; color: #fff; height: 50px; display: flex; align-items: center; justify-content: space-between; padding: 0 18px; }
+.header-title { font-size: 13px; font-weight: bold; letter-spacing: 0.3px; text-transform: uppercase; }
+.header-tag { font-size: 9px; font-weight: bold; letter-spacing: 1.4px; text-transform: uppercase; color: #80b4dc; background: rgba(255,255,255,0.1); padding: 3px 10px; border-radius: 10px; }
+.main { height: 460px; display: flex; gap: 12px; padding: 14px 18px 12px; }
+.panel { flex: 1; background: #fff; border-radius: 8px; border: 1px solid #dce7f5; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.panel-heading { font-size: 11px; font-weight: bold; color: #002060; border-bottom: 2px solid #cc3d00; padding-bottom: 5px; margin-bottom: 4px; }
+
+/* Left: zone grid */
+.zone-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; flex: 1; }
+.zone-card { border-radius: 6px; padding: 8px 10px; display: flex; flex-direction: column; gap: 3px; }
+.zone-card.blue   { background: #e8f0f8; border: 1px solid #3d7fbd; }
+.zone-card.navy   { background: #e2eaf8; border: 1px solid #1a3660; }
+.zone-card.orange { background: #fff0e8; border: 1px solid #cc6000; }
+.zone-card.green  { background: #e8f8ee; border: 1px solid #1a7040; }
+.zone-label { font-size: 8px; font-weight: bold; letter-spacing: 0.6px; text-transform: uppercase; }
+.zone-label.blue   { color: #1d5fa8; }
+.zone-label.navy   { color: #1a3660; }
+.zone-label.orange { color: #cc6000; }
+.zone-label.green  { color: #1a7040; }
+.zone-items { font-size: 9px; color: #334466; line-height: 1.55; }
+
+/* Right: check list */
+.check-intro { font-size: 9.5px; color: #334466; line-height: 1.5; margin-bottom: 4px; }
+.check-row { display: flex; align-items: flex-start; gap: 10px; padding: 6px 0; border-bottom: 1px solid #eef3fa; }
+.check-row:last-child { border-bottom: none; }
+.check-num { width: 20px; height: 20px; border-radius: 50%; background: #002060; color: #fff; font-size: 9px; font-weight: bold; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.check-body { flex: 1; }
+.check-title { font-size: 9.5px; font-weight: bold; color: #1a3660; margin-bottom: 2px; }
+.check-desc  { font-size: 8.5px; color: #334466; line-height: 1.5; }
+.check-note  { font-size: 8px; color: #cc6000; font-weight: bold; margin-top: 2px; }
+
+.key-concept-bar { background: #fff4ee; border: 1px solid #e8c0a8; border-left: 4px solid #cc3d00; border-radius: 7px; padding: 8px 16px; }
+.key-concept-text { font-size: 10px; color: #334466; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-title">Control Panel Readiness</div>
+  <div class="header-tag">Section 3</div>
+</div>
+<div class="main">
+  <!-- LEFT: Control Zones -->
+  <div class="panel">
+    <div class="panel-heading">Panel Zones and Key Indicators</div>
+    <div class="zone-grid">
+      <div class="zone-card blue">
+        <div class="zone-label blue">Engine / Power</div>
+        <div class="zone-items">Oil pressure gauge<br>Coolant temp gauge<br>Battery/charge indicator<br>Fuel level indicator</div>
+      </div>
+      <div class="zone-card navy">
+        <div class="zone-label navy">Hydraulic System</div>
+        <div class="zone-items">Hydraulic pressure gauge<br>Oil temp indicator<br>Filter restriction lamp<br>Return line status</div>
+      </div>
+      <div class="zone-card orange">
+        <div class="zone-label orange">Air / Brake Circuit</div>
+        <div class="zone-items">Primary air reservoir gauge<br>Secondary air reservoir gauge<br>Air dryer indicator<br>Park brake status lamp</div>
+      </div>
+      <div class="zone-card green">
+        <div class="zone-label green">Transmission / Drive</div>
+        <div class="zone-items">Gearbox temp lamp<br>Neutral/Park confirmation<br>Direction selector position<br>Drive engagement status</div>
+      </div>
+    </div>
+    <div class="key-concept-bar" style="margin-top:4px;">
+      <div class="key-concept-text"><strong>Rule:</strong> All warning lamps must extinguish and all gauges must read within the green band before proceeding past the readiness gate.</div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Check Sequence -->
+  <div class="panel">
+    <div class="panel-heading">Pre-Ignition Readiness Sequence</div>
+    <div class="check-intro">Perform these checks in order at the panel <em>before</em> engaging the starter. Confirm each step before advancing.</div>
+    <div class="check-row">
+      <div class="check-num">1</div>
+      <div class="check-body">
+        <div class="check-title">Master Power On</div>
+        <div class="check-desc">Engage master electrical switch. Wait for panel to initialise and all warning lamps to complete their self-test cycle.</div>
+      </div>
+    </div>
+    <div class="check-row">
+      <div class="check-num">2</div>
+      <div class="check-body">
+        <div class="check-title">Confirm Neutral / Park</div>
+        <div class="check-desc">Verify transmission selector in neutral or park. Park brake must be set before proceeding.</div>
+        <div class="check-note">⚠ Starter will not engage if not in neutral on most models.</div>
+      </div>
+    </div>
+    <div class="check-row">
+      <div class="check-num">3</div>
+      <div class="check-body">
+        <div class="check-title">Check Air Reservoirs</div>
+        <div class="check-desc">Primary and secondary gauges must be at operating pressure or able to build to pressure before brake release.</div>
+      </div>
+    </div>
+    <div class="check-row">
+      <div class="check-num">4</div>
+      <div class="check-body">
+        <div class="check-title">Verify No Active Faults</div>
+        <div class="check-desc">Any persistent fault lamp (red or amber) must be resolved or accepted per model manual before startup proceeds.</div>
+        <div class="check-note">⚠ Do not clear a fault by resetting the panel — identify the cause first.</div>
+      </div>
+    </div>
+    <div class="check-row">
+      <div class="check-num">5</div>
+      <div class="check-body">
+        <div class="check-title">Confirm Clear Zone</div>
+        <div class="check-desc">Sound horn once. Ensure all personnel are clear of the machine before engaging the starter.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

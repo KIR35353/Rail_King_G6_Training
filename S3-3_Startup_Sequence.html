@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>Startup Sequence | Section 3</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #f8fafb; font-family: Arial, Helvetica, sans-serif; width: 1040px; min-height: 510px; overflow: hidden; }
+.header { background: #002060; color: #fff; height: 50px; display: flex; align-items: center; padding: 0 24px; justify-content: space-between; }
+.header-title { font-size: 13px; font-weight: bold; letter-spacing: 0.9px; text-transform: uppercase; }
+.header-tag { background: #1a3660; border: 1px solid #3d7fbd; border-radius: 12px; padding: 4px 16px; font-size: 10px; font-weight: bold; color: #88aacc; letter-spacing: 0.5px; }
+.outer { padding: 10px 16px 0; display: flex; flex-direction: column; gap: 8px; }
+.main-row { display: flex; gap: 14px; align-items: flex-start; }
+.layers-panel { flex: 0 0 545px; display: flex; flex-direction: column; gap: 0; }
+.layer { display: flex; align-items: stretch; border-radius: 4px; overflow: hidden; border: 1.5px solid #c8d8e8; }
+.layer-bar { width: 8px; flex-shrink: 0; }
+.layer-inner { flex: 1; display: flex; align-items: center; padding: 5px 12px; gap: 10px; background: #fff; }
+.layer-badge { width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: bold; color: #fff; flex-shrink: 0; }
+.layer-content { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.layer-title { font-size: 9px; font-weight: bold; color: #1a3660; letter-spacing: 0.3px; }
+.layer-desc { font-size: 8.5px; color: #334466; line-height: 1.5; }
+.layer-status { text-align: right; flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-end; justify-content: center; gap: 2px; }
+.layer-status-val { font-size: 8px; font-weight: bold; }
+.layer-status-label { font-size: 7.5px; color: #778899; }
+.layer-arrow { display: flex; align-items: center; justify-content: center; height: 9px; margin: 0 0 0 12px; }
+.layer-arrow::before { content: ''; display: block; width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 7px solid #8899aa; }
+/* Layer colour classes */
+.layer-green  .layer-bar, .layer-green  .layer-badge { background: #1a7040; }
+.layer-green  .layer-inner { background: #e8f8ee; border-color: #1a7040; }
+.layer-blue   .layer-bar, .layer-blue   .layer-badge { background: #1d5fa8; }
+.layer-blue   .layer-inner { background: #eef4fb; border-color: #3d7fbd; }
+.layer-navy   .layer-bar, .layer-navy   .layer-badge { background: #1a3660; }
+.layer-navy   .layer-inner { background: #e8f0f8; border-color: #1a3660; }
+.layer-amber  .layer-bar, .layer-amber  .layer-badge { background: #cc8800; }
+.layer-amber  .layer-inner { background: #fff8e0; border-color: #cc8800; }
+.layer-orange .layer-bar, .layer-orange .layer-badge { background: #cc6000; }
+.layer-orange .layer-inner { background: #fff0e8; border-color: #cc6000; }
+/* Notes panel */
+.notes-panel { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.note-box { background: #fff; border: 1.5px solid #c8d8e8; border-left: 4px solid #002060; border-radius: 0 7px 7px 0; padding: 8px 12px 8px 14px; }
+.note-box.orange-accent { border-left-color: #cc3d00; }
+.note-head { font-size: 9.5px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.4px; color: #1a3660; margin-bottom: 4px; }
+.note-box.orange-accent .note-head { color: #8b2000; }
+.note-body { font-size: 8.5px; color: #334466; line-height: 1.65; }
+.note-body strong { color: #002060; }
+.key-concept-bar { background: #fff4ee; border: 1px solid #e8c0a8; border-left: 4px solid #cc3d00; border-radius: 7px; padding: 7px 18px 7px 22px; }
+.key-concept-text { font-size: 10px; color: #334466; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-title">Startup Sequence</div>
+  <div class="header-tag">Section 3</div>
+</div>
+<div class="outer">
+  <div class="main-row">
+    <div class="layers-panel">
+
+      <div class="layer layer-green">
+        <div class="layer-bar"></div>
+        <div class="layer-inner">
+          <div class="layer-badge">1</div>
+          <div class="layer-content">
+            <div class="layer-title">Pre-Op Walk-Around Complete</div>
+            <div class="layer-desc">All inspection zones confirmed clear, fluid levels checked, no visible damage or leaks. Log any findings before proceeding.</div>
+          </div>
+          <div class="layer-status"><div class="layer-status-val" style="color:#1a7040;">GATE 1</div><div class="layer-status-label">go/no-go</div></div>
+        </div>
+      </div>
+      <div class="layer-arrow"></div>
+
+      <div class="layer layer-blue">
+        <div class="layer-bar"></div>
+        <div class="layer-inner">
+          <div class="layer-badge">2</div>
+          <div class="layer-content">
+            <div class="layer-title">Master Power On — Panel Self-Test</div>
+            <div class="layer-desc">Engage master electrical switch. Allow all warning lamps to complete self-test cycle (approx. 3–5 seconds). All lamps must extinguish.</div>
+          </div>
+          <div class="layer-status"><div class="layer-status-val" style="color:#1d5fa8;">3–5 s</div><div class="layer-status-label">self-test</div></div>
+        </div>
+      </div>
+      <div class="layer-arrow"></div>
+
+      <div class="layer layer-blue">
+        <div class="layer-bar"></div>
+        <div class="layer-inner">
+          <div class="layer-badge">3</div>
+          <div class="layer-content">
+            <div class="layer-title">Confirm Neutral / Park — Sound Horn</div>
+            <div class="layer-desc">Selector in neutral or park, park brake set. Sound horn once to warn personnel. Confirm clear zone before engaging starter.</div>
+          </div>
+          <div class="layer-status"><div class="layer-status-val" style="color:#1d5fa8;">GATE 2</div><div class="layer-status-label">go/no-go</div></div>
+        </div>
+      </div>
+      <div class="layer-arrow"></div>
+
+      <div class="layer layer-navy">
+        <div class="layer-bar"></div>
+        <div class="layer-inner">
+          <div class="layer-badge">4</div>
+          <div class="layer-content">
+            <div class="layer-title">Engine Crank — Oil Pressure Build</div>
+            <div class="layer-desc">Engage starter. Engine cranks and fires. Oil pressure must rise to the operating band within 10 seconds or shut down immediately.</div>
+          </div>
+          <div class="layer-status"><div class="layer-status-val" style="color:#1a3660;">&lt; 10 s</div><div class="layer-status-label">oil pressure</div></div>
+        </div>
+      </div>
+      <div class="layer-arrow"></div>
+
+      <div class="layer layer-amber">
+        <div class="layer-bar"></div>
+        <div class="layer-inner">
+          <div class="layer-badge">5</div>
+          <div class="layer-content">
+            <div class="layer-title">Low-Idle Warm-Up Period</div>
+            <div class="layer-desc">Allow engine to idle at low RPM until coolant temperature enters the operating range. Do not load the hydraulic system during warm-up.</div>
+          </div>
+          <div class="layer-status"><div class="layer-status-val" style="color:#cc8800;">2–5 min</div><div class="layer-status-label">warm-up</div></div>
+        </div>
+      </div>
+      <div class="layer-arrow"></div>
+
+      <div class="layer layer-orange">
+        <div class="layer-bar"></div>
+        <div class="layer-inner">
+          <div class="layer-badge">6</div>
+          <div class="layer-content">
+            <div class="layer-title">Systems Check — Ready for Operation</div>
+            <div class="layer-desc">Air reservoirs at pressure, hydraulic temp in range, no active faults. Release park brake only when confirmed ready to move.</div>
+          </div>
+          <div class="layer-status"><div class="layer-status-val" style="color:#cc6000;">GATE 3</div><div class="layer-status-label">operate</div></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="notes-panel">
+      <div class="note-box">
+        <div class="note-head">Cold-Start Considerations</div>
+        <div class="note-body">In ambient temperatures below 5 °C, extend the low-idle warm-up period. Hydraulic oil viscosity increases significantly in cold conditions — premature loading risks pump cavitation. Consult model manual for minimum fluid temp before actuation.</div>
+      </div>
+      <div class="note-box">
+        <div class="note-head">Oil Pressure Failure at Gate 4</div>
+        <div class="note-body">If oil pressure does not rise within 10 seconds: <strong>shut down immediately</strong>. Do not attempt a second start. Check oil level, look for visible leaks, and escalate to service before restarting.</div>
+      </div>
+      <div class="note-box orange-accent">
+        <div class="note-head">Never Skip the Warm-Up Gate</div>
+        <div class="note-body">Engaging the travel or work circuits while coolant and hydraulic temps are below operating range is the leading cause of premature seal and pump wear on Gen6 equipment.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="key-concept-bar">
+    <div class="key-concept-text"><strong>Three gates — all must pass:</strong> Gate 1 = pre-op complete. Gate 2 = panel clear, neutral confirmed. Gate 3 = warm-up done, all systems in range. Do not bypass a gate under time pressure.</div>
+  </div>
+</div>
+</body>
+</html>

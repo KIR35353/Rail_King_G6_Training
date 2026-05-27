@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>Startup Confirmation and Recordkeeping | Section 3</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { width: 1040px; min-height: 510px; overflow: hidden; background: #f8fafb; font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #334466; }
+.header { background: #002060; color: #fff; height: 50px; display: flex; align-items: center; justify-content: space-between; padding: 0 18px; }
+.header-title { font-size: 13px; font-weight: bold; letter-spacing: 0.3px; text-transform: uppercase; }
+.header-tag { font-size: 9px; font-weight: bold; letter-spacing: 1.4px; text-transform: uppercase; color: #80b4dc; background: rgba(255,255,255,0.1); padding: 3px 10px; border-radius: 10px; }
+.main { height: 460px; display: flex; gap: 12px; padding: 14px 18px 12px; }
+.panel { flex: 1; background: #fff; border-radius: 8px; border: 1px solid #dce7f5; padding: 14px 16px; display: flex; flex-direction: column; gap: 7px; min-width: 0; }
+.panel-heading { font-size: 11px; font-weight: bold; color: #002060; border-bottom: 2px solid #cc3d00; padding-bottom: 5px; margin-bottom: 4px; }
+
+/* Left: confirmation checklist */
+.confirm-intro { font-size: 9px; color: #6a7d94; line-height: 1.5; }
+.confirm-row { display: flex; align-items: flex-start; gap: 9px; padding: 5px 0; border-bottom: 1px solid #f0f4fa; }
+.confirm-row:last-child { border-bottom: none; }
+.confirm-box { width: 16px; height: 16px; border: 2px solid #3d7fbd; border-radius: 3px; flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center; }
+.confirm-box.checked { background: #1a7040; border-color: #1a7040; }
+.confirm-box.checked::after { content: '✓'; color: #fff; font-size: 9px; font-weight: bold; }
+.confirm-label { font-size: 9px; font-weight: bold; color: #1a3660; margin-bottom: 1px; }
+.confirm-detail { font-size: 8.5px; color: #334466; line-height: 1.45; }
+
+/* Right: record fields */
+.field-intro { font-size: 9px; color: #6a7d94; line-height: 1.5; }
+.field-group { display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.field-row { display: flex; gap: 10px; }
+.field-block { flex: 1; }
+.field-label { font-size: 8px; font-weight: bold; color: #6a7d94; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 3px; }
+.field-line { height: 24px; background: #f0f4fa; border: 1px solid #c8d8e8; border-radius: 4px; }
+.field-block.wide { flex: 2; }
+
+.record-note { background: #e8f0f8; border: 1px solid #3d7fbd; border-radius: 6px; padding: 8px 12px; }
+.record-note-text { font-size: 8.5px; color: #1a3660; line-height: 1.5; }
+.record-note-text strong { color: #002060; }
+
+.quality-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.q-card { border-radius: 5px; padding: 6px 10px; }
+.q-card.good  { background: #e8f8ee; border: 1px solid #1a7040; }
+.q-card.bad   { background: #fee8e8; border: 1px solid #cc3d00; }
+.q-card-label { font-size: 8px; font-weight: bold; text-transform: uppercase; margin-bottom: 3px; }
+.q-card.good  .q-card-label { color: #1a7040; }
+.q-card.bad   .q-card-label { color: #cc3d00; }
+.q-card-text  { font-size: 8.5px; color: #334466; line-height: 1.45; }
+
+.key-concept-bar { background: #fff4ee; border: 1px solid #e8c0a8; border-left: 4px solid #cc3d00; border-radius: 7px; padding: 8px 16px; }
+.key-concept-text { font-size: 10px; color: #334466; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-title">Startup Confirmation and Recordkeeping</div>
+  <div class="header-tag">Section 3</div>
+</div>
+<div class="main">
+  <!-- LEFT: Final Confirmation Checklist -->
+  <div class="panel">
+    <div class="panel-heading">Final Startup Confirmation Checklist</div>
+    <div class="confirm-intro">Complete this gate before releasing the park brake or engaging any work circuit.</div>
+
+    <div class="confirm-row">
+      <div class="confirm-box checked"></div>
+      <div><div class="confirm-label">All Warning Lamps Out</div><div class="confirm-detail">No amber or red lamps illuminated after warm-up. If any remain, resolve before proceeding.</div></div>
+    </div>
+    <div class="confirm-row">
+      <div class="confirm-box checked"></div>
+      <div><div class="confirm-label">Engine Temp in Operating Band</div><div class="confirm-detail">Coolant temperature gauge reading within normal range. Warm-up not cut short.</div></div>
+    </div>
+    <div class="confirm-row">
+      <div class="confirm-box checked"></div>
+      <div><div class="confirm-label">Air Reservoirs at Full Pressure</div><div class="confirm-detail">Primary and secondary circuits at or above minimum operating pressure. Brakes safe to release.</div></div>
+    </div>
+    <div class="confirm-row">
+      <div class="confirm-box checked"></div>
+      <div><div class="confirm-label">Hydraulic Oil Temp in Range</div><div class="confirm-detail">Hydraulic system at minimum operating temperature before actuating any cylinders or motors.</div></div>
+    </div>
+    <div class="confirm-row">
+      <div class="confirm-box"></div>
+      <div><div class="confirm-label">Pre-Op Log Entry Made</div><div class="confirm-detail">Date, unit ID, operator name, meter reading, and any noted anomalies entered in the shift log.</div></div>
+    </div>
+    <div class="confirm-row">
+      <div class="confirm-box"></div>
+      <div><div class="confirm-label">Fault Codes Recorded (if any)</div><div class="confirm-detail">Any fault codes observed during startup written down — not cleared — before the shift begins.</div></div>
+    </div>
+
+    <div class="key-concept-bar" style="margin-top:auto;">
+      <div class="key-concept-text"><strong>Unchecked boxes = hold point.</strong> A shift does not begin until all boxes are checked or the hold is escalated.</div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Record Fields and Data Quality -->
+  <div class="panel">
+    <div class="panel-heading">Required Log Entries — Data Quality</div>
+    <div class="field-intro">Every startup requires a log entry. Incomplete or illegible entries degrade the service history and may invalidate warranty claims.</div>
+
+    <div class="field-group">
+      <div class="field-row">
+        <div class="field-block wide"><div class="field-label">Unit ID / Serial Number</div><div class="field-line"></div></div>
+        <div class="field-block"><div class="field-label">Date</div><div class="field-line"></div></div>
+      </div>
+      <div class="field-row">
+        <div class="field-block"><div class="field-label">Operator Name</div><div class="field-line"></div></div>
+        <div class="field-block"><div class="field-label">Hour Meter Reading</div><div class="field-line"></div></div>
+      </div>
+      <div class="field-row">
+        <div class="field-block wide"><div class="field-label">Fault Codes Observed (if none, write "none")</div><div class="field-line"></div></div>
+        <div class="field-block"><div class="field-label">Shift Start Time</div><div class="field-line"></div></div>
+      </div>
+      <div class="field-row">
+        <div class="field-block wide"><div class="field-label">Anomalies or Observations (fluids, noise, visual)</div><div class="field-line"></div></div>
+      </div>
+    </div>
+
+    <div class="quality-grid">
+      <div class="q-card good">
+        <div class="q-card-label">✓ Good Entry</div>
+        <div class="q-card-text">Unit RK24-0042 · 27 May · J. Smith · 1,847 hrs · Fault: none · Slight hydraulic drip at left cylinder seal — noted for service</div>
+      </div>
+      <div class="q-card bad">
+        <div class="q-card-label">✗ Poor Entry</div>
+        <div class="q-card-text">"Fine" — no unit ID, no meter reading, no fault note, no operator name. Cannot support warranty or service review.</div>
+      </div>
+    </div>
+
+    <div class="record-note">
+      <div class="record-note-text"><strong>Tip:</strong> If "none" is noted for faults, that entry is as important as a fault code — it establishes a baseline that the machine was clean at that point in time.</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

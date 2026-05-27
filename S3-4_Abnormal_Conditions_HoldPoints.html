@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>Abnormal Conditions and Hold Points | Section 3</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #f8fafb; font-family: Arial, Helvetica, sans-serif; width: 1040px; min-height: 510px; overflow: hidden; }
+.header { background: #002060; color: #fff; height: 50px; display: flex; align-items: center; padding: 0 24px; justify-content: space-between; }
+.header-title { font-size: 13px; font-weight: bold; letter-spacing: 0.9px; text-transform: uppercase; }
+.header-tag { background: #1a3660; border: 1px solid #3d7fbd; border-radius: 12px; padding: 4px 16px; font-size: 10px; font-weight: bold; color: #88aacc; letter-spacing: 0.5px; }
+.outer { padding: 10px 16px 0; display: flex; flex-direction: column; gap: 8px; }
+.main-row { display: flex; gap: 14px; align-items: flex-start; }
+.layers-panel { flex: 0 0 545px; display: flex; flex-direction: column; gap: 0; }
+.layer { display: flex; align-items: stretch; border-radius: 4px; overflow: hidden; border: 1.5px solid #c8d8e8; }
+.layer-bar { width: 8px; flex-shrink: 0; }
+.layer-inner { flex: 1; display: flex; align-items: center; padding: 6px 12px; gap: 10px; background: #fff; }
+.layer-badge { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: bold; color: #fff; flex-shrink: 0; }
+.layer-content { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.layer-title { font-size: 9px; font-weight: bold; color: #1a3660; letter-spacing: 0.3px; }
+.layer-desc { font-size: 8.5px; color: #334466; line-height: 1.5; }
+.layer-action { text-align: right; flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-end; justify-content: center; gap: 2px; min-width: 68px; }
+.layer-action-val { font-size: 8px; font-weight: bold; padding: 2px 7px; border-radius: 3px; }
+.layer-action-label { font-size: 7.5px; color: #778899; text-align: right; }
+.layer-arrow { display: flex; align-items: center; justify-content: center; height: 9px; margin: 0 0 0 12px; }
+.layer-arrow::before { content: ''; display: block; width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 7px solid #8899aa; }
+/* Colour classes */
+.layer-amber  .layer-bar, .layer-amber  .layer-badge { background: #cc8800; }
+.layer-amber  .layer-inner { background: #fff8e0; border-color: #cc8800; }
+.layer-orange .layer-bar, .layer-orange .layer-badge { background: #cc6000; }
+.layer-orange .layer-inner { background: #fff0e8; border-color: #cc6000; }
+.layer-red    .layer-bar, .layer-red    .layer-badge { background: #cc3d00; }
+.layer-red    .layer-inner { background: #ffe8e0; border-color: #cc3d00; }
+.layer-darkred .layer-bar, .layer-darkred .layer-badge { background: #8b2000; }
+.layer-darkred .layer-inner { background: #fee8e8; border-color: #8b2000; }
+.layer-navy   .layer-bar, .layer-navy   .layer-badge { background: #1a3660; }
+.layer-navy   .layer-inner { background: #e8f0f8; border-color: #1a3660; }
+/* Notes */
+.notes-panel { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.note-box { background: #fff; border: 1.5px solid #c8d8e8; border-left: 4px solid #002060; border-radius: 0 7px 7px 0; padding: 8px 12px 8px 14px; }
+.note-box.red-accent { border-left-color: #cc3d00; }
+.note-head { font-size: 9.5px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.4px; color: #1a3660; margin-bottom: 4px; }
+.note-box.red-accent .note-head { color: #8b2000; }
+.note-body { font-size: 8.5px; color: #334466; line-height: 1.65; }
+.note-body strong { color: #002060; }
+.note-box.red-accent .note-body strong { color: #8b2000; }
+.key-concept-bar { background: #fff4ee; border: 1px solid #e8c0a8; border-left: 4px solid #cc3d00; border-radius: 7px; padding: 7px 18px 7px 22px; }
+.key-concept-text { font-size: 10px; color: #334466; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-title">Abnormal Conditions and Hold Points</div>
+  <div class="header-tag">Section 3</div>
+</div>
+<div class="outer">
+  <div class="main-row">
+    <div class="layers-panel">
+
+      <div class="layer layer-amber">
+        <div class="layer-bar"></div>
+        <div class="layer-inner">
+          <div class="layer-badge">A</div>
+          <div class="layer-content">
+            <div class="layer-title">Amber Warning Lamp During Self-Test Holdover</div>
+            <div class="layer-desc">An amber lamp that remains on after the self-test cycle indicates a non-critical fault. Record the fault code, consult model manual. Do not proceed until identified.</div>
+          </div>
+          <div class="layer-action"><div class="layer-action-val" style="background:#fff8e0;color:#cc8800;border:1px solid #cc8800;">HOLD</div><div class="layer-action-label">identify fault</div></div>
+        </div>
+      </div>
+      <div class="layer-arrow"></div>
+
+      <div class="layer layer-orange">
+        <div class="layer-bar"></div>
+        <div class="layer-inner">
+          <div class="layer-badge">B</div>
+          <div class="layer-content">
+            <div class="layer-title">Red Warning Lamp During Self-Test Holdover</div>
+            <div class="layer-desc">A red lamp remaining after self-test signals a critical system fault. Do not start the engine. Secure the machine and escalate to service immediately.</div>
+          </div>
+          <div class="layer-action"><div class="layer-action-val" style="background:#fff0e8;color:#cc6000;border:1px solid #cc6000;">NO START</div><div class="layer-action-label">escalate now</div></div>
+        </div>
+      </div>
+      <div class="layer-arrow"></div>
+
+      <div class="layer layer-red">
+        <div class="layer-bar"></div>
+        <div class="layer-inner">
+          <div class="layer-badge">C</div>
+          <div class="layer-content">
+            <div class="layer-title">Oil Pressure Fails to Rise After Crank</div>
+            <div class="layer-desc">If oil pressure does not enter the operating band within 10 seconds of engine fire, shut down immediately. Do not attempt a second start without identifying the cause.</div>
+          </div>
+          <div class="layer-action"><div class="layer-action-val" style="background:#ffe8e0;color:#cc3d00;border:1px solid #cc3d00;">SHUT DOWN</div><div class="layer-action-label">check oil / leaks</div></div>
+        </div>
+      </div>
+      <div class="layer-arrow"></div>
+
+      <div class="layer layer-red">
+        <div class="layer-bar"></div>
+        <div class="layer-inner">
+          <div class="layer-badge">D</div>
+          <div class="layer-content">
+            <div class="layer-title">Abnormal Noise or Vibration on Startup</div>
+            <div class="layer-desc">Any unusual knock, squeal, or excessive vibration at startup is a hold condition. Shut down and inspect before proceeding. Do not assume the condition will clear under load.</div>
+          </div>
+          <div class="layer-action"><div class="layer-action-val" style="background:#ffe8e0;color:#cc3d00;border:1px solid #cc3d00;">SHUT DOWN</div><div class="layer-action-label">inspect / report</div></div>
+        </div>
+      </div>
+      <div class="layer-arrow"></div>
+
+      <div class="layer layer-darkred">
+        <div class="layer-bar"></div>
+        <div class="layer-inner">
+          <div class="layer-badge">E</div>
+          <div class="layer-content">
+            <div class="layer-title">Air Pressure Cannot Build to Operating Level</div>
+            <div class="layer-desc">If reservoirs do not reach operating pressure within the expected build time, the brake circuit is not safe to release. Park brake must remain set. Escalate — do not move the machine.</div>
+          </div>
+          <div class="layer-action"><div class="layer-action-val" style="background:#fee8e8;color:#8b2000;border:1px solid #8b2000;">LOCKED</div><div class="layer-action-label">brakes held</div></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="notes-panel">
+      <div class="note-box">
+        <div class="note-head">Hold-Point Rule</div>
+        <div class="note-body">A hold point is a mandatory stop in the startup sequence. <strong>No hold point may be bypassed.</strong> If the condition causing the hold cannot be resolved by the operator, the machine must be locked out and service notified.</div>
+      </div>
+      <div class="note-box">
+        <div class="note-head">Fault Code Documentation</div>
+        <div class="note-body">Write down the exact fault code displayed — do not rely on memory. The code number determines whether the fault is operator-resolvable or service-level. Fault codes are model-specific; always use the correct model manual for lookup.</div>
+      </div>
+      <div class="note-box red-accent">
+        <div class="note-head">Never Override a Red Lamp</div>
+        <div class="note-body"><strong>Resetting the panel to clear a red fault lamp does not fix the fault.</strong> The condition will reappear — often at a worse stage. Clearing without diagnosis voids the service record and may void warranty coverage.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="key-concept-bar">
+    <div class="key-concept-text"><strong>Operator boundary:</strong> Amber lamps — identify and document. Red lamps, pressure failures, abnormal noise — stop, secure, escalate. Operators do not diagnose beyond their role.</div>
+  </div>
+</div>
+</body>
+</html>
