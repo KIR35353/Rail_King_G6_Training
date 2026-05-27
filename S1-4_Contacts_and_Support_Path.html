@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>Contacts and Support Path | Section 1</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #f8fafb; font-family: Arial, Helvetica, sans-serif; width: 1040px; min-height: 510px; overflow: hidden; }
+.header { background: #002060; color: #fff; height: 50px; display: flex; align-items: center; padding: 0 24px; justify-content: space-between; }
+.header-title { font-size: 13px; font-weight: bold; letter-spacing: 0.9px; text-transform: uppercase; }
+.header-tag { background: #1a3660; border: 1px solid #3d7fbd; border-radius: 12px; padding: 4px 16px; font-size: 10px; font-weight: bold; color: #88aacc; letter-spacing: 0.5px; }
+.outer { padding: 10px 16px 0; display: flex; flex-direction: column; gap: 8px; }
+.main-row { display: flex; gap: 14px; align-items: flex-start; }
+.layers-panel { flex: 0 0 530px; display: flex; flex-direction: column; gap: 0; }
+.layer { display: flex; align-items: stretch; border-radius: 4px; overflow: hidden; border: 1.5px solid #c8d8e8; }
+.layer-bar { width: 8px; flex-shrink: 0; }
+.layer-inner { flex: 1; display: flex; align-items: center; padding: 7px 12px; gap: 10px; background: #fff; }
+.layer-badge { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: bold; color: #fff; flex-shrink: 0; }
+.layer-content { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.layer-title { font-size: 9px; font-weight: bold; color: #1a3660; letter-spacing: 0.3px; }
+.layer-desc  { font-size: 8.5px; color: #334466; line-height: 1.5; }
+.layer-arrow { display: flex; align-items: center; justify-content: center; height: 10px; margin: 0 0 0 12px; }
+.layer-arrow::before { content: ''; display: block; width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent; border-top: 8px solid #3d7fbd; }
+.notes-panel { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.note-box { background: #fff; border: 1px solid #dce7f5; border-radius: 8px; padding: 10px 12px; }
+.note-heading { font-size: 10px; font-weight: bold; color: #002060; margin-bottom: 4px; border-bottom: 1.5px solid #3d7fbd; padding-bottom: 3px; }
+.note-item { font-size: 9px; color: #334466; line-height: 1.5; margin-bottom: 3px; padding-left: 10px; position: relative; }
+.note-item::before { content: "→"; position: absolute; left: 0; color: #3d7fbd; font-size: 8px; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-title">Contacts and Support Path</div>
+  <div class="header-tag">Section 1</div>
+</div>
+<div class="outer">
+  <div class="main-row">
+    <div class="layers-panel">
+
+      <div class="layer">
+        <div class="layer-bar" style="background:#1a7040;"></div>
+        <div class="layer-inner">
+          <div class="layer-badge" style="background:#1a7040;">1</div>
+          <div class="layer-content">
+            <div class="layer-title">Observe and Document</div>
+            <div class="layer-desc">Operator notes abnormal condition. Record time, symptoms, and operating state before any action.</div>
+          </div>
+        </div>
+      </div>
+      <div class="layer-arrow"></div>
+
+      <div class="layer">
+        <div class="layer-bar" style="background:#1d5fa8;"></div>
+        <div class="layer-inner">
+          <div class="layer-badge" style="background:#1d5fa8;">2</div>
+          <div class="layer-content">
+            <div class="layer-title">Check Approved Procedure First</div>
+            <div class="layer-desc">Consult operator reference and model manual. If a procedure addresses the condition, follow it.</div>
+          </div>
+        </div>
+      </div>
+      <div class="layer-arrow"></div>
+
+      <div class="layer">
+        <div class="layer-bar" style="background:#cc8800;"></div>
+        <div class="layer-inner">
+          <div class="layer-badge" style="background:#cc8800;">3</div>
+          <div class="layer-content">
+            <div class="layer-title">Notify Supervisor</div>
+            <div class="layer-desc">If procedure does not resolve or condition is unclear, notify lead or supervisor immediately.</div>
+          </div>
+        </div>
+      </div>
+      <div class="layer-arrow"></div>
+
+      <div class="layer">
+        <div class="layer-bar" style="background:#cc6000;"></div>
+        <div class="layer-inner">
+          <div class="layer-badge" style="background:#cc6000;">4</div>
+          <div class="layer-content">
+            <div class="layer-title">Submit Equipment Support Request</div>
+            <div class="layer-desc">Use form_equip_tech_support.pdf. Include unit ID, symptoms, times, and steps already taken.</div>
+          </div>
+        </div>
+      </div>
+      <div class="layer-arrow"></div>
+
+      <div class="layer">
+        <div class="layer-bar" style="background:#cc3d00;"></div>
+        <div class="layer-inner">
+          <div class="layer-badge" style="background:#cc3d00;">5</div>
+          <div class="layer-content">
+            <div class="layer-title">Contact Technical Support Direct</div>
+            <div class="layer-desc">Use contacts.pdf to identify the correct support team and communication channel. State urgency clearly.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="notes-panel">
+      <div class="note-box">
+        <div class="note-heading">What to Include in Every Request</div>
+        <div class="note-item">Unit model and serial number</div>
+        <div class="note-item">Date, time, and operating conditions at onset</div>
+        <div class="note-item">Exact symptom description — no assumptions</div>
+        <div class="note-item">Steps already taken and outcome</div>
+        <div class="note-item">Current unit status (running, shut down, secured)</div>
+      </div>
+      <div class="note-box">
+        <div class="note-heading">Escalation Speed Matters</div>
+        <div class="note-item">Earlier escalation reduces diagnostic time</div>
+        <div class="note-item">Complete data prevents call-backs and delays</div>
+        <div class="note-item">Secure the unit if safe operating limits are unclear</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

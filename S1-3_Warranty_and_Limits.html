@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>Warranty and Limits | Section 1</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #f8fafb; font-family: Arial, Helvetica, sans-serif; width: 1040px; min-height: 510px; overflow: hidden; }
+.header { background: #002060; color: #fff; height: 50px; display: flex; align-items: center; padding: 0 24px; justify-content: space-between; }
+.header-title { font-size: 13px; font-weight: bold; letter-spacing: 0.9px; text-transform: uppercase; }
+.header-tag { background: #1a3660; border: 1px solid #3d7fbd; border-radius: 12px; padding: 4px 16px; font-size: 10px; font-weight: bold; color: #88aacc; letter-spacing: 0.5px; }
+.outer { padding: 12px 18px 0; display: flex; flex-direction: column; gap: 10px; }
+.stat-row { display: flex; gap: 10px; }
+.stat-card { flex: 1; background: #fff; border: 1.5px solid #c8d8e8; border-top: 4px solid #002060; border-radius: 8px; padding: 12px 14px 10px; display: flex; flex-direction: column; gap: 4px; text-align: center; }
+.stat-amber { border-top-color: #cc8800; background: #fffbf2; }
+.stat-red   { border-top-color: #cc3d00; background: #fff8f5; }
+.stat-navy  { border-top-color: #002060; }
+.stat-green { border-top-color: #1a7040; background: #f4fdf7; }
+.stat-super { font-size: 8.5px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.6px; color: #778899; margin-bottom: 2px; }
+.stat-val   { font-size: 28px; font-weight: bold; line-height: 1; color: #002060; }
+.stat-navy .stat-val  { color: #002060; }
+.stat-amber .stat-val { color: #7a5000; }
+.stat-red   .stat-val { color: #8b2000; }
+.stat-green .stat-val { color: #1a5c30; }
+.stat-label { font-size: 9.5px; font-weight: bold; color: #1a3660; text-transform: uppercase; letter-spacing: 0.3px; margin-top: 4px; }
+.stat-context { font-size: 8px; color: #778899; line-height: 1.5; margin-top: 2px; }
+.detail-row { display: flex; gap: 10px; }
+.detail-panel { flex: 1; background: #fff; border: 1px solid #dce7f5; border-radius: 8px; padding: 10px 12px; }
+.detail-heading { font-size: 10px; font-weight: bold; color: #002060; border-bottom: 1.5px solid #cc3d00; padding-bottom: 4px; margin-bottom: 6px; }
+.rule-item { font-size: 9px; color: #334466; line-height: 1.5; margin-bottom: 4px; padding-left: 10px; position: relative; }
+.rule-item::before { content: "•"; position: absolute; left: 0; color: #cc3d00; }
+.key-bar { background: #fff4ee; border: 1px solid #e8c0a8; border-left: 4px solid #cc3d00; border-radius: 7px; padding: 8px 16px; }
+.key-bar-text { font-size: 10px; color: #334466; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-title">Warranty and Limits</div>
+  <div class="header-tag">Section 1</div>
+</div>
+<div class="outer">
+  <div class="stat-row">
+    <div class="stat-card stat-green">
+      <div class="stat-super">Covered</div>
+      <div class="stat-val">✓</div>
+      <div class="stat-label">Approved Procedures</div>
+      <div class="stat-context">Actions performed per documented, approved procedures retain full coverage.</div>
+    </div>
+    <div class="stat-card stat-amber">
+      <div class="stat-super">Review Required</div>
+      <div class="stat-val">?</div>
+      <div class="stat-label">Undocumented Modifications</div>
+      <div class="stat-context">Modifications outside approved scope require prior written authorisation.</div>
+    </div>
+    <div class="stat-card stat-red">
+      <div class="stat-super">Coverage Voided</div>
+      <div class="stat-val">✕</div>
+      <div class="stat-label">Unauthorised Actions</div>
+      <div class="stat-context">Actions outside role, procedure, or approval boundary void applicable warranty coverage.</div>
+    </div>
+    <div class="stat-card stat-navy">
+      <div class="stat-super">Reference</div>
+      <div class="stat-val">📄</div>
+      <div class="stat-label">warranty.pdf</div>
+      <div class="stat-context">Always consult warranty.pdf for current coverage terms and model-specific exceptions.</div>
+    </div>
+  </div>
+  <div class="detail-row">
+    <div class="detail-panel">
+      <div class="detail-heading">Before Any Non-Routine Action</div>
+      <div class="rule-item">Confirm the action is within approved procedure scope.</div>
+      <div class="rule-item">Identify whether warranty terms apply to the component or system.</div>
+      <div class="rule-item">If in doubt, escalate to support before proceeding.</div>
+      <div class="rule-item">Document the decision and approval path.</div>
+    </div>
+    <div class="detail-panel">
+      <div class="detail-heading">Common Warranty Boundary Situations</div>
+      <div class="rule-item">Replacing a listed consumable per schedule: <strong>covered</strong>.</div>
+      <div class="rule-item">Adjusting a component to a non-specified setting: <strong>review required</strong>.</div>
+      <div class="rule-item">Bypassing a safety interlock: <strong>coverage voided</strong>.</div>
+      <div class="rule-item">Running unit with known unreported fault: <strong>coverage at risk</strong>.</div>
+    </div>
+  </div>
+  <div class="key-bar">
+    <div class="key-bar-text"><strong>Key principle:</strong> Warranty boundaries are not bureaucratic hurdles — they exist to ensure that every action taken on the equipment is traceable, safe, and technically sound.</div>
+  </div>
+</div>
+</body>
+</html>

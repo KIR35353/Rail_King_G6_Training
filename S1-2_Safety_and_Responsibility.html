@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>Safety and Responsibility | Section 1</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #f8fafb; font-family: Arial, Helvetica, sans-serif; width: 1040px; min-height: 510px; overflow: hidden; }
+.header { background: #002060; color: #fff; height: 50px; display: flex; align-items: center; padding: 0 24px; justify-content: space-between; }
+.header-title { font-size: 13px; font-weight: bold; letter-spacing: 0.9px; text-transform: uppercase; }
+.header-tag { background: #1a3660; border: 1px solid #3d7fbd; border-radius: 12px; padding: 4px 16px; font-size: 10px; font-weight: bold; color: #88aacc; letter-spacing: 0.5px; }
+.main { height: 460px; display: flex; gap: 12px; padding: 14px 18px 12px; }
+.panel { flex: 1; background: #ffffff; border-radius: 8px; border: 1px solid #dce7f5; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; }
+.panel-heading { font-size: 11px; font-weight: bold; color: #002060; border-bottom: 2px solid #cc3d00; padding-bottom: 5px; margin-bottom: 6px; }
+.resp-row { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; }
+.resp-icon { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+.resp-icon.op { background: #e8f0fa; }
+.resp-icon.sv { background: #fff0e8; }
+.resp-icon.mg { background: #f4fdf7; }
+.resp-content { flex: 1; }
+.resp-role { font-size: 10px; font-weight: bold; color: #002060; margin-bottom: 2px; }
+.resp-desc { font-size: 9px; color: #334466; line-height: 1.5; }
+.divider { height: 1px; background: #dce7f5; margin: 4px 0; }
+.safety-rule { background: #fff4ee; border-left: 3px solid #cc3d00; padding: 8px 10px; border-radius: 3px; font-size: 9px; color: #334466; line-height: 1.5; margin-bottom: 6px; }
+.safety-rule strong { color: #8b2000; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-title">Safety and Responsibility</div>
+  <div class="header-tag">Section 1</div>
+</div>
+<div class="main">
+  <div class="panel">
+    <div class="panel-heading">Role Responsibilities</div>
+    <div class="resp-row">
+      <div class="resp-icon op">👤</div>
+      <div class="resp-content">
+        <div class="resp-role">Operator</div>
+        <div class="resp-desc">Follow approved procedures. Report abnormal conditions immediately. Do not attempt repairs beyond role boundary.</div>
+      </div>
+    </div>
+    <div class="resp-row">
+      <div class="resp-icon sv">🔧</div>
+      <div class="resp-content">
+        <div class="resp-role">Service Technician</div>
+        <div class="resp-desc">Apply model-specific service manual before any corrective action. Cross-reference OEM documentation where specified.</div>
+      </div>
+    </div>
+    <div class="resp-row">
+      <div class="resp-icon mg">📋</div>
+      <div class="resp-content">
+        <div class="resp-role">Supervisor / Lead</div>
+        <div class="resp-desc">Confirm role boundary is observed. Authorise escalation to support when conditions are unclear or unsafe.</div>
+      </div>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="panel-heading">Non-Negotiable Safety Rules</div>
+    <div class="safety-rule"><strong>Stop at uncertainty.</strong> If a procedure result is unclear, stop and escalate. Do not guess.</div>
+    <div class="safety-rule"><strong>No undocumented actions.</strong> Any corrective step must be traceable to an approved procedure or directive.</div>
+    <div class="safety-rule"><strong>Document all abnormal conditions.</strong> Verbal communication is not sufficient — use the equipment tech support form.</div>
+    <div class="safety-rule"><strong>Role limits apply always.</strong> Operators do not perform service-level tasks. Technicians do not operate without model verification.</div>
+    <div class="safety-rule"><strong>Escalation is never optional.</strong> When safe operating limits are uncertain, escalating immediately is the correct action.</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>Forms and Data Quality | Section 1</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #f8fafb; font-family: Arial, Helvetica, sans-serif; width: 1040px; min-height: 510px; overflow: hidden; }
+.header { background: #002060; color: #fff; height: 50px; display: flex; align-items: center; padding: 0 24px; justify-content: space-between; }
+.header-title { font-size: 13px; font-weight: bold; letter-spacing: 0.9px; text-transform: uppercase; }
+.header-tag { background: #1a3660; border: 1px solid #3d7fbd; border-radius: 12px; padding: 4px 16px; font-size: 10px; font-weight: bold; color: #88aacc; letter-spacing: 0.5px; }
+.main { height: 460px; display: flex; gap: 12px; padding: 14px 18px 12px; }
+.panel { background: #ffffff; border-radius: 8px; border: 1px solid #dce7f5; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+.panel.left  { flex: 0 0 380px; }
+.panel.right { flex: 1; }
+.panel-heading { font-size: 11px; font-weight: bold; color: #002060; border-bottom: 2px solid #cc3d00; padding-bottom: 5px; margin-bottom: 6px; }
+.form-row { display: flex; align-items: flex-start; gap: 10px; padding: 7px 8px; border-radius: 4px; background: #f8fafb; border: 1px solid #e4eef8; margin-bottom: 5px; }
+.form-tag { background: #002060; color: #fff; font-size: 8px; font-weight: bold; padding: 2px 7px; border-radius: 3px; flex-shrink: 0; min-width: 60px; text-align: center; margin-top: 1px; }
+.form-info { flex: 1; }
+.form-name { font-size: 9.5px; font-weight: bold; color: #002060; margin-bottom: 1px; }
+.form-use  { font-size: 8.5px; color: #334466; line-height: 1.4; }
+.quality-item { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
+.q-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; }
+.q-dot.good { background: #1a7040; }
+.q-dot.bad  { background: #cc3d00; }
+.q-text { flex: 1; }
+.q-label { font-size: 9.5px; font-weight: bold; margin-bottom: 1px; }
+.q-label.good { color: #1a5c30; }
+.q-label.bad  { color: #8b2000; }
+.q-desc  { font-size: 8.5px; color: #334466; line-height: 1.4; }
+.key-bar { background: #fff4ee; border: 1px solid #e8c0a8; border-left: 4px solid #cc3d00; border-radius: 7px; padding: 8px 16px; margin: 6px 18px 0; }
+.key-bar-text { font-size: 10px; color: #334466; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-title">Forms and Data Quality</div>
+  <div class="header-tag">Section 1</div>
+</div>
+<div class="main">
+  <div class="panel left">
+    <div class="panel-heading">The Support Form Set</div>
+
+    <div class="form-row">
+      <div class="form-tag">SUPPORT</div>
+      <div class="form-info">
+        <div class="form-name">form_equip_tech_support.pdf</div>
+        <div class="form-use">Report equipment issues and request technical assistance from the support team.</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-tag">PARTS</div>
+      <div class="form-info">
+        <div class="form-name">form_parts_order.pdf</div>
+        <div class="form-use">Order replacement parts; requires unit ID, part number, and quantity.</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-tag">MANUAL</div>
+      <div class="form-info">
+        <div class="form-name">form_tech_manual_feedback.pdf</div>
+        <div class="form-use">Report errors, gaps, or discrepancies found in technical documentation.</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-tag">SALES</div>
+      <div class="form-info">
+        <div class="form-name">form_sales_feedback.pdf</div>
+        <div class="form-use">Provide product and sales experience feedback to the commercial team.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel right">
+    <div class="panel-heading">What Makes Data Quality High</div>
+
+    <div class="quality-item">
+      <div class="q-dot good"></div>
+      <div class="q-text">
+        <div class="q-label good">Specific and observable</div>
+        <div class="q-desc">"Hydraulic pressure dropped to 1800 PSI at 09:42 during load cycle 3." Gives the support team exact facts.</div>
+      </div>
+    </div>
+
+    <div class="quality-item">
+      <div class="q-dot good"></div>
+      <div class="q-text">
+        <div class="q-label good">Includes steps already taken</div>
+        <div class="q-desc">List actions performed and their result. Prevents duplicate troubleshooting cycles.</div>
+      </div>
+    </div>
+
+    <div class="quality-item">
+      <div class="q-dot bad"></div>
+      <div class="q-text">
+        <div class="q-label bad">Vague descriptions</div>
+        <div class="q-desc">"It was making a noise." — Requires call-backs, wastes time, delays resolution.</div>
+      </div>
+    </div>
+
+    <div class="quality-item">
+      <div class="q-dot bad"></div>
+      <div class="q-text">
+        <div class="q-label bad">Missing unit identification</div>
+        <div class="q-desc">No model/serial means the support team cannot pull the correct service history or documentation.</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="key-bar">
+  <div class="key-bar-text"><strong>Data quality rule:</strong> Every field on the form exists because support teams need it to act quickly. Incomplete forms directly delay resolution.</div>
+</div>
+</body>
+</html>
